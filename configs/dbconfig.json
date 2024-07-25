@@ -1,0 +1,13 @@
+{
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "testplatform",
+        "USER": "root",
+        "PASSWORD": "root",
+        "HOST": "localhost",
+        "PORT": "3307",
+        "OPTIONS": {
+            "init_command": "SET collation_connection = 'utf8_bin'"
+        }
+    }
+}
