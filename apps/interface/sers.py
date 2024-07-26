@@ -8,3 +8,12 @@ class ApplySer(serializers.ModelSerializer):
     class Meta:
         model = Apply
         fields = '__all__'
+
+
+class PortSer(serializers.ModelSerializer):
+    port_id = serializers.CharField(read_only=True)
+
+    class Meta:
+        model = Port
+        fields = '__all__'
+
