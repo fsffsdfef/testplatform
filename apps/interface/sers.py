@@ -1,4 +1,4 @@
-from apps.interface.models.applymodel import Apply
+from apps.interface.models import *
 from rest_framework import serializers
 
 

@@ -9,7 +9,7 @@ class RandomNumber:
         :param field_name: 表字段名
         :param length: 长度
         :param prefix: 前缀
-        :return:
+        :return: 随机数字字符串
         """
         while True:
             if prefix:
