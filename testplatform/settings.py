@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from utils.read import ReadFile
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,7 +43,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'apps.interface',
     'apps.ui',
-    'apps.management'
+    'apps.common'
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,9 @@ WSGI_APPLICATION = 'testplatform.wsgi.application'
 
 DATABASES = ReadFile('json', 'dbconfig.json').distinguish()
 
-
+AUTHENTICATION_BACKENDS = [
+    'apps.common.util.custombackend.CustomBackend',
+]
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -104,6 +107,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        # 将全局权限控制方案设置为仅允许认证用户访问
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # JWT认证:使用SimpleJWT库提供的JWTAuthentication类来进行认证
+        'rest_framework_simplejwt.authentication.JWTAuthentication'
+    ],
+    'EXCEPTION_HANDLER': 'utils.exception.custom_exception_handler'   # 配置py文件名,函数名
+}
+
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -122,3 +138,17 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'common.User'
+
+# simplejwt配置
+SIMPLE_JWT = {
+    # 指定保存UID的字段
+    "USER_ID_FIELD": "user_id",
+    # # 指定获取JWT返回时 使用的序列化器
+    "TOKEN_OBTAIN_SERIALIZER": "apps.common.sers.customtoken import CustomTokenSer",
+    # token有效时长
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    # token刷新后的有效时间
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1)
+}

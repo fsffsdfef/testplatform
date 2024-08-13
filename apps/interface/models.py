@@ -1,4 +1,4 @@
-from apps.management.models import BaseModel, Apply
+from apps.common.models import BaseModel, Apply
 from django.db import models
 
 
@@ -45,6 +45,6 @@ class HttpCase(BaseModel):
         super().save(*args, **kwargs)
 
 
-class DubboCase(BaseModel):
-    """Dubbo类型接口用例"""
-    pass
+# class DubboCase(BaseModel):
+#     """Dubbo类型接口用例"""
+#     pass
