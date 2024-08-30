@@ -5,7 +5,7 @@ from rest_framework.viewsets import ModelViewSet
 from utils.baseresponse import BaseResponse
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.permissions import AllowAny
-
+from apps.common.sers.expressser import ExpressesSer, ExpressItemSer
 # Create your viewsx here.
 
 
@@ -68,3 +68,15 @@ class MenuViewA(ModelViewSet):
 class MyObtainTokenPairView(TokenObtainPairView):
     permission_classes = (AllowAny,)
     serializer_class = CustomTokenSer
+
+
+class ExpressView(ModelViewSet):
+    queryset = Expresses.objects.all()
+    serializer_class = ExpressesSer
+    permission_classes = []
+
+
+class ExpressItemView(ModelViewSet):
+    queryset = ExpressItem.objects.all()
+    serializer_class = ExpressItemSer
+    permission_classes = []

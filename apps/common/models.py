@@ -3,19 +3,9 @@ from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.base_user import BaseUserManager
 from utils.random_number import RandomNumber
-# Create your models here.
-
-
-class BaseModel(models.Model, RandomNumber):
-    """抽象类"""
-    created_date = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
-    updated_date = models.DateTimeField(verbose_name='修改时间', auto_now=True)
-    create_user = models.CharField(verbose_name='创建人', max_length=20)
-    update_user = models.CharField(verbose_name='修改人', max_length=20)
-
-    class Meta:
-        abstract = True
-        ordering = ["created_date"]
+from apps.common.basemodel import BaseModel
+from apps.automation.models import InterfaceHttpCases
+# Create your db here.
 
 
 class Depart(BaseModel):
@@ -119,7 +109,7 @@ class User(BaseModel, AbstractBaseUser):
     group = models.ManyToManyField(to=Group, related_name='user', blank=True)
     permission = models.ManyToManyField(to=Permission, related_name='user', blank=True)
 
-    USERNAME_FIELD = 'username'
+    USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['password']
 
     objects = BaseUserManager()
@@ -163,3 +153,43 @@ class Menu(BaseModel):
         if not self.menu_id:
             self.menu_id = self.get_random_number(field_name='menu_id', length=5)
         super().save(*args, **kwargs)
+
+
+class ExpressItem(BaseModel, RandomNumber):
+    expressItemId = models.CharField('规则组id', max_length=8, primary_key=True)
+    httpCase = models.ForeignKey(InterfaceHttpCases, to_field='caseId',
+                                 related_name='expressItem', on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'test_expressitem'
+
+    def __str__(self):
+        return self.expressItemId
+
+    def save(self, *args, **kwargs):
+        if not self.expressItemId:
+            self.expressItemId = self.get_random_number(field_name='expressItemId', length=7)
+        super().save(*args, **kwargs)
+
+
+class Expresses(BaseModel, RandomNumber):
+    expressId = models.CharField("表达式", max_length=7, primary_key=True)
+    matchKey = models.CharField('匹配建', max_length=20, help_text='需要校验的key')
+    matchValue = models.CharField('匹配值', max_length=20, help_text='预期返回的值')
+    matchOper = models.CharField('计算方法', max_length=10, help_text='运算校验的方法')
+    expressItem = models.ForeignKey('ExpressItem', to_field='expressItemId',
+                                    related_name='expressList', on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'test_expresses'
+
+    def __str__(self):
+        return self.expressId
+
+    def save(self, *args, **kwargs):
+        if not self.expressId:
+            self.expressId = self.get_random_number(field_name='expressId', length=7)
+        super().save(*args, **kwargs)
+
+
+

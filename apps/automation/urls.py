@@ -1,9 +1,11 @@
 from django.urls import path, include
 from rest_framework import routers
-from apps.interface.views import *
+from apps.automation.views.interface.httpview import InterfaceHttpView
+
+
 router = routers.DefaultRouter()
-router.register('apply', ApplyView, basename='apply')
-router.register('port', PortView, basename='port')
+router.register('httpcase', viewset=InterfaceHttpView, basename='httpcase')
+
 
 urlpatterns = [
     path('api/', include(router.urls))
