@@ -8,7 +8,7 @@ from apps.automation.models import InterfaceHttpCases
 # Create your db here.
 
 
-class Depart(BaseModel):
+class Depart(BaseModel, RandomNumber):
     """部门数据模型"""
     depart_id = models.CharField(verbose_name='部门ID', primary_key=True, max_length=20)
     depart_name = models.CharField(verbose_name='部门名', max_length=30)
@@ -25,7 +25,7 @@ class Depart(BaseModel):
         super().save(*args, **kwargs)
 
 
-class Apply(BaseModel):
+class Apply(BaseModel, RandomNumber):
     """应用数据模型"""
     app_id = models.CharField(max_length=100, primary_key=True)
     app_name = models.CharField(verbose_name='应用名', max_length=30, unique=True)
@@ -45,7 +45,7 @@ class Apply(BaseModel):
         super().save(*args, **kwargs)
 
 
-class Permission(BaseModel):
+class Permission(BaseModel, RandomNumber):
     """权限数据模型"""
     p_id = models.CharField(verbose_name='权限id', primary_key=True, max_length=10)
     name = models.CharField(verbose_name='权限名', max_length=30, unique=True)
@@ -62,7 +62,7 @@ class Permission(BaseModel):
         super().save(*args, **kwargs)
 
 
-class Role(BaseModel):
+class Role(BaseModel, RandomNumber):
     """角色数据模型"""
     role_id = models.CharField(verbose_name='角色id', primary_key=True, max_length=10)
     name = models.CharField(verbose_name='角色名', max_length=30)
@@ -80,7 +80,7 @@ class Role(BaseModel):
         super().save(*args, **kwargs)
 
 
-class Group(BaseModel):
+class Group(BaseModel, RandomNumber):
     """分组数据模型"""
     group_id = models.CharField(verbose_name='分组id', primary_key=True, max_length=10)
     name = models.CharField(verbose_name='分组名', max_length=30)
@@ -98,7 +98,7 @@ class Group(BaseModel):
         super().save(*args, **kwargs)
 
 
-class User(BaseModel, AbstractBaseUser):
+class User(BaseModel, AbstractBaseUser, RandomNumber):
     """用户模型"""
     user_id = models.CharField(verbose_name='用户id', primary_key=True, max_length=200)
     username = models.CharField(verbose_name='用户名', max_length=30)
@@ -128,11 +128,13 @@ class User(BaseModel, AbstractBaseUser):
         super().save(*args, **kwargs)
 
 
-class Menu(BaseModel):
+class Menu(BaseModel, RandomNumber):
     menu_id = models.CharField(verbose_name='菜单id', max_length=8, primary_key=True)
     name = models.CharField(verbose_name='菜单名', max_length=30)
     #  使用自关联逻辑，parent为上层菜单id
     parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE)
+
+    objects = models.Manager
 
     def get_children_tree(self):
         """获取子菜单所有数据"""
@@ -155,7 +157,7 @@ class Menu(BaseModel):
         super().save(*args, **kwargs)
 
 
-class ExpressItem(BaseModel, RandomNumber):
+class ExpressItem(models.Model, RandomNumber):
     expressItemId = models.CharField('规则组id', max_length=8, primary_key=True)
     httpCase = models.ForeignKey(InterfaceHttpCases, to_field='caseId',
                                  related_name='expressItem', on_delete=models.CASCADE)
@@ -172,7 +174,7 @@ class ExpressItem(BaseModel, RandomNumber):
         super().save(*args, **kwargs)
 
 
-class Expresses(BaseModel, RandomNumber):
+class Expresses(models.Model, RandomNumber):
     expressId = models.CharField("表达式", max_length=7, primary_key=True)
     matchKey = models.CharField('匹配建', max_length=20, help_text='需要校验的key')
     matchValue = models.CharField('匹配值', max_length=20, help_text='预期返回的值')
@@ -190,6 +192,3 @@ class Expresses(BaseModel, RandomNumber):
         if not self.expressId:
             self.expressId = self.get_random_number(field_name='expressId', length=7)
         super().save(*args, **kwargs)
-
-
-
