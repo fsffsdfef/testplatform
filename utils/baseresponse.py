@@ -1,5 +1,4 @@
 from collections import OrderedDict
-
 from rest_framework.response import Response
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.serializers import Serializer
@@ -42,7 +41,6 @@ class BasePage(PageNumberPagination):
     total = count = None
 
     def get_page_number(self, request, paginator):
-        print(request.data)
         if request.data:
             return request.data.get(self.page_query_param, 1)
         return super().get_page_number(request, paginator)
@@ -53,10 +51,8 @@ class BasePage(PageNumberPagination):
         return super().get_page_size(request)
 
     def get_paginated_response(self, data):
-        print(self.page.next_page_number())
         return BaseResponse(data=OrderedDict([
             ('count', self.page.paginator.count),
-            ('page_number', self.page.next_page_number() - 1),
             ('next', self.get_next_link()),
             ('list', data)
         ]))

@@ -1,7 +1,18 @@
 from rest_framework.exceptions import ValidationError
 
 from apps.common.models import *
+from apps.automation.models.interface import *
 from rest_framework import serializers
+from apps.automation.sers.interface.portser import PortSer
+
+
+class ApplySer(serializers.ModelSerializer):
+    appId = serializers.CharField(read_only=True)
+    port = PortSer(many=True, read_only=True)
+
+    class Meta:
+        model = Apply
+        fields = '__all__'
 
 
 class DepartSer(serializers.ModelSerializer):

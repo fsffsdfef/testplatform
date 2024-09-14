@@ -1,4 +1,4 @@
-from apps.common.models import Expresses, ExpressItem
+from apps.automation.models.interface import *
 from rest_framework import serializers
 
 

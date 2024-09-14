@@ -12,21 +12,31 @@ from apps.common.sers.expressser import ExpressesSer, ExpressItemSer
 class DepartView(ModelViewSet):
     queryset = Depart.objects.all()
     serializer_class = DepartSer
+    permission_classes = []
+
+
+class ApplyView(ModelViewSet):
+    queryset = Apply.objects.all()
+    serializer_class = ApplySer
+    permission_classes = []
 
 
 class PermissionView(ModelViewSet):
     queryset = Permission.objects.all()
     serializer_class = PermissionSer
+    permission_classes = []
 
 
 class GroupView(ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSer
+    permission_classes = []
 
 
 class RoleView(ModelViewSet):
     queryset = Role.objects.all()
     serializer_class = RoleSer
+    permission_classes = []
 
 
 # class UserView(ModelViewSet):
@@ -52,7 +62,7 @@ class MenuView(APIView):
         data = request.data
         print(data)
         queryset = Menu.objects.filter(menu_id=data.get('menu_id')).first()
-        ser = MenuSer(instance=queryset, data=data)
+        ser = MenuSer(instance=queryset, data=data, partial=True)
         if ser.is_valid(raise_exception=True):
             ser.save()
             return BaseResponse(data=ser.data)

@@ -1,6 +1,5 @@
-from apps.automation.models import InterfaceHttpCases
+from apps.automation.models.interface import *
 from apps.common.sers.expressser import ExpressItemSer
-from apps.common.models import ExpressItem, Expresses
 from rest_framework import serializers
 
 

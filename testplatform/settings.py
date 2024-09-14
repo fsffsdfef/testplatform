@@ -81,6 +81,8 @@ WSGI_APPLICATION = 'testplatform.wsgi.application'
 
 DATABASES = ReadFile('json', 'dbconfig.json').distinguish()
 
+CACHES = ReadFile('json', 'redisconfig.json').distinguish()
+
 AUTHENTICATION_BACKENDS = [
     'apps.common.util.custombackend.CustomBackend',
 ]
@@ -117,7 +119,6 @@ REST_FRAMEWORK = {
     ],
     'EXCEPTION_HANDLER': 'utils.exception.custom_exception_handler'   # 配置py文件名,函数名
 }
-
 
 LANGUAGE_CODE = 'en-us'
 
