@@ -18,7 +18,7 @@ class RequestUtil(object):
         adapter = HTTPAdapter(max_retries=retries)
         return adapter
 
-    def batch_send(self):
+    def batch_send(self, cases):
         pass
 
     def send(self, case_info):

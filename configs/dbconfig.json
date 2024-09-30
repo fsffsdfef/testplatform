@@ -7,6 +7,18 @@
         "HOST": "localhost",
         "PORT": "3307",
         "OPTIONS": {
+            "charset": "utf8mb4",
+            "init_command": "SET time_zone = '+8:00'"
+        }
+    },
+    "celerybeat-schedule": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "testplatform",
+        "USER": "root",
+        "PASSWORD": "root",
+        "HOST": "localhost",
+        "PORT": "3307",
+        "OPTIONS": {
             "init_command": "SET collation_connection = 'utf8_bin'"
         }
     }

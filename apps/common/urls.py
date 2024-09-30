@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from apps.common.views import *
-from apps.common.viewsx.userview import UserView
+from apps.common.views.depart_app_menu_view import *
+from apps.common.views.user_role_permissions_group_view import *
+from apps.common.views.token_view import MyObtainTokenPairView
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -17,8 +18,8 @@ router.register('group', GroupView, basename='group')
 router.register('role', RoleView, basename='role')
 router.register('user', UserView, basename='user')
 router.register('menu', MenuViewA, basename='menu')
-router.register('express', ExpressView, basename='express')
-router.register('expressitem', ExpressItemView, basename='expressitem')
+# router.register('express', ExpressView, basename='express')
+# router.register('expressitem', ExpressItemView, basename='expressitem')
 urlpatterns = [
     path('api/', include(router.urls)),
     # 获取Token接口

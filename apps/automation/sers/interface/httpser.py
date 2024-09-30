@@ -1,5 +1,5 @@
 from apps.automation.models.interface import *
-from apps.common.sers.expressser import ExpressItemSer
+from apps.common.sers.express_ser import ExpressItemSer
 from rest_framework import serializers
 
 

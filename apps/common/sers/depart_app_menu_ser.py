@@ -1,8 +1,6 @@
-from rest_framework.exceptions import ValidationError
-
-from apps.common.models import *
-from apps.automation.models.interface import *
+from ..modelss.depart_and_app import Depart, Menu, Apply
 from rest_framework import serializers
+from rest_framework.exceptions import ValidationError
 from apps.automation.sers.interface.portser import PortSer
 
 
@@ -20,38 +18,6 @@ class DepartSer(serializers.ModelSerializer):
 
     class Meta:
         model = Depart
-        fields = '__all__'
-
-
-class PermissionSer(serializers.ModelSerializer):
-    p_id = serializers.CharField(read_only=True)
-
-    class Meta:
-        model = Permission
-        fields = '__all__'
-
-
-class GroupSer(serializers.ModelSerializer):
-    group_id = serializers.CharField(read_only=True)
-
-    class Meta:
-        model = Group
-        fields = '__all__'
-
-
-class RoleSer(serializers.ModelSerializer):
-    role_id = serializers.CharField(read_only=True)
-
-    class Meta:
-        model = Role
-        fields = '__all__'
-
-
-class UserSer(serializers.ModelSerializer):
-    user_id = serializers.CharField(read_only=True)
-
-    class Meta:
-        model = User
         fields = '__all__'
 
 
@@ -106,5 +72,3 @@ class MenuSer(serializers.ModelSerializer):
 
     def get_extra_field(self, obj):
         pass
-
-

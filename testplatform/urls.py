@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.common.urls')),
     path('', include('apps.automation.urls')),
+    path('', include('apps.celery_task.urls')),
 ]

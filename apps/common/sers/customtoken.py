@@ -1,7 +1,5 @@
 from rest_framework_simplejwt.serializers import TokenObtainSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
-from utils.baseresponse import BaseResponse
-from rest_framework.response import Response
 
 
 class CustomTokenSer(TokenObtainSerializer):

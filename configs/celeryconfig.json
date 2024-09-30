@@ -1,0 +1,13 @@
+{
+  "result_backend": "redis://:leeway123@127.0.0.1:6379/2",
+  "broker_url": "redis://:leeway123@127.0.0.1:6379/3",
+  "CELERY_WORKER_CONCURRENCY": 20,
+  "WORKER_PREFETCH_MULTIPLIER": 20,
+  "CELERYD_FORCE_EXECV": true,
+  "CELERY_WORKER_MAX_TASKS_PER_CHILD ": 100,
+  "include": ["celerys.tasks"],
+  "broker_connection_retry  ": true,
+  "broker_connection_retry_on_startup": true,
+  "timezone": "Asia/Shanghai",
+  "beat_scheduler": "django_celery_beat.schedulers.DatabaseScheduler"
+}

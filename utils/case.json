@@ -1,0 +1,82 @@
+[
+    {
+        "appId": "100068188",
+        "port": [
+            {
+                "id": 1,
+                "httpCase": [
+                    {
+                        "caseId": "550280",
+                        "expressItem": [
+                            {
+                                "expressItemId": "4595827",
+                                "expressList": [
+                                    {
+                                        "expressId": "7450299",
+                                        "expressItem": "4595827",
+                                        "matchKey": "suggest",
+                                        "matchValue": "0",
+                                        "keyType": "int",
+                                        "matchOper": "=="
+                                    }
+                                ],
+                                "httpCase": "测试1"
+                            }
+                        ],
+                        "created_date": "2024-09-13T19:03:58.874746+08:00",
+                        "updated_date": "2024-09-13T19:03:58.875746+08:00",
+                        "create_user": "sw",
+                        "update_user": "sw",
+                        "caseName": "测试1",
+                        "headers": null,
+                        "body": {
+                            "cid": "",
+                            "tag": "ctrip_hotel_aftersale_English_client",
+                            "uid": "M00270642",
+                            "appId": "100009253",
+                            "msgId": "2648882899637501997",
+                            "pageId": "10320668088",
+                            "aitoken": "{\"mid\":\"IMFAQ-1191f682-0ae6-49b1-8bf5-524462716384\",\"oid\":\"\",\"rt\":0,\"tag\":\"ctrip_hotel_aftersale_English_client\",\"way\":\"MHFQ\"}",
+                            "orderID": null,
+                            "aiExInfo": "{\"appVersion\":\"8.68.0\",\"clientID\":\"12001120390324197994\",\"orderId\":\"\",\"auth\":\"4A6F4569A2C53CFB235A1BE8738CF3CEC702EE7260C6D34E7B220FFEFF508FED\",\"hotelOrders\":\"\",\"latitude\":\"-180.000000\",\"aiMsgType\":\"0\",\"checkinDate\":\"20240906\",\"hotelID\":\"18026393\",\"locale\":\"zh_CN\",\"supplierPid\":\"339939498\",\"point\":\"\",\"hotelJumpUrl\":\"ctrip://wireless/hotel_inland_detail?hotelId=445563&checkInDate=20240910&checkOutDate=20240911&hotelDataType=1\",\"syscode\":\"12\",\"fromPage\":\"10650047800\",\"bucode\":\"HTL\",\"productType\":\"\",\"longitude\":\"-180.000000\",\"baseRoomID\":\"339939498\",\"coordinate\":\"0\",\"productId\":\"\",\"groupid\":\"2478219779031171093\",\"hotelId\":\"18026393\",\"hotelName\":\"上海松江开元名都大酒店\",\"pageFrom\":\"IM_messagelist\",\"pageCode\":\"10650047800\",\"checkoutDate\":\"202405226\",\"isOverSea\":\"false\"}",
+                            "botToken": null,
+                            "platform": 2,
+                            "groupCode": "HotelLocal",
+                            "inputData": {
+                                "data": "Is there air conditioning in the room?",
+                                "type": "text"
+                            },
+                            "sessionId": "100000412582319",
+                            "userLevel": "0",
+                            "coordinate": {
+                                "lat": null,
+                                "lon": null,
+                                "cityId": 2,
+                                "coordinate": null
+                            },
+                            "corpOrderId": "",
+                            "clientVersion": null,
+                            "thirdPartytoken": "",
+                            "needAsynchronousInfo": null
+                        },
+                        "timeOut": 5,
+                        "retries": 0,
+                        "port": 1
+                    }
+                ],
+                "portName": "/dialogchat",
+                "portMethod": "POST",
+                "portIntroduction": "问答接口",
+                "apply": "100068188"
+            }
+        ],
+        "created_date": "2024-09-13T18:59:35.790505+08:00",
+        "updated_date": "2024-09-13T18:59:35.790505+08:00",
+        "create_user": "sw.fan",
+        "update_user": "sw.fan",
+        "appName": "AI智能客服",
+        "appType": 0,
+        "domains": "http://aichat.fws.qa.nt.ctripcorp.com/",
+        "depart": "779020"
+    }
+]

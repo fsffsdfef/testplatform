@@ -1,28 +1,7 @@
 from django.db import models
 from apps.common.basemodel import BaseModel
 from utils.random_number import RandomNumber
-from apps.common.models import Depart
-
-
-class Apply(BaseModel, RandomNumber):
-    """应用数据模型"""
-    appId = models.CharField(max_length=100, primary_key=True)
-    appName = models.CharField(verbose_name='应用名', max_length=30, unique=True)
-    appType = models.CharField(verbose_name='服务类型', max_length=10, choices=((0, 'http'), (1, 'dubbo')), default=0)
-    domains = models.URLField(verbose_name='域名', unique=True)
-    depart = models.ForeignKey(to=Depart, to_field='depart_id', related_name='app', on_delete=models.CASCADE)
-
-    class Meta:
-        db_table = 't_apply'
-
-    def __str__(self):
-        return self.appName
-
-    def save(self, *args, **kwargs):
-        if not self.appId:
-            self.appId = self.get_random_number(field_name='appId', length=5, prefix='1000')
-        super().save(*args, **kwargs)
-
+from apps.common.modelss.depart_and_app import Apply
 
 class Port(models.Model):
     portName = models.CharField('接口名', max_length=30, help_text='接口名')

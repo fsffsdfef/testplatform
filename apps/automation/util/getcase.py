@@ -14,5 +14,8 @@ class GetCases:
     def get_apply_case(apply: str) -> list:
         data = Apply.objects.filter(appId=apply)
         ser = ApplySer(instance=data, many=True)
-        case_list = json.dumps(ser.data, ensure_ascii=True)
-        return json.loads(case_list)
+        # case_list = json.dumps(ser.data, ensure_ascii=True)
+        # return json.loads(case_list)
+        return ser.data
+
+
