@@ -1,27 +1,26 @@
 import time
-
-from django.test import TestCase
 import os
 import django
-from django.core.cache import cache
 # 设置 DJANGO_SETTINGS_MODULE 环境变量（引入settings文件）
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'testplatform.settings')
 # 加载 Django 项目配置
 django.setup()
 # Create your tests here.
+from django.core.cache import cache
+from django.test import TestCase
 from apps.common.modelss.depart_and_app import Apply
 from apps.common.sers.depart_app_menu_ser import ApplySer
 import json
 from celerys.tasks import *
 from celerys import celery_app
 import subprocess
-import psutil
+# import psutil
 
 
 class UnitTestCase(TestCase):
 
     def test_a(self):
-        value = Apply.objects.filter(appId='100068188')
+        value = Apply.objects.filter(appId='100005327')
         ser = ApplySer(instance=value, many=True)
         case_info = json.dumps(ser.data, ensure_ascii=False)
         # for i in json.loads(case_info):
@@ -52,18 +51,18 @@ class UnitTestCase(TestCase):
         res2 = celery_app.AsyncResult(result2.id)
         print(res2)
 
-    def test_12(self):
-        for proc in psutil.process_iter(['pid', 'name']):
-            try:
-                # 获取进程的名称和进程 ID
-                name = proc.info['name']
-                pid = proc.info['pid']
-
-                # 如果进程名称中包含 "celery"，则输出进程的名称和进程 ID
-                if 'celery' in name:
-                    print(f"Found celery process: {name} (pid={pid})")
-            except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
-                pass
+    # def test_12(self):
+    #     for proc in psutil.process_iter(['pid', 'name']):
+    #         try:
+    #             # 获取进程的名称和进程 ID
+    #             name = proc.info['name']
+    #             pid = proc.info['pid']
+    #
+    #             # 如果进程名称中包含 "celery"，则输出进程的名称和进程 ID
+    #             if 'celery' in name:
+    #                 print(f"Found celery process: {name} (pid={pid})")
+    #         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+    #             pass
 
 
 v = UnitTestCase()

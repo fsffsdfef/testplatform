@@ -3,6 +3,7 @@ from apps.common.basemodel import BaseModel
 from utils.random_number import RandomNumber
 from apps.common.modelss.depart_and_app import Apply
 
+
 class Port(models.Model):
     portName = models.CharField('接口名', max_length=30, help_text='接口名')
     method_choices = (('POST', 'post'), ('GET', 'get'), ('UPDATE', 'update'), ('DELETE', 'delete'))
@@ -74,5 +75,3 @@ class Expresses(models.Model, RandomNumber):
         if not self.expressId:
             self.expressId = self.get_random_number(field_name='expressId', length=7)
         super().save(*args, **kwargs)
-
-

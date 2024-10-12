@@ -1,5 +1,5 @@
 from apps.automation.models.interface import Apply
-from apps.common.sers.departser import ApplySer
+from apps.common.sers.depart_app_menu_ser import ApplySer
 import json
 
 

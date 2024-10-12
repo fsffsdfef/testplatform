@@ -15,4 +15,6 @@ for key, value in route_path.items():
 
 urlpatterns = [
     path('api/', include(router.urls)),
+    path('api/task/', Demo.as_view()),
+    path('api/demo/', Demo1.as_view()),
 ]
