@@ -1,3 +1,4 @@
+from django.test import TestCase
 import time
 import os
 import django
@@ -63,6 +64,9 @@ class UnitTestCase(TestCase):
     #                 print(f"Found celery process: {name} (pid={pid})")
     #         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
     #             pass
+
+    def test_demo(self):
+        print("123")
 
 
 v = UnitTestCase()

@@ -16,6 +16,7 @@ class GetCases:
         ser = ApplySer(instance=data, many=True)
         # case_list = json.dumps(ser.data, ensure_ascii=True)
         # return json.loads(case_list)
+        # print(json.loads(ser.data))
         return ser.data
 
 
