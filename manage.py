@@ -6,7 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'testplatform.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.base')
     os.environ.setdefault("CELERY_CONFIG_MODULE", "celerys.config")
     try:
         from django.core.management import execute_from_command_line
