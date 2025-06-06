@@ -13,7 +13,7 @@ class BaseModel(models.Model):
 
     class Meta:
         abstract = True
-        ordering = ["created_date"]
+        ordering = ["-updatedDate"]
 
     def get_random_number(self, field_name: str, length: int = None, prefix: str = None, *args) -> any:
         """

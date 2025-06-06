@@ -28,9 +28,23 @@ from ..sers.depart_apply_port import *
 
 class ApplyView(ModelViewSet):
     queryset = ApplyModel.objects.all()
+    permission_classes = []
     serializer_class = ApplySer
 
 
 class PortView(ModelViewSet):
+    permission_classes = []
     queryset = PortModel.objects.all()
     serializer_class = PortSer
+
+
+class PerView(ModelViewSet):
+    permission_classes = []
+    queryset = PermissionModel.objects.all()
+    serializer_class = PerSer
+
+
+class RoleView(ModelViewSet):
+    permission_classes = []
+    queryset = RoleModel.objects.all()
+    serializer_class = RoleSer
