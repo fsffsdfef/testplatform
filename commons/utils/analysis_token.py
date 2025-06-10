@@ -1,5 +1,5 @@
 import jwt
-from settings import base
+from config.settings import base
 
 
 def get_token(request):

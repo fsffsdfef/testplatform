@@ -6,6 +6,8 @@ from django.db.models import Q
 from commons.cusntom.response import CustomResponse
 from commons.cusntom.pagination import CustomPage
 from commons.utils.analysis_token import get_token
+from celerys.tasks import demo
+from celery import result
 
 
 class MenuInitializeView(ModelViewSet):
@@ -77,6 +79,8 @@ class MenuView(GenericAPIView):
         request_path = request.path
         request_data = request.data
         if request_path == "/api/menu/getPageList":
+            res = demo.delay(12, 12)
+            print(f'res: {res.get()}')
             return self.get_query(request=request_data, *args, **kwargs)
         elif request_path == "/api/menu/add":
             return self.add(request=request_data, *args, **kwargs)

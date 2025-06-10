@@ -66,7 +66,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'config.urls'
 # 指定用户表，用于登陆admin后台与jwt验证
 AUTH_USER_MODEL = 'system.UserModel'
 
@@ -86,14 +86,14 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = Read('DataBase.json').get_json_file()
-CACHES = Read('Cache.json').get_json_file()
+DATABASES = Read(env='dev', filename='DataBase.json').get_json_file()
+CACHES = Read('dev', 'Cache.json').get_json_file()
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
