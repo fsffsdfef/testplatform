@@ -4,7 +4,7 @@ from rest_framework.generics import GenericAPIView
 from commons.cusntom.response import CustomResponse
 from django.db.models import Q
 from commons.cusntom.pagination import CustomPage
-from rest_framework.viewsets import ModelViewSet
+from commons.cusntom.view import CustomView
 from ..sers.user_jws import *
 
 
@@ -18,6 +18,23 @@ class UserView(GenericAPIView):
     serializer_class = UserSer
     permission_classes = []
     pagination_class = CustomPage
+    fields = {
+        "userId": {
+            "type": 'exact',
+            "converter": int,
+            "allow_empty": False
+        },
+        "email": {
+            "type": 'exact',
+            "converter": int,
+            "allow_empty": False
+        },
+        "userName": {
+            "type": 'icontains',
+            "converter": str,
+            "allow_empty": True
+        }
+    }
 
     def post(self, request, *args, **kwargs):
         """

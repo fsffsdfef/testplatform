@@ -13,7 +13,7 @@ ROUTERS = {
 router = routers.DefaultRouter()
 router.register("apply", ApplyView, basename="apply")
 router.register("port", PortView, basename="port")
-router.register("per", PerView, basename="per")
+# router.register("per", PerView, basename="per")
 router.register("role", RoleView, basename="role")
 router.register("menu1", MenuInitializeView, basename='menu1')
 router.register("card", MenuCascaderView, basename='card')
@@ -44,5 +44,9 @@ urlpatterns = [
     path("api/menu/add", menu_view),
     path("api/menu/del", menu_view),
     path("api/menu/update", menu_view),
+    path("api/per/getPageList", per_view),
+    path("api/per/add", per_view),
+    path("api/per/del", per_view),
+    path("api/per/update", per_view),
     path('api/login', TokenView.as_view(), name='login')
 ]

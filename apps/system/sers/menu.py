@@ -9,7 +9,7 @@ class MenuSer(serializers.ModelSerializer):
     menuName = serializers.CharField(required=True, error_messages={'blank': '名称不能为空'})
     permissionList = serializers.SerializerMethodField(method_name='get_permission_list', read_only=True)
     previousMenu = serializers.SerializerMethodField(method_name='get_previous_menu')
-    per = serializers.PrimaryKeyRelatedField(many=True, queryset=PermissionModel.objects.all())
+    per = serializers.PrimaryKeyRelatedField(many=True, queryset=PermissionModel.objects.all(), write_only=True)
 
     class Meta:
         model = Menu
