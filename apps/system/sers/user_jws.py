@@ -3,6 +3,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework import serializers
 from itertools import chain
 from ..model.user import UserModel
+from ..model.depart_apply_port import DepartModel
 
 
 def get_permission(obj):
@@ -29,7 +30,6 @@ class TokenSer(TokenObtainSerializer):
         for i in per_map:
             permission_list = i + permission_list
         permission_list = list(set(permission_list))
-        print(permission_list)
         token = super().get_token(user)
         token['email'] = user.email
         token['permissionList'] = permission_list
@@ -37,7 +37,6 @@ class TokenSer(TokenObtainSerializer):
 
     def validate(self, attrs):
         data = {}
-        print(attrs)
         result = super().validate(attrs)
         refresh = self.get_token(self.user)
         data['token'] = str(refresh.access_token)
@@ -48,8 +47,29 @@ class TokenSer(TokenObtainSerializer):
 
 
 class UserSer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True)
+
+    userId = serializers.CharField(read_only=True)
+    password = serializers.CharField(write_only=True, required=False,)
+    depart = serializers.PrimaryKeyRelatedField(queryset=DepartModel.objects.all())
+    departName = serializers.SerializerMethodField(method_name='_get_depart_name', read_only=True)
 
     class Meta:
         model = UserModel
-        fields = "__all__"
+        # fields = ("userId", "password", "roles", "groups", "depart", "departName", "email",
+        #           "createdDate", "updatedDate", "createUser", "updateUser"
+        #           )
+        fields = '__all__'
+        read_only_fields = []
+
+    @staticmethod
+    def _get_depart_name(obj):
+        return obj.depart.departName
+
+    # def update(self, instance, validated_data):
+    #
+    #     for field, value in validated_data.items():
+    #         if field in self.Meta.read_only_fields:
+    #             continue
+    #         setattr(instance, field, value)
+    #     instance.save()
+    #     return instance

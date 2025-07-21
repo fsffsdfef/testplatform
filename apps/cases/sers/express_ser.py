@@ -20,9 +20,3 @@ class ExpressItemSer(serializers.ModelSerializer):
         # fields = '__all__'
         exclude = ['updateUser', 'createUser', 'httpCase']
 
-    def create(self, validated_data):
-        pass
-
-    def update(self, instance, validated_data):
-        pass
-

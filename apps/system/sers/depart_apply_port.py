@@ -46,3 +46,10 @@ class RoleSer(serializers.ModelSerializer):
     class Meta:
         model = RoleModel
         fields = "__all__"
+
+
+class GroupSer(serializers.ModelSerializer):
+
+    class Meta:
+        model = GroupModel
+        fields = "__all__"

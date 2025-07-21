@@ -13,17 +13,15 @@ ROUTERS = {
 router = routers.DefaultRouter()
 router.register("apply", ApplyView, basename="apply")
 router.register("port", PortView, basename="port")
-# router.register("per", PerView, basename="per")
-router.register("role", RoleView, basename="role")
 router.register("menu1", MenuInitializeView, basename='menu1')
 router.register("card", MenuCascaderView, basename='card')
 #
-# for k, v in ROUTERS.items():
+# for k, v in ROUTERS.items()
 #     router.register(k, viewset=v, basename=k)
 urlpatterns = [
     path("api/", include(router.urls)),
     path("api/search", depart_view, name="search"),
-    path("api/test", depart_view, name="test"),
+    # path("api/test", depart_view, name="test"),
     path("api/depart/getPageList", depart_view),
     path("api/depart/add", depart_view),
     path("api/depart/del", depart_view),
@@ -48,5 +46,13 @@ urlpatterns = [
     path("api/per/add", per_view),
     path("api/per/del", per_view),
     path("api/per/update", per_view),
+    path("api/roles/getPageList", role_view),
+    path("api/roles/add", role_view),
+    path("api/roles/del", role_view),
+    path("api/roles/update", role_view),
+    path("api/groups/getPageList", group_view),
+    path("api/groups/add", group_view),
+    path("api/groups/del", group_view),
+    path("api/groups/update", group_view),
     path('api/login', TokenView.as_view(), name='login')
 ]

@@ -25,7 +25,6 @@ class Expresses(BaseModel):
     matchKey = models.CharField('key', max_length=100, help_text='需要校验value的key')
     keyType = models.CharField('key的类型', max_length=30, help_text='key对应value的类型', default='str')
     matchMethod = models.CharField('取值方法', max_length=200, null=True)
-    matchValueType = models.CharField('需要转换的类型', max_length=30, default='str')
     matchValue = models.CharField('预期答案', max_length=200)
     matchOper = models.CharField('运算符', max_length=10, help_text='运算符')
     expressItem = models.ForeignKey(ExpressItem, to_field='expressItemId',

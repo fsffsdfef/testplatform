@@ -80,6 +80,7 @@ class MenuView(CustomView):
             "allow_empty": True
         }
     }
+    index_key = "menuId"
 
     # def post(self, request, *args, **kwargs):
     #     """
