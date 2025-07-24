@@ -6,7 +6,7 @@ class CustomResponse(Response):
 
     def __init__(self, data=None, status=None, msg=None, code=None,
                  template_name=None, headers=None,
-                 exception=False, content_type=None):
+                 exception=False, content_type=None, success=True):
         super().__init__(None, status=status)
 
         if isinstance(data, Serializer):
@@ -17,7 +17,7 @@ class CustomResponse(Response):
             )
             raise AssertionError(msg)
 
-        self.data = {'data': data, 'msg': msg, 'code': code}
+        self.data = {'data': data, 'msg': msg, 'code': code, 'success': success}
         self.template_name = template_name
         self.exception = exception
         self.content_type = content_type

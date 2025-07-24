@@ -21,6 +21,7 @@ class DepartView(CustomView):
             "allow_empty": True
         }
     }
+    index_key = "departId"
 
 
 depart_view = DepartView.as_view()

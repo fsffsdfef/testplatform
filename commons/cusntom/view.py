@@ -8,6 +8,7 @@ class CustomView(GenericAPIView):
 
     model = None
     fields = None
+    index_key = None
 
     def post(self, request, *args, **kwargs):
         path_handlers = {
@@ -28,14 +29,16 @@ class CustomView(GenericAPIView):
             return CustomResponse(data=ser.data, msg="新建成功", code=101)
 
     def delete(self, request, *args, **kwargs):
-        key = request.get("menuId")
-        if key is None:
-            return CustomResponse(data=[], msg="menuId为空", code=1001)
-        self.model.objects.get(applyId=key).delete()
+        obj = {
+            self.index_key: request.get(self.index_key)
+        }
+        if obj[self.index_key] is None:
+            return CustomResponse(data=[], msg="ID为空", code=1001)
+        self.model.objects.get(**obj).delete()
         return CustomResponse(data=[], msg="删除成功", code=201)
 
     def update(self, request, *args, **kwargs):
-        key = request.pop("menuId", None)
+        key = request.pop(self.index_key, None)
         model_obj = self.model.objects.get(pk=key)
         ser = self.serializer_class(instance=model_obj, data=request)
         if ser.is_valid(raise_exception=True):  # 校验数据是否满足条件
@@ -49,7 +52,6 @@ class CustomView(GenericAPIView):
             value = request.get(i, None)
             if value is not None:
                 query_params[i] = value
-
         q_objects = Q()
         processed_fields = set()
 

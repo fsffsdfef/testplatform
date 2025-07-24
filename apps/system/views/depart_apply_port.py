@@ -1,8 +1,8 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.generics import get_object_or_404, GenericAPIView
-from rest_framework.response import Response
 from commons.cusntom.response import CustomResponse
 from commons.cusntom.pagination import CustomPage
+from commons.cusntom.view import CustomView
 from ..model.depart_apply_port import *
 from ..sers.depart_apply_port import *
 from django.db.models import Q
@@ -58,84 +58,63 @@ class PortView(ModelViewSet):
 #         return CustomResponse(data=serializer.data)
 
 
-class PerView(GenericAPIView):
+class PerView(CustomView):
     model = PermissionModel
     serializer_class = PerSer
     permission_classes = []
     pagination_class = CustomPage
-
-    def post(self, request, *args, **kwargs):
-        """
-        post请求分流
-        :param request: 入参
-        :param args:
-        :param kwargs:
-        :return: 下发json格式数据
-        """
-        request_path = request.path
-        request_data = request.data
-        if request_path == "/api/per/getPageList":
-            return self.get_query(request=request_data, *args, **kwargs)
-        elif request_path == "/api/per/add":
-            return self.add(request=request_data, *args, **kwargs)
-        elif request_path == "/api/per/del":
-            return self.delete(request=request_data, *args, **kwargs)
-        elif request_path == "/api/per/update":
-            return self.update(request=request_data, *args, **kwargs)
-        return CustomResponse(data=[])
-
-    def add(self, request, *args, **kwargs):
-        ser = self.serializer_class(data=request)
-        if ser.is_valid(raise_exception=True):
-            ser.save()
-            return CustomResponse(data=ser.data, msg="新建成功", code=101)
-
-    def delete(self, request, *args, **kwargs):
-        key = request.get("perId")
-        if key is None:
-            return CustomResponse(data=[], msg="perId为空", code=1001)
-        self.model.objects.get(applyId=key).delete()
-        return CustomResponse(data=[], msg="删除成功", code=201)
-
-    def update(self, request, *args, **kwargs):
-        key = request.pop("perId", None)
-        model_obj = self.model.objects.get(pk=key)
-        ser = self.serializer_class(instance=model_obj, data=request)
-        if ser.is_valid(raise_exception=True):  # 校验数据是否满足条件
-            ser.save()
-            return CustomResponse(data=ser.data, msg="修改成功", code=1004)
-        return CustomResponse(data=[], msg="修改失败", code=1004)
-
-    def search(self, request, *args, **kwargs):
-        return []
-
-    def get_query(self, request, *args, **kwargs):
-        apply_id = request.pop("perId", None)
-        apply_name = request.get("perCode", None)
-        if apply_id is not None and apply_name is not None:
-            data = self.model.objects.filter(
-                Q(perId=apply_id) &
-                Q(perCode__icontains=apply_name)
-            ).order_by("-updatedDate")
-        elif apply_id is not None or apply_name is not None:
-            data = self.model.objects.filter(
-                Q(perId=apply_id) |
-                Q(perCode__icontains=apply_name)
-            ).order_by("-updatedDate")
-        else:
-            data = self.model.objects.all().order_by("-updatedDate")
-        page_data = self.paginate_queryset(data)
-        if page_data is not None:
-            serializer = self.serializer_class(instance=page_data, many=True)
-            return self.get_paginated_response(serializer.data)
-        ser = self.serializer_class(instance=data, many=True)
-        return CustomResponse(data=ser.data)
+    fields = {
+        "perId": {
+            "type": 'exact',
+            "converter": int,
+            "allow_empty": False
+        },
+        "perCode": {
+            "type": 'icontains',
+            "converter": str,
+            "allow_empty": False
+        },
+    }
 
 
-class RoleView(ModelViewSet):
-    permission_classes = []
-    queryset = RoleModel.objects.all()
+class RoleView(CustomView):
+    model = RoleModel
     serializer_class = RoleSer
+    permission_classes = []
+    pagination_class = CustomPage
+    fields = {
+        "roleId": {
+            "type": 'exact',
+            "converter": int,
+            "allow_empty": False
+        },
+        "roleName": {
+            "type": 'icontains',
+            "converter": str,
+            "allow_empty": False
+        },
+    }
+
+
+class GroupsView(CustomView):
+    model = GroupModel
+    serializer_class = GroupSer
+    permission_classes = []
+    pagination_class = CustomPage
+    fields = {
+        "groupId": {
+            "type": 'exact',
+            "converter": int,
+            "allow_empty": False
+        },
+        "groupName": {
+            "type": 'icontains',
+            "converter": str,
+            "allow_empty": False
+        },
+    }
 
 
 per_view = PerView.as_view()
+role_view = RoleView.as_view()
+group_view = GroupsView.as_view()

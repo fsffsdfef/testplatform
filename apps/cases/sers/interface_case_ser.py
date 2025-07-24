@@ -28,7 +28,7 @@ class HttpCaseSer(serializers.ModelSerializer):
             instance.caseName = validated_data.get('caseName', instance.caseName)
             instance.headers = validated_data.get('headers', instance.headers)
             instance.body = validated_data.get('body', instance.body)
-            instance.timeOut = validated_data.get('timeOut', instance.timeOut)
+            instance.timeout = validated_data.get('timeout', instance.timeout)
             instance.retries = validated_data.get('retries', instance.retries)
             instance.isCore = validated_data.get('isCore', instance.isCore)
             instance.port = validated_data.get('port', instance.port)

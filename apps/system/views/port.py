@@ -21,6 +21,8 @@ class PortView(CustomView):
             "allow_empty": True
         }
     }
+    index_key = 'portId'
 
 
 port_view = PortView.as_view()
+

@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('apps.cases.urls')),
     path('', include('apps.system.urls')),
     path('', include('apps.celery_task.urls')),
+    path('', include('apps.automatic.urls')),
 ]
