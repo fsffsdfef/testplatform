@@ -1,17 +1,8 @@
 import requests
 import operator
-<<<<<<< HEAD
-import logging
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
-logger = logging.getLogger(__name__)
-
-=======
-from requests.adapters import HTTPAdapter
-from requests.packages.urllib3.util.retry import Retry
-
->>>>>>> origin/dev-fsw
 
 class AutomatedRequest(object):
     REQUEST_TYPE = {
@@ -21,23 +12,14 @@ class AutomatedRequest(object):
         "appUi": 4
     }
 
-<<<<<<< HEAD
-    # 规则映射对象 - 修复操作符映射错误
-=======
     # 规则映射对象
->>>>>>> origin/dev-fsw
     OPERATOR_DICT = {
         '==': operator.eq,
         '<=': operator.le,
         '>=': operator.ge,
         '!=': operator.ne,
-<<<<<<< HEAD
-        '>': operator.gt,  # 修复：原来是 operator.lt
-        '<': operator.lt,  # 修复：原来是 operator.gt
-=======
         '>': operator.lt,
         '<': operator.gt,
->>>>>>> origin/dev-fsw
         'in': operator.contains
     }
 
@@ -63,13 +45,8 @@ class AutomatedRequest(object):
         self.sess = requests.session()
 
     def action(self, request_type):
-<<<<<<< HEAD
-        if request_type not in self.REQUEST_TYPE:
-            logger.warning(f"不支持的请求类型: {request_type}")
-=======
 
         if request_type not in self.REQUEST_TYPE:
->>>>>>> origin/dev-fsw
             return {"msg": "暂不支持此类型操作"}
         return []
 
@@ -84,23 +61,6 @@ class AutomatedRequest(object):
         express_group = case.pop('expressItem')
         adapter = self.get_adapter(retries)
         self.sess.mount('http://', adapter)
-<<<<<<< HEAD
-        
-        try:
-            logger.info(f"发送HTTP请求: {case_id}")
-            res = self.sess.request(**case)
-            res.raise_for_status()  # 检查HTTP状态码
-            final = self.get_assert(res_data=res.json(), express_group=express_group)
-        except requests.exceptions.RequestException as e:
-            logger.error(f"HTTP请求失败: {case_id}, 错误: {e}")
-            return {'code': 1000001, 'msg': f'{case_id}执行失败, {e}', 'success': 'skip'}
-        except ValueError as e:
-            logger.error(f"JSON解析失败: {case_id}, 错误: {e}")
-            return {'code': 1000002, 'msg': f'{case_id}响应解析失败, {e}', 'success': 'skip'}
-        else:
-            data = {"req": case, "res": res.json(), "success": final}
-            logger.info(f"HTTP请求成功: {case_id}")
-=======
         try:
             res = self.sess.request(**case)
             final = self.get_assert(res_data=res.json(), express_group=express_group)
@@ -108,7 +68,6 @@ class AutomatedRequest(object):
             return {'code': 1000001, 'msg': f'{case_id}执行失败, {e}', 'success': 'skip'}
         else:
             data = {"req": case, "res": res.json(), "success": final}
->>>>>>> origin/dev-fsw
             return data
 
     def get_adapter(self, total):
@@ -117,30 +76,15 @@ class AutomatedRequest(object):
         @param total: 重试次数
         @return: 重试适配器实例
         """
-<<<<<<< HEAD
-        retries = Retry(
-            total=total, 
-            backoff_factor=1,
-            status_forcelist=self.STATUS_FORCE, 
-            allowed_methods=frozenset(['GET', 'POST'])
-        )
-=======
         retries = Retry(total=total, backoff_factor=1,
                         status_forcelist=self.STATUS_FORCE, allowed_methods=frozenset(['GET', 'POST']))
->>>>>>> origin/dev-fsw
         adapter = HTTPAdapter(max_retries=retries)
         return adapter
 
     def get_assert(self, res_data: dict, express_group: list) -> dict:
-<<<<<<< HEAD
-        result_map = []
-        assert_map = []
-        
-=======
         result_map = list()
         assert_map = list()
         result_answer = dict()
->>>>>>> origin/dev-fsw
         for express_obj in express_group:
             for express in express_obj['expressList']:
                 assert_info = dict()
@@ -148,44 +92,6 @@ class AutomatedRequest(object):
                 key_type = express.pop('keyType')
                 match_value = express.pop('matchValue')
                 match_opera = express.pop('matchOper')
-<<<<<<< HEAD
-                
-                try:
-                    opera = self.get_operator(match_opera)
-                    result_value = self._safe_eval(f'{res_data}{match_key}')
-                    result = opera(result_value, self.TYPE_DICT[key_type](match_value))
-                    
-                    assert_info['msg'] = f'{match_key} {match_opera} {match_value}'
-                    assert_info['assert'] = result
-                    result_map.append(result)
-                    assert_map.append(assert_info)
-                except Exception as e:
-                    logger.error(f"断言执行失败: {match_key} {match_opera} {match_value}, 错误: {e}")
-                    result_map.append(False)
-                    assert_info['msg'] = f'{match_key} {match_opera} {match_value} (执行失败)'
-                    assert_info['assert'] = False
-                    assert_map.append(assert_info)
-        
-        final = all(result_map)
-        result_answer = {'assetInfo': assert_map, 'success': final}
-        return result_answer
-
-    def _safe_eval(self, expression):
-        """安全地执行表达式，避免使用eval的安全风险"""
-        try:
-            # 这里应该使用更安全的表达式解析方法
-            # 暂时保留eval，但建议后续改进
-            return eval(expression)
-        except Exception as e:
-            logger.error(f"表达式执行失败: {expression}, 错误: {e}")
-            raise
-
-    def get_operator(self, opera: str):
-        if opera in self.OPERATOR_DICT:
-            return self.OPERATOR_DICT[opera]
-        else:
-            raise ValueError(f"无效的操作符: {opera}")
-=======
                 opera = self.get_operator(match_opera)
                 result_value = eval(f'{res_data}{match_key}')
                 result = opera(result_value, self.TYPE_DICT[key_type](match_value))
@@ -204,4 +110,3 @@ class AutomatedRequest(object):
             return self.OPERATOR_DICT[opera]
         else:
             raise ValueError(f"Invalid operator: {opera}")
->>>>>>> origin/dev-fsw
