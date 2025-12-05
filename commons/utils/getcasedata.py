@@ -9,17 +9,19 @@ class GetCaseData(object):
 
     def get_case(self, case_type):
         configs = {
-            "http": self.get_http_case()
+            "http": self.get_http_case,
+            "httpObj": self.get_http_case_obj,
+            "onecase": self.get_case_one
         }
         if case_type in configs:
-            return configs[case_type]
+            return configs[case_type]()
         if not case_type:
             return self.default()
         return self.default()
 
     def get_http_case(self):
         case_list = list()
-        for case in self.obj.caseList.all():
+        for case in self.obj.casesList.all():
             express_group = self.get_express(case)
             port = case.port
             apply = port.apply
@@ -29,6 +31,28 @@ class GetCaseData(object):
             instance_dict['expressItem'] = express_group
             case_list.append(instance_dict)
         return case_list
+
+    def get_http_case_obj(self):
+        case = self.obj.case
+        express_group = self.get_express(case)
+        port = case.port
+        apply = port.apply
+        url = apply.baseUrl + port.portPath
+        instance_dict = model_to_dict(case)
+        instance_dict['url'] = url
+        instance_dict['expressItem'] = express_group
+        return instance_dict
+
+    def get_case_one(self):
+        case = self.obj
+        express_group = self.get_express(case)
+        port = case.port
+        apply = port.apply
+        url = apply.baseUrl + port.portPath
+        instance_dict = model_to_dict(case)
+        instance_dict['url'] = url
+        instance_dict['expressItem'] = express_group
+        return {"case": instance_dict}
 
     @staticmethod
     def default():
@@ -52,7 +76,7 @@ class GetCaseData(object):
             # 注意：这里我们只取需要的字段，避免转换不必要的数据
             express_list = []
             for item in group.expressList.all():
-                item_dict = model_to_dict(item, fields=['expressId', 'matchKey', 'keyType', 'matchValue', 'matchOper'])
+                item_dict = model_to_dict(item, fields=['expressId', 'matchMethod', 'matchKey', 'keyType', 'matchValue', 'matchOper'])
                 express_list.append(item_dict)
 
             express_group.append({

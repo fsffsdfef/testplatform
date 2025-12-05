@@ -20,6 +20,7 @@ class MenuInitializeView(ModelViewSet):
     def list(self, request, *args, **kwargs):
         menus = self.serializer_class.Meta.model.objects.filter(parent=None)
         menu_tree = []
+        menu_sort_tree = []
         permission_list = get_token(request)['permissionList']
         for menu in menus:
             per_list = [per.perCode for per in menu.per.all()]
@@ -31,6 +32,7 @@ class MenuInitializeView(ModelViewSet):
                     'menuName': menu.menuName,
                     'icon': menu.icon,
                     'path': menu.path,
+                    'sequence': menu.sequence,
                     'children': menu.get_children_tree(permission_list)
                 })
         return CustomResponse(data=menu_tree, msg='true')

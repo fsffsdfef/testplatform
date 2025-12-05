@@ -21,11 +21,11 @@ router.register("card", MenuCascaderView, basename='card')
 urlpatterns = [
     path("api/", include(router.urls)),
     path("api/search", depart_view, name="search"),
-    # path("api/test", depart_view, name="test"),
     path("api/depart/getPageList", depart_view),
     path("api/depart/add", depart_view),
     path("api/depart/del", depart_view),
     path("api/depart/update", depart_view),
+    path("api/depart/batch", depart_view),
     path("api/apply/getPageList", apply_view),
     path("api/apply/add", apply_view),
     path("api/apply/del", apply_view),

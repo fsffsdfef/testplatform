@@ -22,6 +22,20 @@ class InterfaceView(CustomView):
             "type": 'icontains',
             "converter": str,
             "allow_empty": True
+        },
+        "portId": {
+            "type": 'icontains',
+            "converter": int,
+            "allow_empty": True,
+            'related_field': 'port__portId',
+            'related_lookup_type': 'icontains'
+        },
+        "portName": {
+            "type": 'icontains',
+            "converter": str,
+            "allow_empty": True,
+            'related_field': 'port__portName',
+            'related_lookup_type': 'icontains'
         }
     }
     index_key = "caseId"

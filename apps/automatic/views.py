@@ -4,6 +4,7 @@ from .sers import SuitSer
 from .models import SuitModel
 from commons.cusntom.pagination import CustomPage
 from commons.cusntom.view import CustomView
+
 # Create your views here.
 
 

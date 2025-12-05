@@ -6,7 +6,7 @@ class CustomResponse(Response):
 
     def __init__(self, data=None, status=None, msg=None, code=None,
                  template_name=None, headers=None,
-                 exception=False, content_type=None, success=True):
+                 exception=False, content_type=None, success=True, *args, **kwargs):
         super().__init__(None, status=status)
 
         if isinstance(data, Serializer):

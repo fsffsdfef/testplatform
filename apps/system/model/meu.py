@@ -7,7 +7,7 @@ class Menu(BaseModel):
 
     menuId = models.IntegerField('菜单ID', primary_key=True)
     menuName = models.CharField('菜单名', unique=True, max_length=50)
-    icon = models.CharField('图标', max_length=20, default='Menu')
+    icon = models.CharField('图标', max_length=20, null=True)
     parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE)
     per = models.ManyToManyField(to=PermissionModel, related_name='menu', blank=True)
     path = models.CharField(max_length=40, default='/home')

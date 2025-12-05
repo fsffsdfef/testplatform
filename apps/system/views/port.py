@@ -19,6 +19,20 @@ class PortView(CustomView):
             "type": 'icontains',
             "converter": str,
             "allow_empty": True
+        },
+        "apply": {
+            "type": 'icontains',
+            "converter": int,
+            "allow_empty": True,
+            "related_field": "apply__applyId",
+            "related_lookup_type": 'icontains'
+        },
+        'applyName': {
+            'type': 'icontains',
+            'converter': str,
+            'allow_empty': False,
+            'related_field': 'apply__applyName',  # 假设ApplyModel有applyName字段
+            'related_lookup_type': 'icontains'
         }
     }
     index_key = 'portId'

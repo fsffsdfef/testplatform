@@ -95,6 +95,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 DATABASES = Read(env='dev', filename='DataBase.json').get_json_file()
 CACHES = Read('dev', 'Cache.json').get_json_file()
+# LOGGING = Read('dev', 'Log.json').get_json_file()
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -159,7 +160,7 @@ SIMPLE_JWT = {
     # 指定获取JWT返回时 使用的序列化器
     "TOKEN_OBTAIN_SERIALIZER": "apps.system.sers.user_jwt.TokenSer",
     # token有效时长
-    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(hours=1),
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=1),
     # token刷新后的有效时间
     'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
 }

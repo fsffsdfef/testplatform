@@ -2,6 +2,7 @@ from django.db.models import Q
 from urllib.parse import urlparse
 from rest_framework.generics import GenericAPIView
 from commons.cusntom.response import CustomResponse
+from commons.utils.batch_util import UniversalBatchOperator
 
 
 class CustomView(GenericAPIView):
@@ -15,7 +16,8 @@ class CustomView(GenericAPIView):
             'add': self.add,
             'update': self.update,
             'del': self.delete,
-            'getPageList': self.get_query
+            'getPageList': self.get_query,
+            'batch': self.batch
         }
         path = self.get_last_path_segment(request.path)
         action = path_handlers.get(str(path), None)
@@ -29,13 +31,39 @@ class CustomView(GenericAPIView):
             return CustomResponse(data=ser.data, msg="新建成功", code=101)
 
     def delete(self, request, *args, **kwargs):
-        obj = {
-            self.index_key: request.get(self.index_key)
-        }
-        if obj[self.index_key] is None:
-            return CustomResponse(data=[], msg="ID为空", code=1001)
-        self.model.objects.get(**obj).delete()
-        return CustomResponse(data=[], msg="删除成功", code=201)
+        # 支持单个删除和批量删除
+        single_id = request.get(self.index_key)
+        batch_ids = request.get('ids', [])  # 批量删除的ID列表
+        
+        if single_id is not None:
+            # 单个删除
+            obj = {
+                self.index_key: single_id
+            }
+            try:
+                self.model.objects.get(**obj).delete()
+                return CustomResponse(data=[], msg="删除成功", code=201)
+            except self.model.DoesNotExist:
+                return CustomResponse(data=[], msg="记录不存在", code=1001)
+        elif batch_ids:
+            # 批量删除
+            if not isinstance(batch_ids, list):
+                return CustomResponse(data=[], msg="批量删除参数格式错误，应为ID列表", code=1001)
+            
+            if not batch_ids:
+                return CustomResponse(data=[], msg="批量删除ID列表为空", code=1001)
+            
+            try:
+                # 使用 filter 和 delete 进行批量删除
+                deleted_count, _ = self.model.objects.filter(**{f"{self.index_key}__in": batch_ids}).delete()
+                if deleted_count > 0:
+                    return CustomResponse(data=[], msg=f"批量删除成功，共删除{deleted_count}条记录", code=201)
+                else:
+                    return CustomResponse(data=[], msg="未找到要删除的记录", code=1001)
+            except Exception as e:
+                return CustomResponse(data=[], msg=f"批量删除失败: {str(e)}", code=1001)
+        else:
+            return CustomResponse(data=[], msg="删除参数为空", code=1001)
 
     def update(self, request, *args, **kwargs):
         key = request.pop(self.index_key, None)
@@ -46,6 +74,17 @@ class CustomView(GenericAPIView):
             return CustomResponse(data=ser.data, msg="修改成功", code=1004)
         return CustomResponse(data=[], msg="修改失败", code=1004)
 
+    def batch(self, request, *args, **kwargs):
+        action_type = request.get("action")
+        data = request.get("data", [])
+        if len(data) < 1:
+            return CustomResponse(data=[], msg="入参为空")
+        msg = UniversalBatchOperator(model_class=self.model,
+                                     primary_data=data,
+                                     primary_key_field=self.index_key,
+                                     action_type=action_type).batch()
+        return CustomResponse(data=[], **msg)
+
     def get_query(self, request, *args, **kwargs):
         query_params = {}
         for i in self.fields:
@@ -54,16 +93,29 @@ class CustomView(GenericAPIView):
                 query_params[i] = value
         q_objects = Q()
         processed_fields = set()
+        select_related_fields = set()
 
         for param, value in query_params.items():
             field = param
             lookup_type = self.fields[param].get('type')
             is_range_param = False
+            # 处理关联字段
+            is_related_field = False
+            related_field_path = None
             for base_field, config in self.fields.items():
                 if 'param_suffixes' in config and any(param.endswith(suffix) for suffix in config['param_suffixes']):
                     field = base_field
                     lookup_type = 'range' if param.endswith('_start') or param.endswith('_end') else config['type']
                     is_range_param = True
+                    break
+                # 检查是否是关联字段
+                if 'related_field' in config and param == base_field:
+                    is_related_field = True
+                    related_field_path = config['related_field']
+                    related_lookup_type = config.get('related_lookup_type', lookup_type)
+                    # 收集需要预加载的关联字段
+                    if '__' in related_field_path:
+                        select_related_fields.add(related_field_path.split('__')[0])
                     break
             config = self.fields[field]
             converter = config.get('converter')
@@ -78,20 +130,40 @@ class CustomView(GenericAPIView):
             except (ValueError, TypeError):
                 continue
 
-            if is_range_param:
-                if param.endswith('_start'):
-                    lookup_expr = f'{field}__gte'
-                elif param.endswith('_end'):
-                    lookup_expr = f'{field}__lte'
+                # 构建查询表达式
+            if is_related_field:
+                # 时间范围类型
+                if is_range_param:
+                    if param.endswith('_start'):
+                        lookup_expr = f'{related_field_path}__gte'
+                    elif param.endswith('_end'):
+                        lookup_expr = f'{related_field_path}__lte'
+                    else:
+                        lookup_expr = f'{related_field_path}__{related_lookup_type}'
+                # 非时间类型
                 else:
-                    lookup_expr = f'{field}__{lookup_type}'
-                q_objects &= Q(**{lookup_expr: processed_value})
+                    lookup_expr = f"{related_field_path}__{related_lookup_type}"
+                    print(f'关联字段：{lookup_expr}')
             else:
-                lookup_expr = f"{field}__{lookup_type}"
-                q_objects &= Q(**{lookup_expr: processed_value})
-                processed_fields.add(field)
+                # 普通字段查询
+                if is_range_param:
+                    if param.endswith('_start'):
+                        lookup_expr = f'{field}__gte'
+                    elif param.endswith('_end'):
+                        lookup_expr = f'{field}__lte'
+                    else:
+                        lookup_expr = f'{field}__{lookup_type}'
+                else:
+                    lookup_expr = f"{field}__{lookup_type}"
+
+            q_objects &= Q(**{lookup_expr: processed_value})
+            processed_fields.add(field)
 
         queryset = self.model.objects.all()
+        # 添加 select_related 优化
+        if select_related_fields:
+            queryset = queryset.select_related(*select_related_fields)
+
         if _ := q_objects.children:
             queryset = queryset.filter(q_objects)
         ordered_queryset = queryset.order_by("-updatedDate")

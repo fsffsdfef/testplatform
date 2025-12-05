@@ -1,9 +1,25 @@
-from commons.cusntom.view import CustomView
-from commons.cusntom.response import CustomResponse
-from commons.utils.request import AutomatedRequest
 from apps.automatic.sers import SuitSer
 from apps.automatic.models import SuitModel
-
+from apps.cases.model.interface_case import HttpCaseModel
+from apps.cases.sers import interface_case_ser
+from commons.utils.getcasedata import GetCaseData
+from commons.cusntom.view import CustomView
+from commons.cusntom.response import CustomResponse
+from commons.factory.requestFactory import RequestDispense
+from rest_framework.viewsets import ModelViewSet
+from .sers import (
+    PeriodcTaskSer, PeriodicTasksSer,
+    ClockedScheduleSer, CrontabScheduleSer,
+    IntervalScheduleSer, SolarScheduleSer
+)
+from django_celery_beat.models import (
+    PeriodicTask,
+    PeriodicTasks,
+    IntervalSchedule,
+    ClockedSchedule,
+    SolarSchedule,
+    CrontabSchedule
+)
 
 # Create your views here.
 
@@ -12,12 +28,86 @@ class TestView(CustomView):
     permission_classes = []
 
     def post(self, request, *args, **kwargs):
-        suit_id = request.data.get('suitId')
-        suit_obj = SuitModel.objects.get(suitId=suit_id)
+        suit_id = request.data.get('suitId', None)
+        case_id = request.data.get('caseId', None)
+        if suit_id:
+            return self.suit_action(suit_id)
+        elif case_id:
+            return self.https_action(case_id)
+        else:
+            return CustomResponse(data=[], code=101, msg="暂不支持")
+
+    def suit_action(self, data):
+        client = RequestDispense()
+        # logger.info("日志测试", extra={'request': request.data})
+        suit_obj = SuitModel.objects.get(suitId=data)
         suit_ser = SuitSer(instance=suit_obj)
         data = suit_ser.data['caseInfo']
+
         answer = list()
-        for case in data:
-            a = AutomatedRequest(case).http_send()
-            answer.append(a)
-        return CustomResponse(data=answer, msg="o", code=101)
+        try:
+            for case in data:
+                # a = AutomatedRequest(case).http_send()
+                b = client.http_request(data=case)
+                answer.append(b)
+            return CustomResponse(data=answer, code=101)
+        except Exception as e:
+            return CustomResponse(data=[], code=101, msg=str(e))
+
+    def https_action(self, data):
+        client = RequestDispense()
+        try:
+            case = HttpCaseModel.objects.get(caseId=data)
+            info = GetCaseData(case).get_case("onecase")
+            answer = client.http_request(data=info)
+            return CustomResponse(data=answer, code=100)
+        except Exception as e:
+            return CustomResponse(data=[], code=102, msg=str(e))
+
+    def dubbo_action(self, data):
+        pass
+
+    def ui_action(self, data):
+        pass
+
+
+class PeriodcTaskView(ModelViewSet):
+
+    queryset = PeriodicTask.objects.all()
+    serializer_class = PeriodcTaskSer
+    permission_classes = []
+
+
+class PeriodcTasksView(ModelViewSet):
+
+    queryset = PeriodicTasks.objects.all()
+    serializer_class = PeriodicTasksSer
+    permission_classes = []
+
+
+class IntervalScheduleView(ModelViewSet):
+
+    queryset = IntervalSchedule.objects.all()
+    serializer_class = IntervalScheduleSer
+    permission_classes = []
+
+
+class ClockedScheduleView(ModelViewSet):
+
+    queryset = ClockedSchedule.objects.all()
+    serializer_class = ClockedScheduleSer
+    permission_classes = []
+
+
+class SolarScheduleView(ModelViewSet):
+
+    queryset = SolarSchedule.objects.all()
+    serializer_class = SolarScheduleSer
+    permission_classes = []
+
+
+class CrontabScheduleView(ModelViewSet):
+
+    queryset = CrontabSchedule.objects.all()
+    serializer_class = CrontabScheduleSer
+    permission_classes = []

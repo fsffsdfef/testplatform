@@ -11,6 +11,7 @@ class ApplyView(CustomView):
     serializer_class = ApplySer
     permission_classes = []
     pagination_class = CustomPage
+    index_key = "applyId"
     fields = {
         "applyId": {
             "type": 'exact',
@@ -21,6 +22,25 @@ class ApplyView(CustomView):
             "type": 'icontains',
             "converter": str,
             "allow_empty": True
+        },
+        "owner": {
+            "type": 'icontains',
+            "converter": str,
+            "allow_empty": True
+        },
+        "depart": {
+            "type": 'icontains',
+            "converter": int,
+            "allow_empty": True,
+            "related_field": "depart__departId",
+            "related_lookup_type": 'icontains'
+        },
+        'departName': {
+            'type': 'icontains',
+            'converter': str,
+            'allow_empty': False,
+            'related_field': 'depart__departName',  # 假设ApplyModel有applyName字段
+            'related_lookup_type': 'icontains'
         }
     }
 

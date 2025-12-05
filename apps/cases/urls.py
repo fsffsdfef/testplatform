@@ -20,4 +20,5 @@ urlpatterns = [
     path("api/httpcase/add", httpcase_view),
     path("api/httpcase/del", httpcase_view),
     path("api/httpcase/update", httpcase_view),
+    path("api/httpcase/batch", httpcase_view),
 ]

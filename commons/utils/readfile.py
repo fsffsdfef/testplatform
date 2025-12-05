@@ -10,4 +10,5 @@ class Read:
     def get_json_file(self):
         with open(self.file_path, mode='r', encoding='utf-8') as f:
             value = json.load(f)
+            print(value)
         return value
