@@ -37,24 +37,21 @@ class TestView(CustomView):
         else:
             return CustomResponse(data=[], code=101, msg="暂不支持")
 
-    def suit_action(self, data):
+    @staticmethod
+    def suit_action(data):
         client = RequestDispense()
         # logger.info("日志测试", extra={'request': request.data})
         suit_obj = SuitModel.objects.get(suitId=data)
         suit_ser = SuitSer(instance=suit_obj)
         data = suit_ser.data['caseInfo']
-
-        answer = list()
         try:
-            for case in data:
-                # a = AutomatedRequest(case).http_send()
-                b = client.http_request(data=case)
-                answer.append(b)
+            answer = client.http_request(data)
             return CustomResponse(data=answer, code=101)
         except Exception as e:
             return CustomResponse(data=[], code=101, msg=str(e))
 
-    def https_action(self, data):
+    @staticmethod
+    def https_action(data):
         client = RequestDispense()
         try:
             case = HttpCaseModel.objects.get(caseId=data)

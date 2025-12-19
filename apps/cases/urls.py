@@ -9,7 +9,6 @@ router = routers.DefaultRouter()
 router.register("case", HttpCaseView, basename='case')
 router.register("exp", ExpressItemView, basename="exp")
 router.register("exs", ExpressView, basename="exs")
-router.register("one", OneModelView, basename="one")
 router.register("two", TwoModelView, basename="two")
 router.register("three", ThreeModelView, basename="three")
 
@@ -21,4 +20,5 @@ urlpatterns = [
     path("api/httpcase/del", httpcase_view),
     path("api/httpcase/update", httpcase_view),
     path("api/httpcase/batch", httpcase_view),
+    path("api/operator/", operView)
 ]

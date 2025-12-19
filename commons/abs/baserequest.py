@@ -1,15 +1,25 @@
 from abc import ABC, abstractmethod
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 from commons.utils.assert_util import assert_util
 import json
 import time
 import requests
+import operator
 
 
 class RequestStrategy(ABC):
     """请求抽象基类"""
+
+    @abstractmethod
+    def send_action(self, data: List | Dict) -> List | Dict:
+        pass
+
+    @abstractmethod
+    def batch_request(self, data: list) -> list:
+        """批量请求"""
+        pass
 
     @abstractmethod
     def send_request(self, data: dict) -> dict:
@@ -29,35 +39,54 @@ class HttpRequestStrategy(RequestStrategy):
     # 全局变量
     _GLOBAL = {}
 
-    def __init__(self, timeout: int = 30, headers: Dict[str, str] = None):
+    def __init__(self, timeout: int = 30):
         """初始化默认超时时间与请求头"""
         self.timeout = timeout
-        self.default_headers = headers or {
+        self.default_headers = {
             'Content-Type': 'application/json',
             'User-Agent': 'RequestClient/1.0'
         }
         self.sess = requests.session()
 
-    def send_request(self, data: Dict[str, any]) -> Dict[str, any]:
+    def send_action(self, data: List | Dict) -> List | Dict:
+        if isinstance(data, List) and len(data) > 1:
+            sorted_data = sorted(data, key=operator.itemgetter("execution_order"))
+            res = self.batch_request(sorted_data)
+            return res
+        elif isinstance(data, Dict):
+            res = self.send_request(data)
+            return res
+        else:
+            return {"msg": "暂不支持"}
+
+    def batch_request(self, data_list: List) -> List:
+        is_first_case = [obj for obj in data_list if bool(obj.get("is_first"))]
+        is_last_case = [obj for obj in data_list if bool(obj.get("is_last"))]
+        remove_ids = {id(o) for o in is_last_case+is_first_case}
+        data_list[:] = [o for o in data_list if id(o) not in remove_ids]
+        answer_list = list()
+        for data in data_list:
+            answer = self.send_request(data)
+            answer_list.append(answer)
+        return answer_list
+
+    def send_request(self, data: Dict[str, Any]) -> Dict[str, Any]:
         try:
             case_info = data["case"]
             case_id = case_info.pop('caseId', None)
             case_name = case_info.pop('caseName', None)
             retries = case_info.pop('retries', 0)
-            global_map = case_info.get("globalList")
-            # headers = data.get("headers", None)
-            # if headers == "":
-            #     headers = None
-            # body = data.get("body", None)
-            # if headers:
-            #     data["headers"] = json.loads(headers)
-            # if body:
-            #     data["body"] = json.loads(body)
+            headers = data.pop("headers", None)
+            if headers:
+                case_info['headers'] = self.default_headers.update(headers)
+            else:
+                case_info['headers'] = self.default_headers
             case_info["data"] = case_info.pop("body")
             case = {"method": "POST"}
             key_map = ["url", "headers", "data", "timeout", "expressItem"]
             for k in key_map:
                 case[k] = case_info.pop(k, None)
+
             express_group = case.pop('expressItem', None)
             adapter = self.get_adapter(retries)
             self.sess.mount('http://', adapter)

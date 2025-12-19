@@ -12,7 +12,9 @@ class AssertUtil:
         '>': operator.lt,
         '<': operator.gt,
         'in': operator.contains,
-        "!=null": operator.is_not
+        "!=null": operator.is_not,
+        "like": re.match,
+        "re": re.search
     }
     # 被校验的答案类型枚举
     _TYPE_DICT = {
@@ -108,7 +110,7 @@ class AssertUtil:
         if match:
             var_name = match.group(1)  # 'extPacks'
             index_num = match.group(2)  # '0' (字符串形式)
-            if var_name not in data:
+            if var_name not in data or data[var_name] is None:
                 return None
             if index_num:
                 current_value = data[var_name][int(index_num)]

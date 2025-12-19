@@ -7,7 +7,7 @@ from apps.automatic.models import SuitCaseModel
 
 
 class HttpCaseSer(serializers.ModelSerializer):
-    caseId = serializers.IntegerField(read_only=True)
+    caseId = serializers.CharField(read_only=True)
     expressItem = ExpressItemSer(many=True)
     portName = serializers.SerializerMethodField(method_name='_get_port_name')
 

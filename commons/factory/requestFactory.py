@@ -39,7 +39,7 @@ class RequestDispense:
     def send_request(self, request_type: str, data):
         try:
             strategy = self.factory.create_strategy(request_type)
-            return strategy.send_request(data)
+            return strategy.send_action(data)
         except Exception as e:
             return {
                 "success": False,

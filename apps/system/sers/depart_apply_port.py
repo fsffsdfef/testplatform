@@ -15,7 +15,7 @@ class PortSer(serializers.ModelSerializer):
 
 class ApplySer(serializers.ModelSerializer):
     port = PortSer(many=True, read_only=True)
-    applyId = serializers.IntegerField(read_only=True)
+    applyId = serializers.CharField(read_only=True)
 
     class Meta:
         model = ApplyModel
