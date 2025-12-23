@@ -40,7 +40,7 @@ except ImportError as e:
     sys.exit(1)
 # 标准导入（在Django设置后）
 from commons.utils.getcasedata import GetCaseData
-from commons.utils.request import AutomatedRequest
+from commons.utils.request_util import AutomatedRequest
 from apps.automatic.models import SuitModel
 from apps.automatic.sers import SuitSer
 

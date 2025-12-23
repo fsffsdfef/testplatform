@@ -52,11 +52,13 @@ class SuitSer(serializers.ModelSerializer):
         with transaction.atomic():
             # 创建套件
             suit = SuitModel.objects.create(**validated_data)
-            print(f"case_list: {case_list}")
             # 创建关联关系
             for case_info in case_list:
                 case_id = case_info.get('caseId')
                 execution_order = case_info.get('execution_order')
+                global_list = case_info.get('globalList')
+                if isinstance(global_list, str):
+                    global_list = global_list.split(",")
                 is_first = case_info.get('is_first', False)
                 is_last = case_info.get('is_last', False)
 
@@ -66,6 +68,7 @@ class SuitSer(serializers.ModelSerializer):
                         suit=suit,
                         case=case,
                         execution_order=execution_order,
+                        globalList=global_list,
                         is_first=is_first,
                         is_last=is_last
                     )

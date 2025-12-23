@@ -1,3 +1,4 @@
+from commons.utils.request_util import get_nested_value
 import operator
 import re
 
@@ -13,7 +14,7 @@ class AssertUtil:
         '<': operator.gt,
         'in': operator.contains,
         "!=null": operator.is_not,
-        "like": re.match,
+        "like": re.search,
         "re": re.search
     }
     # 被校验的答案类型枚举
@@ -70,14 +71,13 @@ class AssertUtil:
     def _process_single_express(self, res_data: dict, express: dict) -> dict:
         """处理单个表达式"""
         # 提取表达式参数
-        kwargs = dict()
         express_id = express.pop('expressId')
         match_key = express.pop('matchKey')
         match_opera = express.pop('matchOper')
         # 获取操作符
         opera = self._get_operator(match_opera)
         # 获取结果值
-        result_value = self._get_nested_value(res_data, match_key.split("."))
+        result_value = get_nested_value(res_data, match_key.split("."))
         if match_opera != "!=null":
             key_type = express.pop('keyType')
             match_value = express.pop('matchValue')
@@ -101,33 +101,6 @@ class AssertUtil:
             }
         return assert_info
 
-    def _get_nested_value(self, data: dict, keys: list) -> any:
-        """获取要校验的值"""
-        if not keys:
-            return data
-        current_key = keys[0]
-        match = re.match(r'(\w+)\[(\d+)\]', current_key)
-        if match:
-            var_name = match.group(1)  # 'extPacks'
-            index_num = match.group(2)  # '0' (字符串形式)
-            if var_name not in data or data[var_name] is None:
-                return None
-            if index_num:
-                current_value = data[var_name][int(index_num)]
-        else:
-            current_value = data[current_key]
-
-        # 如果还有更多键且当前值是字典，继续递归
-        if len(keys) > 1 and isinstance(current_value, dict):
-            return self._get_nested_value(current_value, keys[1:])
-
-        # 如果只有一个键，返回当前值
-        if len(keys) == 1:
-            return current_value
-
-        # 如果还有更多键但当前值不是字典，返回None
-        return None
-
     def _evaluate_assert(self,
                          result_value: any,
                          opera: callable,
@@ -138,9 +111,9 @@ class AssertUtil:
         """评估断言结果"""
         try:
             if match_method and key_type and match_value:
-                return opera(self._TYPE_DICT[match_method](result_value), self._TYPE_DICT[key_type](match_value))
+                return opera(self._TYPE_DICT[key_type](match_value), self._TYPE_DICT[match_method](result_value))
             elif key_type and match_value:
-                return opera(result_value, self._TYPE_DICT[key_type](match_value))
+                return bool(opera(self._TYPE_DICT[key_type](match_value), result_value))
             else:
                 return opera(result_value, None)
         except (ValueError, TypeError) as e:
