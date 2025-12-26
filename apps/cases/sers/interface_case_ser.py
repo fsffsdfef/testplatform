@@ -126,12 +126,12 @@ class SuitCaseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SuitCaseModel
-        fields = ['id', 'case', 'case_id', 'execution_order', 'is_first', 'is_last', 'globalList', 'created_at', 'updated_at']
+        fields = ['id', 'case', 'case_id', 'execution_order', 'is_first', 'is_last', 'globalList', 'created_at', 'updated_at', 'streamKey']
         read_only_fields = ['id', 'created_at', 'updated_at']
 
     def create(self, validated_data):
         case_id = validated_data.pop('caseId')
-        global_list = validated_data.get('globalList', None)
+        global_list = validated_data.get('streamKey', None)
         print(f'globalList：{type(global_list)}')
         try:
             case = HttpCaseModel.objects.get(caseId=case_id)

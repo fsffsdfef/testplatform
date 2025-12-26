@@ -13,7 +13,6 @@ class HttpCaseModel(BaseModel):
     retries = models.IntegerField(verbose_name='重试次数', help_text='输入重视次数', default=1)
     isCore = models.BooleanField(verbose_name='是否为核心用例', default=False)
     port = models.ForeignKey(PortModel, to_field='portId', related_name='httpcase', on_delete=models.CASCADE)
-    globalList = models.JSONField(verbose_name='全局变量', default=list)
 
     class Meta:
         db_table = 't_interface_httpcase'

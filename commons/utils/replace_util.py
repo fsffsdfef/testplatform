@@ -16,7 +16,6 @@ def replace_placeholders(text, data_dict):
     """
     # 正则表达式匹配 {xxx} 格式的占位符
     pattern = r'\{(\w+)\}'
-
     # 使用回调函数进行替换
     def replacement(match):
         key = match.group(1)  # 提取占位符内的key

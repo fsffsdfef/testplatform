@@ -57,8 +57,7 @@ class SuitSer(serializers.ModelSerializer):
                 case_id = case_info.get('caseId')
                 execution_order = case_info.get('execution_order')
                 global_list = case_info.get('globalList')
-                if isinstance(global_list, str):
-                    global_list = global_list.split(",")
+                stream_key = case_info.get('streamKey')
                 is_first = case_info.get('is_first', False)
                 is_last = case_info.get('is_last', False)
 
@@ -70,7 +69,8 @@ class SuitSer(serializers.ModelSerializer):
                         execution_order=execution_order,
                         globalList=global_list,
                         is_first=is_first,
-                        is_last=is_last
+                        is_last=is_last,
+                        streamKey=stream_key
                     )
                 except HttpCaseModel.DoesNotExist:
                     # 可以选择抛出异常或跳过
