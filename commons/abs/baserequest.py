@@ -38,16 +38,26 @@ class HttpRequestStrategy(RequestStrategy):
     # 触发重试的状态码
     _STATUS_FORCE = [500, 502, 503, 504]
 
+    _CMD_MAP = {
+        "jsonloads": json.loads,
+        "jsondumps": json.dumps,
+        "jsonlaods": json.loads
+
+    }
+
     # 全局变量
 
-    def __init__(self, timeout: int = 30):
+    def __init__(self, global_map: Dict = None):
         """初始化默认超时时间与请求头"""
-        self. _GLOBAL_MAP = {}
-        self.timeout = timeout
+        if global_map:
+            self. _GLOBAL_MAP = global_map
+        else:
+            self._GLOBAL_MAP = dict()
         self.default_headers = {
             'Content-Type': 'application/json',
             'User-Agent': 'RequestClient/1.0'
         }
+        self.retries = 3
         self.sess = requests.session()
 
     def send_action(self, data: List | Dict) -> List | Dict:
@@ -61,7 +71,9 @@ class HttpRequestStrategy(RequestStrategy):
         else:
             return {"msg": "暂不支持"}
 
-    def batch_request(self, data_list: List) -> List:
+    def batch_request(self, data_list: List) -> Dict:
+        answer_map = dict()
+
         # 根据序号排序，并抽出前置与后置用例
         is_first_case = [obj for obj in data_list if bool(obj.get("is_first"))]
         is_last_case = [obj for obj in data_list if bool(obj.get("is_last"))]
@@ -69,7 +81,11 @@ class HttpRequestStrategy(RequestStrategy):
         data_list[:] = [o for o in data_list if id(o) not in remove_ids]
         # 执行用例获取答案
         answer_list = list(map(self.send_request, data_list))
-        return answer_list
+        assert_list = list(map(lambda x: x['assert']['finalAssert'], answer_list))
+        pass_percentage = self._get_pass_percentage(assert_list)
+        answer_map['pass'] = pass_percentage
+        answer_map['info'] = answer_list
+        return answer_map
 
     def send_request(self, data: Dict[str, Any]) -> Dict[str, Any]:
         try:
@@ -77,11 +93,15 @@ class HttpRequestStrategy(RequestStrategy):
             stream_key = data.get("streamKey", None)
             case_id = case_info.pop('caseId', None)
             case_name = case_info.pop('caseName', None)
-            retries = case_info.pop('retries', 0)
-            headers = data.pop("headers", None)
+            retries = case_info.pop('retries', self.retries)
+            headers = case_info.get("headers", None)
             global_map = data.pop('globalList', None)
             if headers:
-                case_info['headers'] = self.default_headers.update(headers)
+                if isinstance(headers, str):
+                    headers = json.loads(headers)
+                    case_info['headers'] = {**self.default_headers, **headers}
+                else:
+                    case_info['headers'] = {**self.default_headers, **headers}
             else:
                 case_info['headers'] = self.default_headers
             body = case_info.pop("body")
@@ -145,8 +165,18 @@ class HttpRequestStrategy(RequestStrategy):
     def _set_global_key(self, global_map: Dict, res: requests.Response):
         """设置全局变量"""
         for k, v in global_map.items():
-            v = get_nested_value(res.json(), v.split("."))
-            self._GLOBAL_MAP[k] = v
+            if "@" in v:
+                v_list = v.split("@")
+                res_data_key = v_list[0]
+                res_data = get_nested_value(res.json(), res_data_key.split("."))
+                if v_list[1] in self._CMD_MAP:
+                    final_res_data = get_nested_value(self._CMD_MAP[v_list[1]](res_data), v_list[2].split("."))
+                    self._GLOBAL_MAP[k] = final_res_data
+                else:
+                    self._GLOBAL_MAP[k] = "获取失败"
+            else:
+                v = get_nested_value(res.json(), v.split("."))
+                self._GLOBAL_MAP[k] = v
 
     def _send_stream_req(self, stream_key, case) -> Dict:
         num = 0
@@ -167,5 +197,8 @@ class HttpRequestStrategy(RequestStrategy):
                 continue
         return {"msh": "超过最大片数"}
 
+    @staticmethod
+    def _get_pass_percentage(assert_list):
+        return round(sum(assert_list) / len(assert_list) * 100, 2)
 
 

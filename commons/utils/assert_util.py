@@ -110,10 +110,13 @@ class AssertUtil:
                          ) -> bool:
         """评估断言结果"""
         try:
-            if match_method and key_type and match_value:
-                return opera(self._TYPE_DICT[key_type](match_value), self._TYPE_DICT[match_method](result_value))
-            elif key_type and match_value:
+            if opera.__name__ == "search":
+                print("咋了这是")
                 return bool(opera(self._TYPE_DICT[key_type](match_value), result_value))
+            if match_method and match_method != "0" and key_type and match_value:
+                return opera(self._TYPE_DICT[match_method](result_value), self._TYPE_DICT[key_type](match_value))
+            elif key_type and match_value:
+                return bool(opera(result_value, self._TYPE_DICT[key_type](match_value)))
             else:
                 return opera(result_value, None)
         except (ValueError, TypeError) as e:

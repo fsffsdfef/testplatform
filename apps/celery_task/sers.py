@@ -15,6 +15,10 @@ class PeriodcTaskSer(serializers.ModelSerializer):
         model = PeriodicTask
         fields = '__all__'
 
+    def validate(self, attr):
+        print(attr)
+        return attr
+
 
 class PeriodicTasksSer(serializers.ModelSerializer):
 

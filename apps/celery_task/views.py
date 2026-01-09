@@ -2,6 +2,7 @@ from apps.automatic.sers import SuitSer
 from apps.automatic.models import SuitModel
 from apps.cases.model.interface_case import HttpCaseModel
 from apps.cases.sers import interface_case_ser
+from commons.cusntom.pagination import CustomPage
 from commons.utils.getcasedata import GetCaseData
 from commons.cusntom.view import CustomView
 from commons.cusntom.response import CustomResponse
@@ -44,8 +45,12 @@ class TestView(CustomView):
         suit_obj = SuitModel.objects.get(suitId=data)
         suit_ser = SuitSer(instance=suit_obj)
         data = suit_ser.data['caseInfo']
+        suit_id = suit_ser.data['suitId']
+        suit_name = suit_ser.data['suitName']
         try:
             answer = client.http_request(data)
+            answer['suitID'] = suit_id
+            answer['suitName'] = suit_name
             return CustomResponse(data=answer, code=101)
         except Exception as e:
             return CustomResponse(data=[], code=101, msg=str(e))
@@ -68,8 +73,31 @@ class TestView(CustomView):
         pass
 
 
+# class PeriodcTaskView(CustomView):
+#     model = PeriodicTask
+#     serializer_class = PeriodcTaskSer
+#     permission_classes = []
+#
+#     authentication_classes = []
+#     pagination_class = CustomPage
+#
+#     fields = {
+#         "id": {
+#             "type": 'exact',
+#             "converter": int,
+#             "allow_empty": False
+#         },
+#         "name": {
+#             "type": 'icontains',
+#             "converter": str,
+#             "allow_empty": True
+#         }
+#     }
+#     index_key = "id"
+#
+#
+# task_view = PeriodcTaskView.as_view()
 class PeriodcTaskView(ModelViewSet):
-
     queryset = PeriodicTask.objects.all()
     serializer_class = PeriodcTaskSer
     permission_classes = []
