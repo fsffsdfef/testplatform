@@ -33,6 +33,7 @@ class CustomView(GenericAPIView):
     def delete(self, request, *args, **kwargs):
         # 支持单个删除和批量删除
         single_id = request.get(self.index_key)
+
         batch_ids = request.get('ids', [])  # 批量删除的ID列表
         
         if single_id is not None:

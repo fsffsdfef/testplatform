@@ -3,12 +3,15 @@ from typing import Dict, Any, Optional, List
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 from commons.utils.assert_util import assert_util
-from commons.utils.request_util import get_nested_value
+from commons.utils.request_util import get_nested_value, get_kv
 from commons.utils.replace_util import replace_placeholders
 import json
 import time
 import requests
 import operator
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class RequestStrategy(ABC):
@@ -40,9 +43,7 @@ class HttpRequestStrategy(RequestStrategy):
 
     _CMD_MAP = {
         "jsonloads": json.loads,
-        "jsondumps": json.dumps,
-        "jsonlaods": json.loads
-
+        "jsondumps": json.dumps
     }
 
     # 全局变量
@@ -63,9 +64,11 @@ class HttpRequestStrategy(RequestStrategy):
     def send_action(self, data: List | Dict) -> List | Dict:
         if isinstance(data, List) and len(data) >= 1:
             sorted_data = sorted(data, key=operator.itemgetter("execution_order"))
+            logger.info(sorted_data)
             res = self.batch_request(sorted_data)
             return res
         elif isinstance(data, Dict):
+            print(type(data))
             res = self.send_request(data)
             return res
         else:
@@ -128,7 +131,7 @@ class HttpRequestStrategy(RequestStrategy):
                 return data
             try:
                 res = self.sess.request(**case)
-                final = assert_util.get_assert(res_data=res.json(), express_group=express_group)
+                final = assert_util.get_assert(req=body, res_data=res.json(), express_group=express_group)
                 if global_map:
                     self._set_global_key(global_map=global_map, res=res)
             except requests.exceptions.RequestException as e:
@@ -143,7 +146,7 @@ class HttpRequestStrategy(RequestStrategy):
                         }
                 return data
         except Exception as e:
-            print(f"有报错哟{e}")
+            logger.error(f"{str(e)}")
             import traceback
             traceback.print_exc()
             return {"msg": str(e)}
@@ -165,20 +168,14 @@ class HttpRequestStrategy(RequestStrategy):
     def _set_global_key(self, global_map: Dict, res: requests.Response):
         """设置全局变量"""
         for k, v in global_map.items():
-            if "@" in v:
-                v_list = v.split("@")
-                res_data_key = v_list[0]
-                res_data = get_nested_value(res.json(), res_data_key.split("."))
-                if v_list[1] in self._CMD_MAP:
-                    final_res_data = get_nested_value(self._CMD_MAP[v_list[1]](res_data), v_list[2].split("."))
-                    self._GLOBAL_MAP[k] = final_res_data
-                else:
-                    self._GLOBAL_MAP[k] = "获取失败"
+            final_global_value = get_kv(data=res, keys=v)
+            if final_global_value:
+                self._GLOBAL_MAP[k] = final_global_value
             else:
-                v = get_nested_value(res.json(), v.split("."))
-                self._GLOBAL_MAP[k] = v
+                self._GLOBAL_MAP[k] = "获取失败"
 
     def _send_stream_req(self, stream_key, case) -> Dict:
+        """流式请求执行逻辑"""
         num = 0
         data = json.loads(case['data'])
         data[stream_key] = num
@@ -199,6 +196,7 @@ class HttpRequestStrategy(RequestStrategy):
 
     @staticmethod
     def _get_pass_percentage(assert_list):
+        """获取通过率"""
         return round(sum(assert_list) / len(assert_list) * 100, 2)
 
 

@@ -43,8 +43,14 @@ class HttpCaseSer(serializers.ModelSerializer):
 
         # 获取所有传入的ID
         incoming_item_ids = [item.get('expressItemId') for item in items_data if item.get('expressItemId')]
+        # 获取当前case下关联的规则id
+        history_express_ids = list(instance.expressItem.all().values_list('expressItemId', flat=True))
+        # 获取与传入的id不同的id作为删除项并删除
+        removed = set(history_express_ids) - set(incoming_item_ids)
+        if removed:
+            instance.expressItem.filter(expressItemId__in=removed).delete()
 
-        # 处理每个expressItem
+        # 更新每个expressItem
         for item_data in items_data:
             express_item_id = item_data.get('expressItemId')
             express_list = item_data.pop('expressList', [])
@@ -71,16 +77,16 @@ class HttpCaseSer(serializers.ModelSerializer):
                 express_item = ExpressItem.objects.create(httpCase=instance, **item_data)
                 self._handle_expresses(express_item, express_list)
 
-        # 删除不在传入列表中的现有项
-        # if incoming_item_ids:
-        #     instance.expressItem.exclude(expressItemId__in=incoming_item_ids).delete()
 
     @staticmethod
     def _handle_expresses(express_item, express_list):
         """处理表达式列表"""
         # 获取所有传入的表达式ID
         incoming_express_ids = [exp.get('expressId') for exp in express_list if exp.get('expressId')]
-
+        history_express_ids = list(express_item.expressList.all().values_list('expressId', flat=True))
+        removed = set(history_express_ids) - set(incoming_express_ids)
+        if removed:
+            express_item.expressList.filter(expressId__in=removed).delete()
         # 处理每个表达式
         for express_data in express_list:
             express_id = express_data.get('expressId')

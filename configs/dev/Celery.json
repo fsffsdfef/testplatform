@@ -4,7 +4,7 @@
   "CELERY_WORKER_CONCURRENCY": 20,
   "WORKER_PREFETCH_MULTIPLIER": 20,
   "CELERYD_FORCE_EXECV": true,
-  "CELERY_WORKER_MAX_TASKS_PER_CHILD ": 100,
+  "CELERY_WORKER_MAX_TASKS_PER_CHILD": 100,
   "include": ["celerys.tasks"],
   "broker_connection_retry_on_startup": true,
   "timezone": "Asia/Shanghai",

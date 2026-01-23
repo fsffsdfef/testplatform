@@ -16,7 +16,6 @@ def demo(a, b):
 
 @shared_task(base=HookTask)
 def SuitRequest(suit_id):
-    print(type(suit_id))
     client = RequestDispense()
     suit_obj = SuitModel.objects.get(suitId=suit_id)
     suit_ser = SuitSer(instance=suit_obj)

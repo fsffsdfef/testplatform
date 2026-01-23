@@ -11,7 +11,10 @@ from rest_framework.viewsets import ModelViewSet
 from .sers import (
     PeriodcTaskSer, PeriodicTasksSer,
     ClockedScheduleSer, CrontabScheduleSer,
-    IntervalScheduleSer, SolarScheduleSer
+    IntervalScheduleSer, SolarScheduleSer,
+    CustomPeriodcTaskSer, CustomIntervalScheduleSer,
+    CustomCrontabSchedulSer, CustomSolarScheduleSer,
+    CustomClockedScheduleSer
 )
 from django_celery_beat.models import (
     PeriodicTask,
@@ -21,6 +24,11 @@ from django_celery_beat.models import (
     SolarSchedule,
     CrontabSchedule
 )
+from .models import *
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 
@@ -32,8 +40,10 @@ class TestView(CustomView):
         suit_id = request.data.get('suitId', None)
         case_id = request.data.get('caseId', None)
         if suit_id:
+            logger.info(f"{request.data['suitName']}套件执行", extra={'req': request.data})
             return self.suit_action(suit_id)
         elif case_id:
+            logger.info(f"{request.data['portName']}接口{request.data['caseName']}用例执行", extra={'req': request.data})
             return self.https_action(case_id)
         else:
             return CustomResponse(data=[], code=101, msg="暂不支持")
@@ -41,7 +51,6 @@ class TestView(CustomView):
     @staticmethod
     def suit_action(data):
         client = RequestDispense()
-        # logger.info("日志测试", extra={'request': request.data})
         suit_obj = SuitModel.objects.get(suitId=data)
         suit_ser = SuitSer(instance=suit_obj)
         data = suit_ser.data['caseInfo']
@@ -62,8 +71,10 @@ class TestView(CustomView):
             case = HttpCaseModel.objects.get(caseId=data)
             info = GetCaseData(case).get_case("onecase")
             answer = client.http_request(data=info)
+            logger.info(f"{case}用例返回", extra={'res': answer})
             return CustomResponse(data=answer, code=100)
         except Exception as e:
+            logger.info(f"{case}用例返回", extra={'res': str(e)})
             return CustomResponse(data=[], code=102, msg=str(e))
 
     def dubbo_action(self, data):
@@ -73,30 +84,54 @@ class TestView(CustomView):
         pass
 
 
-# class PeriodcTaskView(CustomView):
-#     model = PeriodicTask
-#     serializer_class = PeriodcTaskSer
-#     permission_classes = []
-#
-#     authentication_classes = []
-#     pagination_class = CustomPage
-#
-#     fields = {
-#         "id": {
-#             "type": 'exact',
-#             "converter": int,
-#             "allow_empty": False
-#         },
-#         "name": {
-#             "type": 'icontains',
-#             "converter": str,
-#             "allow_empty": True
-#         }
-#     }
-#     index_key = "id"
-#
-#
-# task_view = PeriodcTaskView.as_view()
+class CustomClockedScheduleView(CustomView):
+
+    model = CustomClockedSchedule
+    serializer_class = CustomClockedScheduleSer
+    permission_classes = []
+    fields = {}
+    index_key = 'id'
+
+
+class CustomCrontabScheduleView(CustomView):
+    model = CustomCrontabSchedule
+    serializer_class = CustomCrontabSchedulSer
+    permission_classes = []
+    fields = {}
+    index_key = 'id'
+
+
+class CustomSolarScheduleView(CustomView):
+    model = CustomSolarSchedule
+    serializer_class = CustomSolarScheduleSer
+    permission_classes = []
+    fields = {}
+    index_key = 'id'
+
+
+class CustomIntervalScheduleView(CustomView):
+    model = CustomIntervalSchedule
+    serializer_class = CustomIntervalScheduleSer
+    permission_classes = []
+    fields = {}
+    index_key = "id"
+
+
+class CustomPeriodcTaskView(CustomView):
+    model = CustomPeriodicTask
+    serializer_class = CustomPeriodcTaskSer
+    permission_classes = []
+    fields = {}
+    index_key = "id"
+
+
+periodc_task = CustomPeriodcTaskView.as_view()
+interval_schedule = CustomIntervalScheduleView.as_view()
+clocked_schedule = CustomClockedScheduleView.as_view()
+solar_schedule = CustomSolarScheduleView.as_view()
+crontab_schedule = CustomCrontabScheduleView.as_view()
+
+
 class PeriodcTaskView(ModelViewSet):
     queryset = PeriodicTask.objects.all()
     serializer_class = PeriodcTaskSer

@@ -56,7 +56,8 @@ class CustomDatabaseScheduler(DatabaseScheduler):
                 'options': json.loads(task.options) if task.options else {},
             }
 
-    def _get_task_schedule(self, task):
+    @staticmethod
+    def _get_task_schedule(task):
         """获取任务调度对象"""
         if task.interval:
             return task.interval.schedule
@@ -66,15 +67,15 @@ class CustomDatabaseScheduler(DatabaseScheduler):
             return task.solar.schedule
         elif task.clocked:
             return task.clocked.schedule
-        elif task.custom_interval:
-            return task.custom_interval.schedule
-        elif task.custom_crontab:
+        elif task.customInterval:
+            return task.customInterval.schedule
+        elif task.customCrontab:
             return crontab(
-                minute=task.custom_crontab.minute,
-                hour=task.custom_crontab.hour,
-                day_of_week=task.custom_crontab.day_of_week,
-                day_of_month=task.custom_crontab.day_of_month,
-                month_of_year=task.custom_crontab.month_of_year,
+                minute=task.customCrontab.minute,
+                hour=task.customCrontab.hour,
+                day_of_week=task.customCrontab.day_of_week,
+                day_of_month=task.customCrontab.day_of_month,
+                month_of_year=task.customCrontab.month_of_year,
             )
         return None
 
@@ -117,7 +118,6 @@ class CustomDatabaseScheduler(DatabaseScheduler):
                 # 更新任务失败计数
                 try:
                     custom_task = PeriodicTask.objects.get(task=entry['task'])
-                    custom_task.record_failure(str(e))
                 except PeriodicTask.DoesNotExist:
                     pass
             raise
@@ -169,7 +169,6 @@ class TaskResultHandler:
         """处理任务成功"""
         try:
             task = PeriodicTask.objects.get(task=task_name)
-            task.record_success()
 
         except PeriodicTask.DoesNotExist:
             pass

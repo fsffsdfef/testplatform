@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'apps.cases',
     'apps.system',
     'apps.celery_task',
-    'apps.automatic'
+    'apps.automatic',
+    'apps.log'
 ]
 
 MIDDLEWARE = [
@@ -63,6 +64,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'commons.middleware.requestlog.RequestLogMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -89,12 +91,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 CORS_ALLOW_ALL_ORIGINS = True
-
+LOG_DIR = os.path.join(BASE_DIR, 'logs')
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+LOGGING = Read(env='dev', filename="Log.json").get_json_file()
 DATABASES = Read(env='dev', filename='DataBase.json').get_json_file()
-CACHES = Read('dev', 'Cache.json').get_json_file()
+CACHES = Read(env='dev', filename='Cache.json').get_json_file()
 # LOGGING = Read('dev', 'Log.json').get_json_file()
 
 # Password validation

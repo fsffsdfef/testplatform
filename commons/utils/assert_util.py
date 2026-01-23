@@ -1,4 +1,4 @@
-from commons.utils.request_util import get_nested_value
+from commons.utils.request_util import get_nested_value, get_kv
 import operator
 import re
 
@@ -31,14 +31,14 @@ class AssertUtil:
         'sum': sum
     }
 
-    def get_assert(self, res_data: dict, express_group: list) -> dict:
+    def get_assert(self, req: dict, res_data: dict, express_group: list) -> dict:
         """获取断言结果"""
         group_assert_list = []
         final_list = []
 
         for index, express_obj in enumerate(express_group, 1):
             # 处理单个组的断言
-            group_result = self._process_express_group(res_data, express_obj)
+            group_result = self._process_express_group(req, res_data, express_obj)
             group_assert_list.append(group_result)
             final_list.append(group_result["final"])
 
@@ -47,7 +47,7 @@ class AssertUtil:
             'finalAssert': any(final_list)
         }
 
-    def _process_express_group(self, res_data: dict, express_obj: dict) -> dict:
+    def _process_express_group(self, req: dict, res_data: dict, express_obj: dict) -> dict:
         """
         处理单个表达组
         :param res_data: 校验数据data
@@ -57,7 +57,7 @@ class AssertUtil:
         item_final_list = list()
         item_assert_info_list = list()
         for express in express_obj["expressList"]:
-            assert_result = self._process_single_express(res_data, express)
+            assert_result = self._process_single_express(req, res_data, express)
             item_final_list.append(assert_result['assert'])
             item_assert_info_list.append(assert_result)
         group_final = all(item_final_list)
@@ -68,7 +68,7 @@ class AssertUtil:
         "final": group_final
         }
 
-    def _process_single_express(self, res_data: dict, express: dict) -> dict:
+    def _process_single_express(self, req: dict, res_data: dict, express: dict) -> dict:
         """处理单个表达式"""
         # 提取表达式参数
         express_id = express.pop('expressId')
@@ -81,6 +81,8 @@ class AssertUtil:
         if match_opera != "!=null":
             key_type = express.pop('keyType')
             match_value = express.pop('matchValue')
+            if "$" in match_value:
+                match_value = get_kv(req, match_value)
             match_method = express.pop("matchMethod")
             # 构建断言信息
             assert_info = {
@@ -90,7 +92,9 @@ class AssertUtil:
                                                 opera=opera,
                                                 match_method=match_method,
                                                 key_type=key_type,
-                                                match_value=match_value)
+                                                match_value=match_value,
+                                                match_opera=match_opera
+                                                )
             }
         else:
             # 构建断言信息
@@ -104,15 +108,20 @@ class AssertUtil:
     def _evaluate_assert(self,
                          result_value: any,
                          opera: callable,
+                         match_opera: str = None,
                          key_type: str = None,
                          match_value: str = None,
                          match_method: str = None
                          ) -> bool:
         """评估断言结果"""
+        if "$" in match_value:
+            pass
         try:
             if opera.__name__ == "search":
-                print("咋了这是")
-                return bool(opera(self._TYPE_DICT[key_type](match_value), result_value))
+                if match_opera == "like":
+                    return bool(opera(re.escape(self._TYPE_DICT[key_type](match_value)), result_value))
+                if match_opera == "re":
+                    return bool(opera(self._TYPE_DICT[key_type](match_value), result_value))
             if match_method and match_method != "0" and key_type and match_value:
                 return opera(self._TYPE_DICT[match_method](result_value), self._TYPE_DICT[key_type](match_value))
             elif key_type and match_value:

@@ -1,0 +1,1650 @@
+[2026-01-14 14:39:22] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\middleware\requestlog.py changed, reloading.
+[2026-01-14 14:39:24] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 14:39:42] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\cusntom\view.py changed, reloading.
+[2026-01-14 14:39:44] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 14:39:49] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 14:39:51] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 9858
+[2026-01-14 14:40:08] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 450936
+[2026-01-14 14:41:49] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\log\views.py changed, reloading.
+[2026-01-14 14:41:50] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 14:41:56] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 27916
+[2026-01-14 14:43:00] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 14:46:35] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-14 14:46:35] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 3019
+[2026-01-14 14:47:04] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 14:47:06] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 9858
+[2026-01-14 14:51:30] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 14:51:32] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 14:57:23] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 14:57:25] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 15:06:54] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-14 15:06:54] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 3315
+[2026-01-14 15:07:02] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 15:07:02] INFO [apps.celery_task.views:40] ÈÕÖ¾²âÊÔ
+[2026-01-14 15:07:02] INFO [commons.abs.baserequest:69] [{'id': 8, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 9811, 'caseName': '¡¾MFAQ¡¿´ğ°¸Ö±Âä²»´øfaq', 'headers': None, 'body': '{"appId":"100009253","sessionId":"700000002224027","guid":"IMFAQ-a8937d10-88b1-428f-a5d2-a21168f85b0c","userID":"answerout","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"","clientVersion":null,"extData":{"syscode":"","imBizType":"1321","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pagecode":"","faqScene":"initial","imHeadAuth":"58CDE440882FDF2F9CF2A3F483555BDAA5B75B560FEBC16CBD7BF719669F93A1"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 1133, 'expressList': [{'expressId': 1149, 'matchKey': 'action.code', 'keyType': 'str', 'matchMethod': None, 'matchValue': 'KEEP', 'matchOper': '=='}, {'expressId': 6054, 'matchKey': 'extData.answerOutQid', 'keyType': 'str', 'matchMethod': None, 'matchValue': 'a79cbbd7|22cf|44ff|b408|46aaeb292399', 'matchOper': '=='}, {'expressId': 7402, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '0', 'matchOper': '=='}, {'expressId': 8611, 'matchKey': 'extData.MhfqExpId', 'keyType': 'str', 'matchMethod': None, 'matchValue': '198738', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': [], 'created_at': '2025-12-01T19:38:15.209965+08:00', 'updated_at': '2025-12-01T19:38:15.210968+08:00', 'streamKey': ''}]
+[2026-01-14 15:07:02] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 2435
+[2026-01-14 15:07:09] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 27288
+[2026-01-14 15:10:50] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\middleware\requestlog.py changed, reloading.
+[2026-01-14 15:10:52] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 15:13:50] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 15:13:50] INFO [apps.celery_task.views:40] ÈÕÖ¾²âÊÔ
+[2026-01-14 15:13:50] INFO [commons.abs.baserequest:69] [{'id': 8, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 9811, 'caseName': '¡¾MFAQ¡¿´ğ°¸Ö±Âä²»´øfaq', 'headers': None, 'body': '{"appId":"100009253","sessionId":"700000002224027","guid":"IMFAQ-a8937d10-88b1-428f-a5d2-a21168f85b0c","userID":"answerout","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"","clientVersion":null,"extData":{"syscode":"","imBizType":"1321","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pagecode":"","faqScene":"initial","imHeadAuth":"58CDE440882FDF2F9CF2A3F483555BDAA5B75B560FEBC16CBD7BF719669F93A1"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 1133, 'expressList': [{'expressId': 1149, 'matchKey': 'action.code', 'keyType': 'str', 'matchMethod': None, 'matchValue': 'KEEP', 'matchOper': '=='}, {'expressId': 6054, 'matchKey': 'extData.answerOutQid', 'keyType': 'str', 'matchMethod': None, 'matchValue': 'a79cbbd7|22cf|44ff|b408|46aaeb292399', 'matchOper': '=='}, {'expressId': 7402, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '0', 'matchOper': '=='}, {'expressId': 8611, 'matchKey': 'extData.MhfqExpId', 'keyType': 'str', 'matchMethod': None, 'matchValue': '198738', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': [], 'created_at': '2025-12-01T19:38:15.209965+08:00', 'updated_at': '2025-12-01T19:38:15.210968+08:00', 'streamKey': ''}]
+[2026-01-14 15:13:51] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 2435
+[2026-01-14 15:43:06] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\cases\views\interface.py changed, reloading.
+[2026-01-14 15:43:07] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 15:55:15] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\cases\views\interface.py changed, reloading.
+[2026-01-14 15:55:17] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 15:55:54] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\cases\views\interface.py changed, reloading.
+[2026-01-14 15:55:56] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 15:56:33] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\cases\views\interface.py changed, reloading.
+[2026-01-14 15:56:35] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 16:00:38] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-14 16:00:38] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 6597
+[2026-01-14 16:00:41] INFO [django.server:213] "OPTIONS /api/httpcase/del HTTP/1.1" 200 0
+[2026-01-14 16:00:41] INFO [django.server:213] "POST /api/httpcase/del HTTP/1.1" 200 116
+[2026-01-14 16:00:41] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-14 16:00:41] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 6597
+[2026-01-14 16:01:09] INFO [django.server:213] "OPTIONS /api/httpcase/del HTTP/1.1" 200 0
+[2026-01-14 16:01:09] INFO [django.server:213] "POST /api/httpcase/del HTTP/1.1" 200 87
+[2026-01-14 16:01:09] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-14 16:01:09] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 4952
+[2026-01-14 16:02:07] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-14 16:02:07] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 3315
+[2026-01-14 16:02:54] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-14 16:02:54] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 3315
+[2026-01-14 16:03:25] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-14 16:03:25] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 3315
+[2026-01-14 16:03:41] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-14 16:03:41] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 3315
+[2026-01-14 16:03:53] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-14 16:03:53] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 3315
+[2026-01-14 16:03:58] INFO [django.server:213] "OPTIONS /api/suit/del HTTP/1.1" 200 0
+[2026-01-14 16:03:58] INFO [django.server:213] "POST /api/suit/del HTTP/1.1" 200 86
+[2026-01-14 16:03:58] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-14 16:03:58] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 91
+[2026-01-14 16:44:00] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\celerys\tasks.py changed, reloading.
+[2026-01-14 16:44:02] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 16:48:09] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\readfile.py changed, reloading.
+[2026-01-14 16:48:11] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 16:56:32] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\cusntom\handler.py changed, reloading.
+[2026-01-14 16:56:34] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 16:56:47] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-14 16:56:47] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 4952
+[2026-01-14 16:56:54] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 26496
+[2026-01-14 16:57:24] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 16:57:24] INFO [apps.celery_task.views:40] ÈÕÖ¾²âÊÔ
+[2026-01-14 16:57:25] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 2367
+[2026-01-14 16:57:32] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 26496
+[2026-01-14 16:58:11] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 26496
+[2026-01-14 16:58:16] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 26496
+[2026-01-14 16:58:34] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\cusntom\handler.py changed, reloading.
+[2026-01-14 16:58:36] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 16:58:40] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 34018
+[2026-01-14 17:04:16] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:04:16] INFO [apps.celery_task.views:40] ÈÕÖ¾²âÊÔ
+[2026-01-14 17:04:19] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 10031
+[2026-01-14 17:06:25] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\cusntom\handler.py changed, reloading.
+[2026-01-14 17:06:27] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:10:45] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:10:47] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:10:50] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:10:53] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 9990
+[2026-01-14 17:10:57] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 33745
+[2026-01-14 17:16:52] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:16:54] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:18:34] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:18:34] INFO [apps.celery_task.views:40] ½Ó¿ÚÓÃÀıÖ´ĞĞ
+[2026-01-14 17:18:35] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 9990
+[2026-01-14 17:18:38] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 33446
+[2026-01-14 17:20:02] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:20:04] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:21:00] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:21:05] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:21:05] ERROR [django.request:248] Internal Server Error: /api/test
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 40, in post
+    logger.info(f"{request.data.portName}½Ó¿Ú{request.data.caseName}ÓÃÀıÖ´ĞĞ", extra={'req': request.data})
+                   ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'portName'
+[2026-01-14 17:21:05] ERROR [django.server:213] "POST /api/test HTTP/1.1" 500 100860
+[2026-01-14 17:21:10] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 35860
+[2026-01-14 17:22:28] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:22:30] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:23:08] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:23:08] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:23:09] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 9990
+[2026-01-14 17:23:15] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 35643
+[2026-01-14 17:27:14] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:27:16] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:27:28] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:27:28] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:27:30] ERROR [django.request:248] Internal Server Error: /api/test
+Traceback (most recent call last):
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 73, in https_action
+    logger.info(f"{data['portName']}½Ó¿Ú{data['caseName']}ÓÃÀıÖ´ĞĞ", extra={'res': answer})
+                   ~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 46, in post
+    return self.https_action(case_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 76, in https_action
+    logger.info(f"{data['portName']}½Ó¿Ú{data['caseName']}ÓÃÀıÖ´ĞĞ", extra={'res': str(e)})
+                   ~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[2026-01-14 17:27:30] ERROR [django.server:213] "POST /api/test HTTP/1.1" 500 123601
+[2026-01-14 17:27:58] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:28:00] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:28:02] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:28:02] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:28:04] ERROR [django.request:248] Internal Server Error: /api/test
+Traceback (most recent call last):
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 73, in https_action
+    logger.info(f"{data['portName']}½Ó¿Ú{data['caseName']}ÓÃÀıÖ´ĞĞ", extra={'res': CustomResponse(data=answer, code=100)})
+                   ~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 46, in post
+    return self.https_action(case_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 76, in https_action
+    logger.info(f"{data['portName']}½Ó¿Ú{data['caseName']}ÓÃÀıÖ´ĞĞ", extra={'res': str(e)})
+                   ~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[2026-01-14 17:28:04] ERROR [django.server:213] "POST /api/test HTTP/1.1" 500 123694
+[2026-01-14 17:28:20] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:28:22] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:28:29] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:28:29] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:28:31] ERROR [django.request:248] Internal Server Error: /api/test
+Traceback (most recent call last):
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 73, in https_action
+    logger.info(f"{data['portName']}½Ó¿Ú{data['caseName']}ÓÃÀıÖ´ĞĞ", extra={'res': answer})
+                   ~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 46, in post
+    return self.https_action(case_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 76, in https_action
+    logger.info(f"{data['portName']}½Ó¿Ú{data['caseName']}ÓÃÀıÖ´ĞĞ", extra={'res': e})
+                   ~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[2026-01-14 17:28:31] ERROR [django.server:213] "POST /api/test HTTP/1.1" 500 123586
+[2026-01-14 17:29:43] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 44955
+[2026-01-14 17:30:17] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:30:18] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:30:22] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:30:22] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:30:24] ERROR [django.request:248] Internal Server Error: /api/test
+Traceback (most recent call last):
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 73, in https_action
+    logger.info(f"{data['portName']}½Ó¿Ú{data['caseName']}ÓÃÀı·µ»Ø", extra={'res': answer})
+                   ~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 46, in post
+    return self.https_action(case_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 76, in https_action
+    logger.info(f"{data['portName']}½Ó¿Ú{data['caseName']}ÓÃÀı·µ»Ø", extra={'res': e})
+                   ~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[2026-01-14 17:30:24] ERROR [django.server:213] "POST /api/test HTTP/1.1" 500 123586
+[2026-01-14 17:30:30] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 39340
+[2026-01-14 17:31:18] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:31:19] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:31:20] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:31:20] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:31:21] ERROR [django.request:248] Internal Server Error: /api/test
+Traceback (most recent call last):
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 73, in https_action
+    logger.info(f"{data['portName']}½Ó¿Ú{data['caseName']}ÓÃÀı·µ»Ø", extra={'res': CustomResponse(data=answer, code=100)})
+                   ~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 46, in post
+    return self.https_action(case_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 76, in https_action
+    logger.info(f"{data['portName']}½Ó¿Ú{data['caseName']}ÓÃÀı·µ»Ø", extra={'res': e})
+                   ~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[2026-01-14 17:31:21] ERROR [django.server:213] "POST /api/test HTTP/1.1" 500 123679
+[2026-01-14 17:32:00] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:32:02] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:32:04] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:32:04] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:32:05] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 88
+[2026-01-14 17:32:25] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:32:27] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:32:28] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:32:28] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:32:30] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 88
+[2026-01-14 17:33:05] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:33:07] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:33:09] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:33:09] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:33:11] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 88
+[2026-01-14 17:34:07] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:34:09] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:34:10] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:34:10] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:34:10] ERROR [django.request:248] Internal Server Error: /api/test
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 46, in post
+    return self.https_action(case_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 69, in https_action
+    print(data['portName'])
+          ~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[2026-01-14 17:34:10] ERROR [django.server:213] "POST /api/test HTTP/1.1" 500 105075
+[2026-01-14 17:37:02] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:37:05] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:38:16] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:38:16] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:38:17] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 88
+[2026-01-14 17:38:47] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:38:49] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:38:51] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:38:51] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:38:51] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 96
+[2026-01-14 17:39:24] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:39:24] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:39:24] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 96
+[2026-01-14 17:39:25] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:39:27] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:39:30] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:39:30] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:39:32] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 88
+[2026-01-14 17:39:54] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:39:56] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:40:10] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:40:10] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:40:10] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 83
+[2026-01-14 17:40:40] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:40:42] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:40:55] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:40:55] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:40:57] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 88
+[2026-01-14 17:42:28] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:42:30] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:42:48] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:42:48] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:42:49] ERROR [django.request:248] Internal Server Error: /api/test
+Traceback (most recent call last):
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 74, in https_action
+    logger.info(f"{info['case']['caseName']}ÓÃÀı·µ»Ø", extra={'res': answer})
+                   ~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'caseName'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 46, in post
+    return self.https_action(case_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 77, in https_action
+    logger.info(f"{info['case']['caseName']}ÓÃÀı·µ»Ø", extra={'res': str(e)})
+                   ~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'caseName'
+[2026-01-14 17:42:49] ERROR [django.server:213] "POST /api/test HTTP/1.1" 500 123208
+[2026-01-14 17:43:17] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:43:27] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:43:29] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:43:32] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:43:32] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:43:33] ERROR [django.request:248] Internal Server Error: /api/test
+Traceback (most recent call last):
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 73, in https_action
+    print(info['case']['caseName'])
+          ~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'caseName'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 46, in post
+    return self.https_action(case_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 77, in https_action
+    logger.info(f"{info['case']['caseName']}ÓÃÀı·µ»Ø", extra={'res': str(e)})
+                   ~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'caseName'
+[2026-01-14 17:43:33] ERROR [django.server:213] "POST /api/test HTTP/1.1" 500 123234
+[2026-01-14 17:43:45] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:43:47] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:43:51] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:43:51] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:43:53] ERROR [django.request:248] Internal Server Error: /api/test
+Traceback (most recent call last):
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 74, in https_action
+    logger.info(f"{info['case']['caseName']}ÓÃÀı·µ»Ø", extra={'res': answer})
+                   ~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'caseName'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 46, in post
+    return self.https_action(case_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 77, in https_action
+    logger.info(f"{info['case']['caseName']}ÓÃÀı·µ»Ø", extra={'res': str(e)})
+                   ~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'caseName'
+[2026-01-14 17:43:53] ERROR [django.server:213] "POST /api/test HTTP/1.1" 500 123290
+[2026-01-14 17:44:10] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:44:12] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:44:18] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:44:18] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:44:19] ERROR [django.request:248] Internal Server Error: /api/test
+Traceback (most recent call last):
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 74, in https_action
+    logger.info(f"{info['case']['caseName']}ÓÃÀı·µ»Ø", extra={'res': answer})
+                   ~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'caseName'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 46, in post
+    return self.https_action(case_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 77, in https_action
+    logger.info(f"{info['case']['caseName']}ÓÃÀı·µ»Ø", extra={'res': str(e)})
+                   ~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'caseName'
+[2026-01-14 17:44:19] ERROR [django.server:213] "POST /api/test HTTP/1.1" 500 123254
+[2026-01-14 17:44:39] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:44:41] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:44:47] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:44:48] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:44:49] ERROR [django.request:248] Internal Server Error: /api/test
+Traceback (most recent call last):
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 74, in https_action
+    logger.info(f"{info['case']['caseName']}ÓÃÀı·µ»Ø", extra={'res': answer})
+                   ~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'caseName'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 46, in post
+    return self.https_action(case_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 77, in https_action
+    logger.info(f"{info['case']['caseName']}ÓÃÀı·µ»Ø", extra={'res': str(e)})
+                   ~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'caseName'
+[2026-01-14 17:44:49] ERROR [django.server:213] "POST /api/test HTTP/1.1" 500 123254
+[2026-01-14 17:45:40] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:45:42] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:45:45] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-14 17:45:45] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-14 17:45:49] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-14 17:45:49] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 17:45:51] INFO [apps.celery_task.views:73] ¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀı·µ»Ø
+[2026-01-14 17:45:51] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 10017
+[2026-01-14 17:46:08] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:46:09] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:46:16] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 77771
+[2026-01-14 17:46:46] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:46:48] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 17:47:01] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-14 17:47:03] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 18:56:23] INFO [django.server:213] "OPTIONS /api/httpcase/del HTTP/1.1" 200 0
+[2026-01-14 18:56:23] INFO [django.server:213] "POST /api/httpcase/del HTTP/1.1" 200 58
+[2026-01-14 18:56:23] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-14 18:56:23] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 3019
+[2026-01-14 18:57:38] INFO [django.server:213] "POST /api/task/getPageList HTTP/1.1" 200 49
+[2026-01-14 18:57:59] INFO [django.server:213] "GET /api/task/ HTTP/1.1" 200 26048
+[2026-01-14 18:58:56] WARNING [django.request:248] Method Not Allowed: /api/task/getPageList
+[2026-01-14 18:58:56] WARNING [django.server:213] "GET /api/task/getPageList HTTP/1.1" 405 16543
+[2026-01-14 18:59:15] WARNING [django.request:248] Method Not Allowed: /api/interval/getPageList
+[2026-01-14 18:59:15] WARNING [django.server:213] "GET /api/interval/getPageList HTTP/1.1" 405 15157
+[2026-01-14 18:59:18] WARNING [django.request:248] Method Not Allowed: /api/task/getPageList
+[2026-01-14 18:59:18] WARNING [django.server:213] "GET /api/task/getPageList HTTP/1.1" 405 16543
+[2026-01-14 18:59:27] WARNING [django.request:248] Bad Request: /api/task/add
+[2026-01-14 18:59:27] WARNING [django.server:213] "POST /api/task/add HTTP/1.1" 400 57
+[2026-01-14 18:59:37] ERROR [django.request:248] Internal Server Error: /api/task/add
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 25, in post
+    return action(request=request.data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 30, in add
+    ser.save()
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 619, in save
+    self.validate_unique()
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 593, in validate_unique
+    raise ValidationError(
+django.core.exceptions.ValidationError: ['One of clocked, interval, crontab, or solar must be set.']
+[2026-01-14 18:59:37] ERROR [django.server:213] "POST /api/task/add HTTP/1.1" 500 146504
+[2026-01-14 19:14:13] WARNING [django.request:248] Method Not Allowed: /api/task/getPageList
+[2026-01-14 19:14:13] WARNING [django.server:213] "GET /api/task/getPageList HTTP/1.1" 405 16543
+[2026-01-14 19:18:53] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\models.py changed, reloading.
+[2026-01-14 19:18:55] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 19:19:49] INFO [django.server:213] "GET /api/task/ HTTP/1.1" 200 26048
+[2026-01-14 19:28:04] INFO [apps.celery_task.views:40] dialogchat½Ó¿Ú¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀıÖ´ĞĞ
+[2026-01-14 19:28:07] INFO [apps.celery_task.views:73] ¡¾RAG¡¿Í¼Æ¬´ğ°¸+ÁÁµãÓÃÀı·µ»Ø
+[2026-01-14 19:28:07] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 10016
+[2026-01-14 19:28:25] WARNING [django.request:248] Not Found: /api/logs/
+[2026-01-14 19:28:25] WARNING [django.server:213] "GET /api/logs/ HTTP/1.1" 404 47882
+[2026-01-14 19:28:50] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 77857
+[2026-01-14 19:32:08] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\models.py changed, reloading.
+[2026-01-14 19:32:10] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 19:33:24] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\models.py changed, reloading.
+[2026-01-14 19:33:26] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 19:36:10] WARNING [django.request:248] Method Not Allowed: /api/task/getPageList
+[2026-01-14 19:36:10] WARNING [django.server:213] "GET /api/task/getPageList HTTP/1.1" 405 16543
+[2026-01-14 19:36:25] ERROR [django.request:248] Internal Server Error: /api/task/add
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 25, in post
+    return action(request=request.data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 30, in add
+    ser.save()
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 619, in save
+    self.validate_unique()
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 593, in validate_unique
+    raise ValidationError(
+django.core.exceptions.ValidationError: ['One of clocked, interval, crontab, or solar must be set.']
+[2026-01-14 19:36:25] ERROR [django.server:213] "POST /api/task/add HTTP/1.1" 500 146929
+[2026-01-14 19:36:54] WARNING [django.request:248] Not Found: /api/Interval/getPageList
+[2026-01-14 19:36:54] WARNING [django.server:213] "GET /api/Interval/getPageList HTTP/1.1" 404 47927
+[2026-01-14 19:37:01] WARNING [django.request:248] Method Not Allowed: /api/interval/getPageList
+[2026-01-14 19:37:01] WARNING [django.server:213] "GET /api/interval/getPageList HTTP/1.1" 405 15157
+[2026-01-14 19:37:19] INFO [django.server:213] "POST /api/interval/getPageList HTTP/1.1" 200 256
+[2026-01-14 19:40:30] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\models.py changed, reloading.
+[2026-01-14 19:40:32] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 19:42:23] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-14 19:46:44] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\sers.py changed, reloading.
+[2026-01-14 19:46:46] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 19:47:16] ERROR [django.request:248] Internal Server Error: /api/task/add
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 25, in post
+    return action(request=request.data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 30, in add
+    ser.save()
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 619, in save
+    self.validate_unique()
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 593, in validate_unique
+    raise ValidationError(
+django.core.exceptions.ValidationError: ['One of clocked, interval, crontab, or solar must be set.']
+[2026-01-14 19:47:16] ERROR [django.server:213] "POST /api/task/add HTTP/1.1" 500 155172
+[2026-01-14 19:49:05] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\models.py changed, reloading.
+[2026-01-14 19:49:07] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 19:49:15] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\sers.py changed, reloading.
+[2026-01-14 19:49:17] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 19:49:22] ERROR [django.request:248] Internal Server Error: /api/task/add
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 25, in post
+    return action(request=request.data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 30, in add
+    ser.save()
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 619, in save
+    self.validate_unique()
+  File "D:\testplatformservice\testplatform\apps\celery_task\models.py", line 94, in validate_unique
+    super().validate_unique(*args, **kwargs)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 593, in validate_unique
+    raise ValidationError(
+django.core.exceptions.ValidationError: ['One of clocked, interval, crontab, or solar must be set.']
+[2026-01-14 19:49:22] ERROR [django.server:213] "POST /api/task/add HTTP/1.1" 500 151251
+[2026-01-14 19:50:32] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\models.py changed, reloading.
+[2026-01-14 19:50:34] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 19:50:36] ERROR [django.request:248] Internal Server Error: /api/task/add
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 25, in post
+    return action(request=request.data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 30, in add
+    ser.save()
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 619, in save
+    self.validate_unique()
+  File "D:\testplatformservice\testplatform\apps\celery_task\models.py", line 94, in validate_unique
+    super().validate_unique(*args, **kwargs)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 593, in validate_unique
+    raise ValidationError(
+django.core.exceptions.ValidationError: ['One of clocked, interval, crontab, or solar must be set.']
+[2026-01-14 19:50:36] ERROR [django.server:213] "POST /api/task/add HTTP/1.1" 500 151274
+[2026-01-14 19:50:46] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\models.py changed, reloading.
+[2026-01-14 19:50:47] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 19:50:52] ERROR [django.request:248] Internal Server Error: /api/task/add
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 25, in post
+    return action(request=request.data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 30, in add
+    ser.save()
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 619, in save
+    self.validate_unique()
+  File "D:\testplatformservice\testplatform\apps\celery_task\models.py", line 95, in validate_unique
+    super().validate_unique(*args, **kwargs)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 593, in validate_unique
+    raise ValidationError(
+django.core.exceptions.ValidationError: ['One of clocked, interval, crontab, or solar must be set.']
+[2026-01-14 19:50:52] ERROR [django.server:213] "POST /api/task/add HTTP/1.1" 500 151190
+[2026-01-14 19:51:42] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\models.py changed, reloading.
+[2026-01-14 19:51:44] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 19:51:52] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\models.py changed, reloading.
+[2026-01-14 19:51:54] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 19:52:05] ERROR [django.request:248] Internal Server Error: /api/task/add
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 25, in post
+    return action(request=request.data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 30, in add
+    ser.save()
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 619, in save
+    self.validate_unique()
+  File "D:\testplatformservice\testplatform\apps\celery_task\models.py", line 118, in validate_unique
+    super().validate_unique(*args, **kwargs)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 593, in validate_unique
+    raise ValidationError(
+django.core.exceptions.ValidationError: ['One of clocked, interval, crontab, or solar must be set.']
+[2026-01-14 19:52:05] ERROR [django.server:213] "POST /api/task/add HTTP/1.1" 500 151169
+[2026-01-14 19:53:38] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\models.py changed, reloading.
+[2026-01-14 19:53:40] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 19:53:42] ERROR [django.request:248] Internal Server Error: /api/task/add
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\MySQLdb\connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'weekdays_only' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 25, in post
+    return action(request=request.data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\commons\cusntom\view.py", line 30, in add
+    ser.save()
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django_celery_beat\models.py", line 620, in save
+    super().save(*args, **kwargs)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\MySQLdb\connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'weekdays_only' in 'field list'")
+[2026-01-14 19:53:42] ERROR [django.server:213] "POST /api/task/add HTTP/1.1" 500 252520
+[2026-01-14 19:54:11] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\models.py changed, reloading.
+[2026-01-14 19:54:13] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-14 19:54:53] INFO [django.server:213] "POST /api/task/add HTTP/1.1" 200 253
+[2026-01-14 19:56:26] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 38568
+[2026-01-15 13:42:46] WARNING [django.request:248] Method Not Allowed: /api/crontab/getPageList
+[2026-01-15 13:42:46] WARNING [django.server:213] "GET /api/crontab/getPageList HTTP/1.1" 405 75570
+[2026-01-15 13:46:49] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 35572
+[2026-01-15 15:05:36] INFO [django.server:213] "OPTIONS /api/login HTTP/1.1" 200 0
+[2026-01-15 15:05:36] INFO [django.server:213] "POST /api/login HTTP/1.1" 200 371
+[2026-01-15 15:05:36] INFO [django.server:213] "OPTIONS /api/menu1 HTTP/1.1" 200 0
+[2026-01-15 15:05:36] INFO [django.server:213] "GET /api/menu1 HTTP/1.1" 301 0
+[2026-01-15 15:05:36] INFO [django.server:213] "OPTIONS /api/menu1/ HTTP/1.1" 200 0
+[2026-01-15 15:05:37] INFO [django.server:213] "GET /api/menu1/ HTTP/1.1" 200 1408
+[2026-01-15 15:05:37] INFO [django.server:213] "OPTIONS /api/user/getPageList HTTP/1.1" 200 0
+[2026-01-15 15:05:37] INFO [django.server:213] "POST /api/user/getPageList HTTP/1.1" 200 391
+[2026-01-15 15:05:37] INFO [django.server:213] "OPTIONS /api/depart/getPageList HTTP/1.1" 200 0
+[2026-01-15 15:05:37] INFO [django.server:213] "POST /api/depart/getPageList HTTP/1.1" 200 6585
+[2026-01-15 15:05:43] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-15 15:05:43] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 3019
+[2026-01-15 18:09:55] INFO [django.server:213] "GET /api/task/ HTTP/1.1" 200 27053
+[2026-01-15 18:10:10] INFO [django.server:213] "POST /api/task/getPageList HTTP/1.1" 200 246
+[2026-01-15 18:13:01] INFO [django.server:213] "POST /api/task/getPageList HTTP/1.1" 200 246
+[2026-01-15 18:13:13] INFO [django.server:213] "POST /api/task/add HTTP/1.1" 200 258
+[2026-01-15 21:18:35] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-15 21:18:35] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-16 13:50:48] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\celerys\app.py changed, reloading.
+[2026-01-16 13:50:51] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-16 13:51:02] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\celerys\app.py changed, reloading.
+[2026-01-16 13:51:03] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-16 15:59:28] INFO [django.server:213] "OPTIONS /api/login HTTP/1.1" 200 0
+[2026-01-16 15:59:29] INFO [django.server:213] "POST /api/login HTTP/1.1" 200 371
+[2026-01-16 15:59:29] INFO [django.server:213] "OPTIONS /api/menu1 HTTP/1.1" 200 0
+[2026-01-16 15:59:29] INFO [django.server:213] "GET /api/menu1 HTTP/1.1" 301 0
+[2026-01-16 15:59:29] INFO [django.server:213] "OPTIONS /api/menu1/ HTTP/1.1" 200 0
+[2026-01-16 15:59:29] INFO [django.server:213] "GET /api/menu1/ HTTP/1.1" 200 1408
+[2026-01-16 15:59:29] INFO [django.server:213] "OPTIONS /api/user/getPageList HTTP/1.1" 200 0
+[2026-01-16 15:59:29] INFO [django.server:213] "POST /api/user/getPageList HTTP/1.1" 200 391
+[2026-01-16 15:59:29] INFO [django.server:213] "OPTIONS /api/depart/getPageList HTTP/1.1" 200 0
+[2026-01-16 15:59:29] INFO [django.server:213] "POST /api/depart/getPageList HTTP/1.1" 200 6585
+[2026-01-16 15:59:33] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-16 15:59:33] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 3019
+[2026-01-16 15:59:34] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-16 15:59:34] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-16 18:22:47] INFO [django.server:213] "OPTIONS /api/apply/getPageList HTTP/1.1" 200 0
+[2026-01-16 18:22:47] INFO [django.server:213] "POST /api/apply/getPageList HTTP/1.1" 200 6397
+[2026-01-16 18:22:48] INFO [django.server:213] "OPTIONS /api/menu/getPageList HTTP/1.1" 200 0
+[2026-01-16 18:22:48] INFO [django.server:213] "POST /api/menu/getPageList HTTP/1.1" 200 3096
+[2026-01-16 18:22:50] INFO [django.server:213] "OPTIONS /api/port/getPageList HTTP/1.1" 200 0
+[2026-01-16 18:22:50] INFO [django.server:213] "POST /api/port/getPageList HTTP/1.1" 200 5796
+[2026-01-16 18:23:02] INFO [django.server:213] "POST /api/port/getPageList HTTP/1.1" 200 5524
+[2026-01-16 18:23:29] INFO [django.server:213] "POST /api/apply/getPageList HTTP/1.1" 200 6397
+[2026-01-16 18:24:04] INFO [django.server:213] "OPTIONS /api/port/add HTTP/1.1" 200 0
+[2026-01-16 18:24:04] INFO [django.server:213] "POST /api/port/add HTTP/1.1" 200 339
+[2026-01-16 18:24:04] INFO [django.server:213] "POST /api/port/getPageList HTTP/1.1" 200 2902
+[2026-01-16 18:24:18] INFO [django.server:213] "POST /api/port/getPageList HTTP/1.1" 200 5809
+[2026-01-16 18:25:07] INFO [django.server:213] "POST /api/port/add HTTP/1.1" 200 350
+[2026-01-16 18:25:07] INFO [django.server:213] "POST /api/port/getPageList HTTP/1.1" 200 2915
+[2026-01-16 18:25:32] INFO [django.server:213] "POST /api/port/getPageList HTTP/1.1" 200 2926
+[2026-01-16 18:25:56] INFO [django.server:213] "POST /api/port/add HTTP/1.1" 200 342
+[2026-01-16 18:25:56] INFO [django.server:213] "POST /api/port/getPageList HTTP/1.1" 200 2931
+[2026-01-16 18:26:09] INFO [django.server:213] "OPTIONS /api/port/update HTTP/1.1" 200 0
+[2026-01-16 18:26:09] INFO [django.server:213] "POST /api/port/update HTTP/1.1" 200 345
+[2026-01-16 18:26:09] INFO [django.server:213] "POST /api/port/getPageList HTTP/1.1" 200 2925
+[2026-01-16 18:26:16] INFO [django.server:213] "POST /api/port/getPageList HTTP/1.1" 200 361
+[2026-01-16 18:26:48] INFO [django.server:213] "POST /api/port/add HTTP/1.1" 200 373
+[2026-01-16 18:26:48] INFO [django.server:213] "POST /api/port/getPageList HTTP/1.1" 200 2969
+[2026-01-16 18:26:52] INFO [django.server:213] "POST /api/port/getPageList HTTP/1.1" 200 4096
+[2026-01-16 18:26:53] INFO [django.server:213] "POST /api/port/getPageList HTTP/1.1" 200 2969
+[2026-01-16 18:26:59] INFO [django.server:213] "OPTIONS /api/depart/getPageList HTTP/1.1" 200 0
+[2026-01-16 18:26:59] INFO [django.server:213] "POST /api/depart/getPageList HTTP/1.1" 200 7763
+[2026-01-16 18:27:02] INFO [django.server:213] "POST /api/apply/getPageList HTTP/1.1" 200 7575
+[2026-01-19 11:31:41] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-19 11:31:49] INFO [django.server:213] "OPTIONS /api/login HTTP/1.1" 200 0
+[2026-01-19 11:31:50] INFO [django.server:213] "POST /api/login HTTP/1.1" 200 371
+[2026-01-19 11:31:50] INFO [django.server:213] "OPTIONS /api/menu1 HTTP/1.1" 200 0
+[2026-01-19 11:31:50] INFO [django.server:213] "GET /api/menu1 HTTP/1.1" 301 0
+[2026-01-19 11:31:50] INFO [django.server:213] "OPTIONS /api/menu1/ HTTP/1.1" 200 0
+[2026-01-19 11:31:50] INFO [django.server:213] "GET /api/menu1/ HTTP/1.1" 200 1408
+[2026-01-19 11:31:50] INFO [django.server:213] "OPTIONS /api/user/getPageList HTTP/1.1" 200 0
+[2026-01-19 11:31:50] INFO [django.server:213] "POST /api/user/getPageList HTTP/1.1" 200 391
+[2026-01-19 11:31:50] INFO [django.server:213] "OPTIONS /api/depart/getPageList HTTP/1.1" 200 0
+[2026-01-19 11:31:50] INFO [django.server:213] "POST /api/depart/getPageList HTTP/1.1" 200 7763
+[2026-01-19 11:31:57] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-19 11:31:57] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 3019
+[2026-01-19 15:52:54] INFO [django.utils.autoreload:266] D:\Miniforge3\envs\pytorch\Lib\site-packages\requests\api.py changed, reloading.
+[2026-01-19 15:52:56] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-19 16:59:20] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-19 16:59:20] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 3019
+[2026-01-19 16:59:24] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 91
+[2026-01-19 16:59:29] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 3019
+[2026-01-19 16:59:36] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 3019
+[2026-01-19 16:59:39] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 91
+[2026-01-20 15:49:06] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-20 15:49:06] WARNING [django.request:248] Unauthorized: /api/httpcase/getPageList
+[2026-01-20 15:49:06] WARNING [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 401 183
+[2026-01-20 20:03:10] INFO [django.server:213] "OPTIONS /api/login HTTP/1.1" 200 0
+[2026-01-20 20:03:10] INFO [django.server:213] "POST /api/login HTTP/1.1" 200 371
+[2026-01-20 20:03:10] INFO [django.server:213] "OPTIONS /api/menu1 HTTP/1.1" 200 0
+[2026-01-20 20:03:10] INFO [django.server:213] "OPTIONS /api/menu1/ HTTP/1.1" 200 0
+[2026-01-20 20:03:10] INFO [django.server:213] "GET /api/menu1/ HTTP/1.1" 200 1408
+[2026-01-20 20:03:10] INFO [django.server:213] "OPTIONS /api/user/getPageList HTTP/1.1" 200 0
+[2026-01-20 20:03:10] INFO [django.server:213] "POST /api/user/getPageList HTTP/1.1" 200 391
+[2026-01-20 20:03:10] INFO [django.server:213] "OPTIONS /api/depart/getPageList HTTP/1.1" 200 0
+[2026-01-20 20:03:10] INFO [django.server:213] "POST /api/depart/getPageList HTTP/1.1" 200 7763
+[2026-01-20 20:03:19] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-20 20:03:19] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 91
+[2026-01-22 16:14:27] INFO [django.server:213] "OPTIONS /api/login HTTP/1.1" 200 0
+[2026-01-22 16:14:28] INFO [django.server:213] "POST /api/login HTTP/1.1" 200 371
+[2026-01-22 16:14:28] INFO [django.server:213] "OPTIONS /api/menu1 HTTP/1.1" 200 0
+[2026-01-22 16:14:28] INFO [django.server:213] "OPTIONS /api/menu1/ HTTP/1.1" 200 0
+[2026-01-22 16:14:28] INFO [django.server:213] "GET /api/menu1/ HTTP/1.1" 200 1408
+[2026-01-22 16:14:28] INFO [django.server:213] "OPTIONS /api/user/getPageList HTTP/1.1" 200 0
+[2026-01-22 16:14:28] INFO [django.server:213] "POST /api/user/getPageList HTTP/1.1" 200 391
+[2026-01-22 16:14:28] INFO [django.server:213] "OPTIONS /api/depart/getPageList HTTP/1.1" 200 0
+[2026-01-22 16:14:28] INFO [django.server:213] "POST /api/depart/getPageList HTTP/1.1" 200 7763
+[2026-01-22 16:14:32] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-22 16:14:33] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 3019
+[2026-01-22 16:14:41] INFO [django.server:213] "OPTIONS /api/httpcase/del HTTP/1.1" 200 0
+[2026-01-22 16:14:41] INFO [django.server:213] "POST /api/httpcase/del HTTP/1.1" 200 58
+[2026-01-22 16:14:41] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 91
+[2026-01-22 16:14:43] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-22 16:14:43] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-22 16:20:24] INFO [django.server:213] "OPTIONS /api/httpcase/add HTTP/1.1" 200 0
+[2026-01-22 16:20:24] INFO [django.server:213] "POST /api/httpcase/add HTTP/1.1" 200 1986
+[2026-01-22 16:20:24] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 2021
+[2026-01-22 16:20:28] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-22 16:20:33] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-22 16:20:33] INFO [apps.celery_task.views:40] getBIMultiLayerFAQ½Ó¿Ú¡¾MFAQ¡¿½ö´ğ°¸Ö±ÂäÓÃÀıÖ´ĞĞ
+[2026-01-22 16:20:33] INFO [apps.celery_task.views:73] ¡¾MFAQ¡¿½ö´ğ°¸Ö±ÂäÓÃÀı·µ»Ø
+[2026-01-22 16:20:33] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 2409
+[2026-01-22 16:22:16] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-22 16:22:28] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-22 16:24:22] INFO [django.server:213] "POST /api/httpcase/add HTTP/1.1" 200 1876
+[2026-01-22 16:24:22] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 3842
+[2026-01-22 16:35:34] INFO [django.server:213] "POST /api/httpcase/add HTTP/1.1" 200 2226
+[2026-01-22 16:35:34] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 6013
+[2026-01-22 16:35:35] INFO [apps.celery_task.views:40] getBIMultiLayerFAQ½Ó¿Ú¡¾MFAQ¡¿µ¥·şÎñ½ø¶ÈÓÃÀıÖ´ĞĞ
+[2026-01-22 16:35:35] INFO [apps.celery_task.views:73] ¡¾MFAQ¡¿µ¥·şÎñ½ø¶ÈÓÃÀı·µ»Ø
+[2026-01-22 16:35:35] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 13639
+[2026-01-22 16:36:48] INFO [django.server:213] "POST /api/httpcase/add HTTP/1.1" 200 2218
+[2026-01-22 16:36:48] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 8176
+[2026-01-22 16:44:35] INFO [django.server:213] "POST /api/httpcase/add HTTP/1.1" 200 3409
+[2026-01-22 16:44:35] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 11530
+[2026-01-22 16:44:37] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-22 16:47:11] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-22 16:47:55] INFO [django.server:213] "POST /api/httpcase/add HTTP/1.1" 200 3400
+[2026-01-22 16:47:55] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 14875
+[2026-01-22 16:52:28] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-22 16:52:39] INFO [django.server:213] "OPTIONS /api/httpcase/update HTTP/1.1" 200 0
+[2026-01-22 16:52:39] INFO [django.server:213] "POST /api/httpcase/update HTTP/1.1" 200 3416
+[2026-01-22 16:52:39] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 14881
+[2026-01-22 16:52:54] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-22 16:52:54] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 91
+[2026-01-22 16:53:54] INFO [django.server:213] "POST /api/login HTTP/1.1" 200 371
+[2026-01-22 16:53:54] INFO [django.server:213] "GET /api/menu1/ HTTP/1.1" 200 1408
+[2026-01-22 16:53:54] INFO [django.server:213] "POST /api/user/getPageList HTTP/1.1" 200 391
+[2026-01-22 16:53:54] INFO [django.server:213] "POST /api/depart/getPageList HTTP/1.1" 200 19625
+[2026-01-22 16:53:57] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 91
+[2026-01-22 16:54:43] INFO [django.server:213] "OPTIONS /api/suit/add HTTP/1.1" 200 0
+[2026-01-22 16:54:43] INFO [django.server:213] "POST /api/suit/add HTTP/1.1" 200 15262
+[2026-01-22 16:54:43] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 15297
+[2026-01-22 16:54:48] ERROR [django.request:248] Internal Server Error: /api/test
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 40, in post
+    logger.info(f"{request.data['portName']}½Ó¿Ú{request.data['caseName']}ÓÃÀıÖ´ĞĞ", extra={'req': request.data})
+                   ~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'portName'
+[2026-01-22 16:54:48] ERROR [django.server:213] "POST /api/test HTTP/1.1" 500 100323
+[2026-01-22 16:54:59] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-22 16:54:59] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 15297
+[2026-01-22 16:55:00] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-22 16:55:00] ERROR [django.request:248] Internal Server Error: /api/test
+Traceback (most recent call last):
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Miniforge3\envs\pytorch\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\testplatformservice\testplatform\apps\celery_task\views.py", line 40, in post
+    logger.info(f"{request.data['portName']}½Ó¿Ú{request.data['caseName']}ÓÃÀıÖ´ĞĞ", extra={'req': request.data})
+                   ~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'portName'
+[2026-01-22 16:55:00] ERROR [django.server:213] "POST /api/test HTTP/1.1" 500 100588
+[2026-01-22 16:57:54] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-22 16:57:56] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-22 16:58:15] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\apps\celery_task\views.py changed, reloading.
+[2026-01-22 16:58:17] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-22 16:58:22] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-22 16:58:22] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 15297
+[2026-01-22 16:58:31] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-22 16:58:31] INFO [apps.celery_task.views:43] FAQ¸÷³¡¾°µ¥Àı»Ø¹éÌ×¼şÖ´ĞĞ
+[2026-01-22 16:58:31] INFO [commons.abs.baserequest:69] [{'id': 81, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 1172, 'caseName': '¡¾MFAQ¡¿·şÎñ½ø¶È+Q', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"111","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 8889, 'expressList': [{'expressId': 1302, 'matchKey': 'extPacks[0].data.resource.iconMap.5034', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'https://dimg04.fws.qa.nt.ctripcorp.com/images/0B7651200004qc4za13F7.png', 'matchOper': '=='}, {'expressId': 5044, 'matchKey': 'extPacks[0].data.entiytList[0].entityList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDINFO', 'matchOper': '=='}, {'expressId': 6664, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDS', 'matchOper': '=='}, {'expressId': 9362, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '1', 'matchOper': '>='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.220231+08:00', 'updated_at': '2026-01-22T16:54:43.220231+08:00', 'streamKey': ''}, {'id': 82, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 1254, 'caseName': '¡¾MFAQ¡¿´ğ°¸Ö±Âä+faq', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"answerout+faq","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 8150, 'expressList': [{'expressId': 2275, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '1', 'matchOper': '>='}, {'expressId': 9957, 'matchKey': 'extData.answerOutQid', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'a79cbbd7|22cf|44ff|b408|46aaeb292399', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.229167+08:00', 'updated_at': '2026-01-22T16:54:43.229167+08:00', 'streamKey': ''}, {'id': 83, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 2219, 'caseName': '¡¾MFAQ¡¿½ö´ğ°¸Ö±Âä', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"answerout","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 4894, 'expressList': [{'expressId': 1140, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '0', 'matchOper': '=='}, {'expressId': 2990, 'matchKey': 'extData.answerOutQid', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'a79cbbd7|22cf|44ff|b408|46aaeb292399', 'matchOper': '=='}, {'expressId': 4666, 'matchKey': 'action.code', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'KEEP', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.231212+08:00', 'updated_at': '2026-01-22T16:54:43.231212+08:00', 'streamKey': ''}, {'id': 84, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 5143, 'caseName': '¡¾MFAQ¡¿´ó²Ëµ¥Ê×ÆÁÍÆBU', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274645","guid":"IMFAQ-a99b2ff9-5e1b-4823-9f11-d682fc404071","userID":"TIHK19v1qjeu6zou","cid":"09031156310510335525","corp":"ctrip","bu":"calldefault","tag":"trip_main_menu_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"\\"}","groupCode":"CALLDEFAULT","requestType":1,"platform":3,"pageId":"","clientVersion":null,"extData":{"Locale":"en_us","offset":"28800000","imBuSwitchList":"[{\\"bizType\\":1321,\\"aiTag\\":\\"ctrip_hotel_aftersale_English_client\\",\\"buCode\\":\\"IBU_Hotel\\"},{\\"bizType\\":1322,\\"aiTag\\":\\"ctrip_ibu_flight_aftersale_client\\",\\"buCode\\":\\"IBU_Flight\\"},{\\"bizType\\":1323,\\"aiTag\\":\\"ctrip_ibu_train_aftersale_client\\",\\"buCode\\":\\"IBU_Train\\"},{\\"bizType\\":1336,\\"aiTag\\":\\"ctrip_ibu_AirportTransfers_client\\",\\"buCode\\":\\"IBU_AirportTransfer\\"},{\\"bizType\\":1337,\\"aiTag\\":\\"ctrip_ibu_carrental_client\\",\\"buCode\\":\\"IBU_RentCar\\"},{\\"bizType\\":1344,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Play_client\\",\\"buCode\\":\\"IBU_Activity\\"},{\\"bizType\\":1495,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Cruise_client\\",\\"buCode\\":\\"IBU_Cruises\\"},{\\"bizType\\":2435,\\"aiTag\\":\\"ctrip_ibu_trip_client\\",\\"buCode\\":\\"IBU_PrivateTours\\"},{\\"bizType\\":2389,\\"aiTag\\":\\"ctrip_ibu_grouptour_client\\",\\"buCode\\":\\"IBU_PackageTour\\"},{\\"bizType\\":2485,\\"aiTag\\":\\"ctrip_car_charter_trip_client\\",\\"buCode\\":\\"IBU_CharterCarTrip\\"},{\\"bizType\\":1614,\\"aiTag\\":\\"ctrip_ibu_giftcard_client\\",\\"buCode\\":\\"IBU_GiftCard\\"},{\\"bizType\\":2400,\\"aiTag\\":\\"ctrip_ibu_insurance_AIQ_client\\",\\"buCode\\":\\"IBU_Insurance\\"}]","channel":"","timeZone":"Asia/Shanghai","hotelId":"","imParentSid":"300000002274645","sessionId":"300000002274645","syscode":"","sessionRevisit":"0","imBizType":"2404","imClientIp":"10.18.120.190","pagecode":"","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 3996, 'expressList': [{'expressId': 2119, 'matchKey': 'extData.MhfqV', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'LM', 'matchOper': '=='}, {'expressId': 5968, 'matchKey': 'extPacks[0].data.entiytList[0].params', 'keyType': 'str', 'matchMethod': '0', 'matchValue': '{"data":"{}","type":"FAQ"}', 'matchOper': '=='}, {'expressId': 7355, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'BUSELECT', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.233334+08:00', 'updated_at': '2026-01-22T16:54:43.233334+08:00', 'streamKey': ''}, {'id': 85, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 6378, 'caseName': '¡¾MFAQ¡¿´ó²Ëµ¥Ê×ÆÁÍÆ¶©µ¥', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274645","guid":"IMFAQ-a99b2ff9-5e1b-4823-9f11-d682fc404071","userID":"_TIHK19v1qjeu6zou","cid":"09031156310510335525","corp":"ctrip","bu":"calldefault","tag":"trip_main_menu_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"\\"}","groupCode":"CALLDEFAULT","requestType":1,"platform":3,"pageId":"","clientVersion":null,"extData":{"Locale":"en_us","offset":"28800000","imBuSwitchList":"[{\\"bizType\\":1321,\\"aiTag\\":\\"ctrip_hotel_aftersale_English_client\\",\\"buCode\\":\\"IBU_Hotel\\"},{\\"bizType\\":1322,\\"aiTag\\":\\"ctrip_ibu_flight_aftersale_client\\",\\"buCode\\":\\"IBU_Flight\\"},{\\"bizType\\":1323,\\"aiTag\\":\\"ctrip_ibu_train_aftersale_client\\",\\"buCode\\":\\"IBU_Train\\"},{\\"bizType\\":1336,\\"aiTag\\":\\"ctrip_ibu_AirportTransfers_client\\",\\"buCode\\":\\"IBU_AirportTransfer\\"},{\\"bizType\\":1337,\\"aiTag\\":\\"ctrip_ibu_carrental_client\\",\\"buCode\\":\\"IBU_RentCar\\"},{\\"bizType\\":1344,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Play_client\\",\\"buCode\\":\\"IBU_Activity\\"},{\\"bizType\\":1495,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Cruise_client\\",\\"buCode\\":\\"IBU_Cruises\\"},{\\"bizType\\":2435,\\"aiTag\\":\\"ctrip_ibu_trip_client\\",\\"buCode\\":\\"IBU_PrivateTours\\"},{\\"bizType\\":2389,\\"aiTag\\":\\"ctrip_ibu_grouptour_client\\",\\"buCode\\":\\"IBU_PackageTour\\"},{\\"bizType\\":2485,\\"aiTag\\":\\"ctrip_car_charter_trip_client\\",\\"buCode\\":\\"IBU_CharterCarTrip\\"},{\\"bizType\\":1614,\\"aiTag\\":\\"ctrip_ibu_giftcard_client\\",\\"buCode\\":\\"IBU_GiftCard\\"},{\\"bizType\\":2400,\\"aiTag\\":\\"ctrip_ibu_insurance_AIQ_client\\",\\"buCode\\":\\"IBU_Insurance\\"}]","channel":"","timeZone":"Asia/Shanghai","hotelId":"","imParentSid":"300000002274645","sessionId":"300000002274645","syscode":"","sessionRevisit":"0","imBizType":"2404","imClientIp":"10.18.120.190","pagecode":"","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 9944, 'expressList': [{'expressId': 1923, 'matchKey': 'extData.MhfqV', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'LM', 'matchOper': '=='}, {'expressId': 2665, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'ORDERCONFIRMSELECT', 'matchOper': '=='}, {'expressId': 5674, 'matchKey': 'extPacks[0].data.entiytList[0].params', 'keyType': 'str', 'matchMethod': '0', 'matchValue': '{"data":"{}","type":"FAQ"}', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.234445+08:00', 'updated_at': '2026-01-22T16:54:43.235481+08:00', 'streamKey': ''}, {'id': 86, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 9962, 'caseName': '¡¾MFAQ¡¿µ¥·şÎñ½ø¶È', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"servercard","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 5123, 'expressList': [{'expressId': 1852, 'matchKey': 'extPacks[0].data.resource.iconMap.5034', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'https://dimg04.fws.qa.nt.ctripcorp.com/images/0B7651200004qc4za13F7.png', 'matchOper': '=='}, {'expressId': 3543, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDS', 'matchOper': '=='}, {'expressId': 5640, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '0', 'matchOper': '=='}, {'expressId': 7791, 'matchKey': 'extPacks[0].data.entiytList[0].entityList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDINFO', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.236496+08:00', 'updated_at': '2026-01-22T16:54:43.236496+08:00', 'streamKey': ''}]
+[2026-01-22 16:58:34] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 157
+[2026-01-22 17:00:05] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-22 17:00:07] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-22 17:00:09] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-22 17:00:09] INFO [apps.celery_task.views:43] FAQ¸÷³¡¾°µ¥Àı»Ø¹éÌ×¼şÖ´ĞĞ
+[2026-01-22 17:00:09] INFO [commons.abs.baserequest:69] [{'id': 81, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 1172, 'caseName': '¡¾MFAQ¡¿·şÎñ½ø¶È+Q', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"111","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 8889, 'expressList': [{'expressId': 1302, 'matchKey': 'extPacks[0].data.resource.iconMap.5034', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'https://dimg04.fws.qa.nt.ctripcorp.com/images/0B7651200004qc4za13F7.png', 'matchOper': '=='}, {'expressId': 5044, 'matchKey': 'extPacks[0].data.entiytList[0].entityList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDINFO', 'matchOper': '=='}, {'expressId': 6664, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDS', 'matchOper': '=='}, {'expressId': 9362, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '1', 'matchOper': '>='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.220231+08:00', 'updated_at': '2026-01-22T16:54:43.220231+08:00', 'streamKey': ''}, {'id': 82, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 1254, 'caseName': '¡¾MFAQ¡¿´ğ°¸Ö±Âä+faq', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"answerout+faq","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 8150, 'expressList': [{'expressId': 2275, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '1', 'matchOper': '>='}, {'expressId': 9957, 'matchKey': 'extData.answerOutQid', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'a79cbbd7|22cf|44ff|b408|46aaeb292399', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.229167+08:00', 'updated_at': '2026-01-22T16:54:43.229167+08:00', 'streamKey': ''}, {'id': 83, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 2219, 'caseName': '¡¾MFAQ¡¿½ö´ğ°¸Ö±Âä', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"answerout","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 4894, 'expressList': [{'expressId': 1140, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '0', 'matchOper': '=='}, {'expressId': 2990, 'matchKey': 'extData.answerOutQid', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'a79cbbd7|22cf|44ff|b408|46aaeb292399', 'matchOper': '=='}, {'expressId': 4666, 'matchKey': 'action.code', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'KEEP', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.231212+08:00', 'updated_at': '2026-01-22T16:54:43.231212+08:00', 'streamKey': ''}, {'id': 84, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 5143, 'caseName': '¡¾MFAQ¡¿´ó²Ëµ¥Ê×ÆÁÍÆBU', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274645","guid":"IMFAQ-a99b2ff9-5e1b-4823-9f11-d682fc404071","userID":"TIHK19v1qjeu6zou","cid":"09031156310510335525","corp":"ctrip","bu":"calldefault","tag":"trip_main_menu_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"\\"}","groupCode":"CALLDEFAULT","requestType":1,"platform":3,"pageId":"","clientVersion":null,"extData":{"Locale":"en_us","offset":"28800000","imBuSwitchList":"[{\\"bizType\\":1321,\\"aiTag\\":\\"ctrip_hotel_aftersale_English_client\\",\\"buCode\\":\\"IBU_Hotel\\"},{\\"bizType\\":1322,\\"aiTag\\":\\"ctrip_ibu_flight_aftersale_client\\",\\"buCode\\":\\"IBU_Flight\\"},{\\"bizType\\":1323,\\"aiTag\\":\\"ctrip_ibu_train_aftersale_client\\",\\"buCode\\":\\"IBU_Train\\"},{\\"bizType\\":1336,\\"aiTag\\":\\"ctrip_ibu_AirportTransfers_client\\",\\"buCode\\":\\"IBU_AirportTransfer\\"},{\\"bizType\\":1337,\\"aiTag\\":\\"ctrip_ibu_carrental_client\\",\\"buCode\\":\\"IBU_RentCar\\"},{\\"bizType\\":1344,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Play_client\\",\\"buCode\\":\\"IBU_Activity\\"},{\\"bizType\\":1495,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Cruise_client\\",\\"buCode\\":\\"IBU_Cruises\\"},{\\"bizType\\":2435,\\"aiTag\\":\\"ctrip_ibu_trip_client\\",\\"buCode\\":\\"IBU_PrivateTours\\"},{\\"bizType\\":2389,\\"aiTag\\":\\"ctrip_ibu_grouptour_client\\",\\"buCode\\":\\"IBU_PackageTour\\"},{\\"bizType\\":2485,\\"aiTag\\":\\"ctrip_car_charter_trip_client\\",\\"buCode\\":\\"IBU_CharterCarTrip\\"},{\\"bizType\\":1614,\\"aiTag\\":\\"ctrip_ibu_giftcard_client\\",\\"buCode\\":\\"IBU_GiftCard\\"},{\\"bizType\\":2400,\\"aiTag\\":\\"ctrip_ibu_insurance_AIQ_client\\",\\"buCode\\":\\"IBU_Insurance\\"}]","channel":"","timeZone":"Asia/Shanghai","hotelId":"","imParentSid":"300000002274645","sessionId":"300000002274645","syscode":"","sessionRevisit":"0","imBizType":"2404","imClientIp":"10.18.120.190","pagecode":"","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 3996, 'expressList': [{'expressId': 2119, 'matchKey': 'extData.MhfqV', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'LM', 'matchOper': '=='}, {'expressId': 5968, 'matchKey': 'extPacks[0].data.entiytList[0].params', 'keyType': 'str', 'matchMethod': '0', 'matchValue': '{"data":"{}","type":"FAQ"}', 'matchOper': '=='}, {'expressId': 7355, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'BUSELECT', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.233334+08:00', 'updated_at': '2026-01-22T16:54:43.233334+08:00', 'streamKey': ''}, {'id': 85, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 6378, 'caseName': '¡¾MFAQ¡¿´ó²Ëµ¥Ê×ÆÁÍÆ¶©µ¥', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274645","guid":"IMFAQ-a99b2ff9-5e1b-4823-9f11-d682fc404071","userID":"_TIHK19v1qjeu6zou","cid":"09031156310510335525","corp":"ctrip","bu":"calldefault","tag":"trip_main_menu_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"\\"}","groupCode":"CALLDEFAULT","requestType":1,"platform":3,"pageId":"","clientVersion":null,"extData":{"Locale":"en_us","offset":"28800000","imBuSwitchList":"[{\\"bizType\\":1321,\\"aiTag\\":\\"ctrip_hotel_aftersale_English_client\\",\\"buCode\\":\\"IBU_Hotel\\"},{\\"bizType\\":1322,\\"aiTag\\":\\"ctrip_ibu_flight_aftersale_client\\",\\"buCode\\":\\"IBU_Flight\\"},{\\"bizType\\":1323,\\"aiTag\\":\\"ctrip_ibu_train_aftersale_client\\",\\"buCode\\":\\"IBU_Train\\"},{\\"bizType\\":1336,\\"aiTag\\":\\"ctrip_ibu_AirportTransfers_client\\",\\"buCode\\":\\"IBU_AirportTransfer\\"},{\\"bizType\\":1337,\\"aiTag\\":\\"ctrip_ibu_carrental_client\\",\\"buCode\\":\\"IBU_RentCar\\"},{\\"bizType\\":1344,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Play_client\\",\\"buCode\\":\\"IBU_Activity\\"},{\\"bizType\\":1495,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Cruise_client\\",\\"buCode\\":\\"IBU_Cruises\\"},{\\"bizType\\":2435,\\"aiTag\\":\\"ctrip_ibu_trip_client\\",\\"buCode\\":\\"IBU_PrivateTours\\"},{\\"bizType\\":2389,\\"aiTag\\":\\"ctrip_ibu_grouptour_client\\",\\"buCode\\":\\"IBU_PackageTour\\"},{\\"bizType\\":2485,\\"aiTag\\":\\"ctrip_car_charter_trip_client\\",\\"buCode\\":\\"IBU_CharterCarTrip\\"},{\\"bizType\\":1614,\\"aiTag\\":\\"ctrip_ibu_giftcard_client\\",\\"buCode\\":\\"IBU_GiftCard\\"},{\\"bizType\\":2400,\\"aiTag\\":\\"ctrip_ibu_insurance_AIQ_client\\",\\"buCode\\":\\"IBU_Insurance\\"}]","channel":"","timeZone":"Asia/Shanghai","hotelId":"","imParentSid":"300000002274645","sessionId":"300000002274645","syscode":"","sessionRevisit":"0","imBizType":"2404","imClientIp":"10.18.120.190","pagecode":"","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 9944, 'expressList': [{'expressId': 1923, 'matchKey': 'extData.MhfqV', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'LM', 'matchOper': '=='}, {'expressId': 2665, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'ORDERCONFIRMSELECT', 'matchOper': '=='}, {'expressId': 5674, 'matchKey': 'extPacks[0].data.entiytList[0].params', 'keyType': 'str', 'matchMethod': '0', 'matchValue': '{"data":"{}","type":"FAQ"}', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.234445+08:00', 'updated_at': '2026-01-22T16:54:43.235481+08:00', 'streamKey': ''}, {'id': 86, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 9962, 'caseName': '¡¾MFAQ¡¿µ¥·şÎñ½ø¶È', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"servercard","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 5123, 'expressList': [{'expressId': 1852, 'matchKey': 'extPacks[0].data.resource.iconMap.5034', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'https://dimg04.fws.qa.nt.ctripcorp.com/images/0B7651200004qc4za13F7.png', 'matchOper': '=='}, {'expressId': 3543, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDS', 'matchOper': '=='}, {'expressId': 5640, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '0', 'matchOper': '=='}, {'expressId': 7791, 'matchKey': 'extPacks[0].data.entiytList[0].entityList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDINFO', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.236496+08:00', 'updated_at': '2026-01-22T16:54:43.236496+08:00', 'streamKey': ''}]
+[2026-01-22 17:00:13] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 157
+[2026-01-22 17:01:00] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-22 17:01:02] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-22 17:01:09] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-22 17:01:09] INFO [apps.celery_task.views:43] FAQ¸÷³¡¾°µ¥Àı»Ø¹éÌ×¼şÖ´ĞĞ
+[2026-01-22 17:01:09] INFO [commons.abs.baserequest:69] [{'id': 81, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 1172, 'caseName': '¡¾MFAQ¡¿·şÎñ½ø¶È+Q', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"111","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 8889, 'expressList': [{'expressId': 1302, 'matchKey': 'extPacks[0].data.resource.iconMap.5034', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'https://dimg04.fws.qa.nt.ctripcorp.com/images/0B7651200004qc4za13F7.png', 'matchOper': '=='}, {'expressId': 5044, 'matchKey': 'extPacks[0].data.entiytList[0].entityList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDINFO', 'matchOper': '=='}, {'expressId': 6664, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDS', 'matchOper': '=='}, {'expressId': 9362, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '1', 'matchOper': '>='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.220231+08:00', 'updated_at': '2026-01-22T16:54:43.220231+08:00', 'streamKey': ''}, {'id': 82, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 1254, 'caseName': '¡¾MFAQ¡¿´ğ°¸Ö±Âä+faq', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"answerout+faq","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 8150, 'expressList': [{'expressId': 2275, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '1', 'matchOper': '>='}, {'expressId': 9957, 'matchKey': 'extData.answerOutQid', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'a79cbbd7|22cf|44ff|b408|46aaeb292399', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.229167+08:00', 'updated_at': '2026-01-22T16:54:43.229167+08:00', 'streamKey': ''}, {'id': 83, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 2219, 'caseName': '¡¾MFAQ¡¿½ö´ğ°¸Ö±Âä', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"answerout","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 4894, 'expressList': [{'expressId': 1140, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '0', 'matchOper': '=='}, {'expressId': 2990, 'matchKey': 'extData.answerOutQid', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'a79cbbd7|22cf|44ff|b408|46aaeb292399', 'matchOper': '=='}, {'expressId': 4666, 'matchKey': 'action.code', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'KEEP', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.231212+08:00', 'updated_at': '2026-01-22T16:54:43.231212+08:00', 'streamKey': ''}, {'id': 84, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 5143, 'caseName': '¡¾MFAQ¡¿´ó²Ëµ¥Ê×ÆÁÍÆBU', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274645","guid":"IMFAQ-a99b2ff9-5e1b-4823-9f11-d682fc404071","userID":"TIHK19v1qjeu6zou","cid":"09031156310510335525","corp":"ctrip","bu":"calldefault","tag":"trip_main_menu_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"\\"}","groupCode":"CALLDEFAULT","requestType":1,"platform":3,"pageId":"","clientVersion":null,"extData":{"Locale":"en_us","offset":"28800000","imBuSwitchList":"[{\\"bizType\\":1321,\\"aiTag\\":\\"ctrip_hotel_aftersale_English_client\\",\\"buCode\\":\\"IBU_Hotel\\"},{\\"bizType\\":1322,\\"aiTag\\":\\"ctrip_ibu_flight_aftersale_client\\",\\"buCode\\":\\"IBU_Flight\\"},{\\"bizType\\":1323,\\"aiTag\\":\\"ctrip_ibu_train_aftersale_client\\",\\"buCode\\":\\"IBU_Train\\"},{\\"bizType\\":1336,\\"aiTag\\":\\"ctrip_ibu_AirportTransfers_client\\",\\"buCode\\":\\"IBU_AirportTransfer\\"},{\\"bizType\\":1337,\\"aiTag\\":\\"ctrip_ibu_carrental_client\\",\\"buCode\\":\\"IBU_RentCar\\"},{\\"bizType\\":1344,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Play_client\\",\\"buCode\\":\\"IBU_Activity\\"},{\\"bizType\\":1495,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Cruise_client\\",\\"buCode\\":\\"IBU_Cruises\\"},{\\"bizType\\":2435,\\"aiTag\\":\\"ctrip_ibu_trip_client\\",\\"buCode\\":\\"IBU_PrivateTours\\"},{\\"bizType\\":2389,\\"aiTag\\":\\"ctrip_ibu_grouptour_client\\",\\"buCode\\":\\"IBU_PackageTour\\"},{\\"bizType\\":2485,\\"aiTag\\":\\"ctrip_car_charter_trip_client\\",\\"buCode\\":\\"IBU_CharterCarTrip\\"},{\\"bizType\\":1614,\\"aiTag\\":\\"ctrip_ibu_giftcard_client\\",\\"buCode\\":\\"IBU_GiftCard\\"},{\\"bizType\\":2400,\\"aiTag\\":\\"ctrip_ibu_insurance_AIQ_client\\",\\"buCode\\":\\"IBU_Insurance\\"}]","channel":"","timeZone":"Asia/Shanghai","hotelId":"","imParentSid":"300000002274645","sessionId":"300000002274645","syscode":"","sessionRevisit":"0","imBizType":"2404","imClientIp":"10.18.120.190","pagecode":"","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 3996, 'expressList': [{'expressId': 2119, 'matchKey': 'extData.MhfqV', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'LM', 'matchOper': '=='}, {'expressId': 5968, 'matchKey': 'extPacks[0].data.entiytList[0].params', 'keyType': 'str', 'matchMethod': '0', 'matchValue': '{"data":"{}","type":"FAQ"}', 'matchOper': '=='}, {'expressId': 7355, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'BUSELECT', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.233334+08:00', 'updated_at': '2026-01-22T16:54:43.233334+08:00', 'streamKey': ''}, {'id': 85, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 6378, 'caseName': '¡¾MFAQ¡¿´ó²Ëµ¥Ê×ÆÁÍÆ¶©µ¥', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274645","guid":"IMFAQ-a99b2ff9-5e1b-4823-9f11-d682fc404071","userID":"_TIHK19v1qjeu6zou","cid":"09031156310510335525","corp":"ctrip","bu":"calldefault","tag":"trip_main_menu_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"\\"}","groupCode":"CALLDEFAULT","requestType":1,"platform":3,"pageId":"","clientVersion":null,"extData":{"Locale":"en_us","offset":"28800000","imBuSwitchList":"[{\\"bizType\\":1321,\\"aiTag\\":\\"ctrip_hotel_aftersale_English_client\\",\\"buCode\\":\\"IBU_Hotel\\"},{\\"bizType\\":1322,\\"aiTag\\":\\"ctrip_ibu_flight_aftersale_client\\",\\"buCode\\":\\"IBU_Flight\\"},{\\"bizType\\":1323,\\"aiTag\\":\\"ctrip_ibu_train_aftersale_client\\",\\"buCode\\":\\"IBU_Train\\"},{\\"bizType\\":1336,\\"aiTag\\":\\"ctrip_ibu_AirportTransfers_client\\",\\"buCode\\":\\"IBU_AirportTransfer\\"},{\\"bizType\\":1337,\\"aiTag\\":\\"ctrip_ibu_carrental_client\\",\\"buCode\\":\\"IBU_RentCar\\"},{\\"bizType\\":1344,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Play_client\\",\\"buCode\\":\\"IBU_Activity\\"},{\\"bizType\\":1495,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Cruise_client\\",\\"buCode\\":\\"IBU_Cruises\\"},{\\"bizType\\":2435,\\"aiTag\\":\\"ctrip_ibu_trip_client\\",\\"buCode\\":\\"IBU_PrivateTours\\"},{\\"bizType\\":2389,\\"aiTag\\":\\"ctrip_ibu_grouptour_client\\",\\"buCode\\":\\"IBU_PackageTour\\"},{\\"bizType\\":2485,\\"aiTag\\":\\"ctrip_car_charter_trip_client\\",\\"buCode\\":\\"IBU_CharterCarTrip\\"},{\\"bizType\\":1614,\\"aiTag\\":\\"ctrip_ibu_giftcard_client\\",\\"buCode\\":\\"IBU_GiftCard\\"},{\\"bizType\\":2400,\\"aiTag\\":\\"ctrip_ibu_insurance_AIQ_client\\",\\"buCode\\":\\"IBU_Insurance\\"}]","channel":"","timeZone":"Asia/Shanghai","hotelId":"","imParentSid":"300000002274645","sessionId":"300000002274645","syscode":"","sessionRevisit":"0","imBizType":"2404","imClientIp":"10.18.120.190","pagecode":"","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 9944, 'expressList': [{'expressId': 1923, 'matchKey': 'extData.MhfqV', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'LM', 'matchOper': '=='}, {'expressId': 2665, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'ORDERCONFIRMSELECT', 'matchOper': '=='}, {'expressId': 5674, 'matchKey': 'extPacks[0].data.entiytList[0].params', 'keyType': 'str', 'matchMethod': '0', 'matchValue': '{"data":"{}","type":"FAQ"}', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.234445+08:00', 'updated_at': '2026-01-22T16:54:43.235481+08:00', 'streamKey': ''}, {'id': 86, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 9962, 'caseName': '¡¾MFAQ¡¿µ¥·şÎñ½ø¶È', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"servercard","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 5123, 'expressList': [{'expressId': 1852, 'matchKey': 'extPacks[0].data.resource.iconMap.5034', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'https://dimg04.fws.qa.nt.ctripcorp.com/images/0B7651200004qc4za13F7.png', 'matchOper': '=='}, {'expressId': 3543, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDS', 'matchOper': '=='}, {'expressId': 5640, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '0', 'matchOper': '=='}, {'expressId': 7791, 'matchKey': 'extPacks[0].data.entiytList[0].entityList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDINFO', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.236496+08:00', 'updated_at': '2026-01-22T16:54:43.236496+08:00', 'streamKey': ''}]
+[2026-01-22 17:01:11] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 157
+[2026-01-22 17:05:36] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-22 17:05:54] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-22 17:05:54] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 15297
+[2026-01-22 17:05:56] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-22 17:05:56] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 14881
+[2026-01-22 17:05:57] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-22 17:05:57] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-22 17:06:59] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-22 17:06:59] INFO [apps.celery_task.views:46] getBIMultiLayerFAQ½Ó¿Ú¡¾MFAQ¡¿´ó²Ëµ¥Ê×ÆÁÍÆ¶©µ¥ÓÃÀıÖ´ĞĞ
+[2026-01-22 17:07:00] INFO [apps.celery_task.views:74] ¡¾MFAQ¡¿´ó²Ëµ¥Ê×ÆÁÍÆ¶©µ¥ÓÃÀı·µ»Ø
+[2026-01-22 17:07:00] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 64
+[2026-01-22 17:07:04] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-22 17:07:04] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 14881
+[2026-01-22 17:07:05] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-22 17:07:05] INFO [apps.celery_task.views:46] getBIMultiLayerFAQ½Ó¿Ú¡¾MFAQ¡¿´ó²Ëµ¥Ê×ÆÁÍÆ¶©µ¥ÓÃÀıÖ´ĞĞ
+[2026-01-22 17:07:06] INFO [apps.celery_task.views:74] ¡¾MFAQ¡¿´ó²Ëµ¥Ê×ÆÁÍÆ¶©µ¥ÓÃÀı·µ»Ø
+[2026-01-22 17:07:06] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 64
+[2026-01-22 17:07:11] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-22 17:07:11] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-22 17:08:05] INFO [django.server:213] "OPTIONS /api/httpcase/update HTTP/1.1" 200 0
+[2026-01-22 17:08:05] INFO [django.server:213] "POST /api/httpcase/update HTTP/1.1" 200 3422
+[2026-01-22 17:08:05] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-22 17:08:05] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 14887
+[2026-01-22 17:08:23] INFO [django.server:213] "OPTIONS /api/httpcase/update HTTP/1.1" 200 0
+[2026-01-22 17:08:23] INFO [django.server:213] "POST /api/httpcase/update HTTP/1.1" 200 3407
+[2026-01-22 17:08:23] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-22 17:08:23] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 14893
+[2026-01-22 17:08:33] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-22 17:08:33] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 15309
+[2026-01-22 17:08:34] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-22 17:08:34] INFO [apps.celery_task.views:43] FAQ¸÷³¡¾°µ¥Àı»Ø¹éÌ×¼şÖ´ĞĞ
+[2026-01-22 17:08:34] INFO [commons.abs.baserequest:69] [{'id': 81, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 1172, 'caseName': '¡¾MFAQ¡¿·şÎñ½ø¶È+Q', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"111","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 8889, 'expressList': [{'expressId': 1302, 'matchKey': 'extPacks[0].data.resource.iconMap.5034', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'https://dimg04.fws.qa.nt.ctripcorp.com/images/0B7651200004qc4za13F7.png', 'matchOper': '=='}, {'expressId': 5044, 'matchKey': 'extPacks[0].data.entiytList[0].entityList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDINFO', 'matchOper': '=='}, {'expressId': 6664, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDS', 'matchOper': '=='}, {'expressId': 9362, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '1', 'matchOper': '>='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.220231+08:00', 'updated_at': '2026-01-22T16:54:43.220231+08:00', 'streamKey': ''}, {'id': 82, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 1254, 'caseName': '¡¾MFAQ¡¿´ğ°¸Ö±Âä+faq', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"answerout+faq","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 8150, 'expressList': [{'expressId': 2275, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '1', 'matchOper': '>='}, {'expressId': 9957, 'matchKey': 'extData.answerOutQid', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'a79cbbd7|22cf|44ff|b408|46aaeb292399', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.229167+08:00', 'updated_at': '2026-01-22T16:54:43.229167+08:00', 'streamKey': ''}, {'id': 83, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 2219, 'caseName': '¡¾MFAQ¡¿½ö´ğ°¸Ö±Âä', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"answerout","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 4894, 'expressList': [{'expressId': 1140, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '0', 'matchOper': '=='}, {'expressId': 2990, 'matchKey': 'extData.answerOutQid', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'a79cbbd7|22cf|44ff|b408|46aaeb292399', 'matchOper': '=='}, {'expressId': 4666, 'matchKey': 'action.code', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'KEEP', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.231212+08:00', 'updated_at': '2026-01-22T16:54:43.231212+08:00', 'streamKey': ''}, {'id': 84, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 5143, 'caseName': '¡¾MFAQ¡¿´ó²Ëµ¥Ê×ÆÁÍÆBU', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274645","guid":"IMFAQ-a99b2ff9-5e1b-4823-9f11-d682fc404071","userID":"TIHK19v1qjeu6zou","cid":"09031156310510335525","corp":"ctrip","bu":"calldefault","tag":"trip_main_menu_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"\\"}","groupCode":"CALLDEFAULT","requestType":1,"platform":3,"pageId":"","clientVersion":null,"extData":{"Locale":"en_us","offset":"28800000","imBuSwitchList":"[{\\"bizType\\":1321,\\"aiTag\\":\\"ctrip_hotel_aftersale_English_client\\",\\"buCode\\":\\"IBU_Hotel\\"},{\\"bizType\\":1322,\\"aiTag\\":\\"ctrip_ibu_flight_aftersale_client\\",\\"buCode\\":\\"IBU_Flight\\"},{\\"bizType\\":1323,\\"aiTag\\":\\"ctrip_ibu_train_aftersale_client\\",\\"buCode\\":\\"IBU_Train\\"},{\\"bizType\\":1336,\\"aiTag\\":\\"ctrip_ibu_AirportTransfers_client\\",\\"buCode\\":\\"IBU_AirportTransfer\\"},{\\"bizType\\":1337,\\"aiTag\\":\\"ctrip_ibu_carrental_client\\",\\"buCode\\":\\"IBU_RentCar\\"},{\\"bizType\\":1344,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Play_client\\",\\"buCode\\":\\"IBU_Activity\\"},{\\"bizType\\":1495,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Cruise_client\\",\\"buCode\\":\\"IBU_Cruises\\"},{\\"bizType\\":2435,\\"aiTag\\":\\"ctrip_ibu_trip_client\\",\\"buCode\\":\\"IBU_PrivateTours\\"},{\\"bizType\\":2389,\\"aiTag\\":\\"ctrip_ibu_grouptour_client\\",\\"buCode\\":\\"IBU_PackageTour\\"},{\\"bizType\\":2485,\\"aiTag\\":\\"ctrip_car_charter_trip_client\\",\\"buCode\\":\\"IBU_CharterCarTrip\\"},{\\"bizType\\":1614,\\"aiTag\\":\\"ctrip_ibu_giftcard_client\\",\\"buCode\\":\\"IBU_GiftCard\\"},{\\"bizType\\":2400,\\"aiTag\\":\\"ctrip_ibu_insurance_AIQ_client\\",\\"buCode\\":\\"IBU_Insurance\\"}]","channel":"","timeZone":"Asia/Shanghai","hotelId":"","imParentSid":"300000002274645","sessionId":"300000002274645","syscode":"","sessionRevisit":"0","imBizType":"2404","imClientIp":"10.18.120.190","pagecode":"","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 3996, 'expressList': [{'expressId': 2119, 'matchKey': 'extData.MhfqV', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'LM', 'matchOper': '=='}, {'expressId': 5968, 'matchKey': 'extPacks[0].data.entiytList[0].attrs.params', 'keyType': 'str', 'matchMethod': '0', 'matchValue': '{"data":"{}","type":"FAQ"}', 'matchOper': '=='}, {'expressId': 7355, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'BUSELECT', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.233334+08:00', 'updated_at': '2026-01-22T16:54:43.233334+08:00', 'streamKey': ''}, {'id': 85, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 6378, 'caseName': '¡¾MFAQ¡¿´ó²Ëµ¥Ê×ÆÁÍÆ¶©µ¥', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274645","guid":"IMFAQ-a99b2ff9-5e1b-4823-9f11-d682fc404071","userID":"_TIHK19v1qjeu6zou","cid":"09031156310510335525","corp":"ctrip","bu":"calldefault","tag":"trip_main_menu_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"\\"}","groupCode":"CALLDEFAULT","requestType":1,"platform":3,"pageId":"","clientVersion":null,"extData":{"Locale":"en_us","offset":"28800000","imBuSwitchList":"[{\\"bizType\\":1321,\\"aiTag\\":\\"ctrip_hotel_aftersale_English_client\\",\\"buCode\\":\\"IBU_Hotel\\"},{\\"bizType\\":1322,\\"aiTag\\":\\"ctrip_ibu_flight_aftersale_client\\",\\"buCode\\":\\"IBU_Flight\\"},{\\"bizType\\":1323,\\"aiTag\\":\\"ctrip_ibu_train_aftersale_client\\",\\"buCode\\":\\"IBU_Train\\"},{\\"bizType\\":1336,\\"aiTag\\":\\"ctrip_ibu_AirportTransfers_client\\",\\"buCode\\":\\"IBU_AirportTransfer\\"},{\\"bizType\\":1337,\\"aiTag\\":\\"ctrip_ibu_carrental_client\\",\\"buCode\\":\\"IBU_RentCar\\"},{\\"bizType\\":1344,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Play_client\\",\\"buCode\\":\\"IBU_Activity\\"},{\\"bizType\\":1495,\\"aiTag\\":\\"ctrip_IBU_Multilingual_Cruise_client\\",\\"buCode\\":\\"IBU_Cruises\\"},{\\"bizType\\":2435,\\"aiTag\\":\\"ctrip_ibu_trip_client\\",\\"buCode\\":\\"IBU_PrivateTours\\"},{\\"bizType\\":2389,\\"aiTag\\":\\"ctrip_ibu_grouptour_client\\",\\"buCode\\":\\"IBU_PackageTour\\"},{\\"bizType\\":2485,\\"aiTag\\":\\"ctrip_car_charter_trip_client\\",\\"buCode\\":\\"IBU_CharterCarTrip\\"},{\\"bizType\\":1614,\\"aiTag\\":\\"ctrip_ibu_giftcard_client\\",\\"buCode\\":\\"IBU_GiftCard\\"},{\\"bizType\\":2400,\\"aiTag\\":\\"ctrip_ibu_insurance_AIQ_client\\",\\"buCode\\":\\"IBU_Insurance\\"}]","channel":"","timeZone":"Asia/Shanghai","hotelId":"","imParentSid":"300000002274645","sessionId":"300000002274645","syscode":"","sessionRevisit":"0","imBizType":"2404","imClientIp":"10.18.120.190","pagecode":"","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 9944, 'expressList': [{'expressId': 1923, 'matchKey': 'extData.MhfqV', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'LM', 'matchOper': '=='}, {'expressId': 2665, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'ORDERCONFIRMSELECT', 'matchOper': '=='}, {'expressId': 5674, 'matchKey': 'extPacks[0].data.entiytList[0].attrs.params', 'keyType': 'str', 'matchMethod': '0', 'matchValue': '{"data":"{}","type":"FAQ"}', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.234445+08:00', 'updated_at': '2026-01-22T16:54:43.235481+08:00', 'streamKey': ''}, {'id': 86, 'case': {'createUser': None, 'updateUser': 'Admin@qq.com', 'caseId': 9962, 'caseName': '¡¾MFAQ¡¿µ¥·şÎñ½ø¶È', 'headers': None, 'body': '{"appId":"100009253","sessionId":"300000002274631","guid":"IMFAQ-f063472e-dd95-45a4-959e-b100c54a99a0","userID":"servercard","cid":"","corp":"ctrip","bu":"hotel","tag":"ctrip_hotel_aftersale_English_client","casevalue":null,"orderID":null,"corpOrderId":null,"questionId":"","coordinate":{"lat":null,"lon":null,"cityId":2,"coordinate":null},"productInfo":"{\\"syscode\\":\\"\\",\\"orderId\\":\\"\\",\\"bucode\\":\\"HTL\\",\\"hotelId\\":\\"\\",\\"hotelID\\":\\"\\"}","groupCode":"HotelLocal","requestType":1,"platform":2,"pageId":"10320668088","clientVersion":null,"extData":{"Locale":"en_US","offset":"28800000","channel":"HTL","timeZone":"Asia/Shanghai","hotelId":"","pageFrom":"10320668088","syscode":"","sessionRevisit":"0","imBizType":"1321","imClientIp":"10.18.120.190","pagecode":"10320668088","faqScene":"initial","imHeadAuth":"E9AB39125C97FFE850EDDB0ECE1E711A3DF77E48D5F6FE69D506E360B9F50EA6"},"aitoken":"","thirdPartytoken":""}', 'timeout': 3, 'retries': 3, 'isCore': False, 'port': 8949, 'url': 'http://aichat.fws.qa.nt.ctripcorp.com/getBIMultiLayerFAQ', 'expressItem': [{'expressItemId': 5123, 'expressList': [{'expressId': 1852, 'matchKey': 'extPacks[0].data.resource.iconMap.5034', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'https://dimg04.fws.qa.nt.ctripcorp.com/images/0B7651200004qc4za13F7.png', 'matchOper': '=='}, {'expressId': 3543, 'matchKey': 'extPacks[0].data.entiytList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDS', 'matchOper': '=='}, {'expressId': 5640, 'matchKey': 'questions', 'keyType': 'int', 'matchMethod': 'len', 'matchValue': '0', 'matchOper': '=='}, {'expressId': 7791, 'matchKey': 'extPacks[0].data.entiytList[0].entityList[0].type', 'keyType': 'str', 'matchMethod': '0', 'matchValue': 'PRCCRDINFO', 'matchOper': '=='}]}]}, 'execution_order': 0, 'is_first': False, 'is_last': False, 'globalList': {}, 'created_at': '2026-01-22T16:54:43.236496+08:00', 'updated_at': '2026-01-22T16:54:43.236496+08:00', 'streamKey': ''}]
+[2026-01-22 17:08:36] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 44609
+[2026-01-22 17:10:03] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-22 17:10:04] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-22 17:14:26] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-22 17:14:27] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-22 17:17:01] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-22 17:17:01] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 14893
+[2026-01-22 17:17:03] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-22 17:17:03] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-22 17:17:08] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-22 17:17:08] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-22 17:17:36] INFO [django.server:213] "OPTIONS /api/httpcase/add HTTP/1.1" 200 0
+[2026-01-22 17:17:36] INFO [django.server:213] "POST /api/httpcase/add HTTP/1.1" 200 3054
+[2026-01-22 17:17:36] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-22 17:17:37] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 17892
+[2026-01-22 17:17:43] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-22 17:17:43] INFO [apps.celery_task.views:46] getBIMultiLayerFAQ½Ó¿ÚsddsdÓÃÀıÖ´ĞĞ
+[2026-01-22 17:17:44] ERROR [commons.utils.request_util:35] 'sdsd'
+[2026-01-22 17:17:44] INFO [apps.celery_task.views:74] sddsdÓÃÀı·µ»Ø
+[2026-01-22 17:17:44] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 4899
+[2026-01-22 17:18:52] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-22 17:18:54] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-22 17:19:39] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-22 17:19:39] INFO [apps.celery_task.views:46] getBIMultiLayerFAQ½Ó¿ÚsddsdÓÃÀıÖ´ĞĞ
+[2026-01-22 17:19:39] ERROR [commons.utils.request_util:35] 'sdsd'²»´æÔÚ·µ»ØÌåÖĞ
+[2026-01-22 17:19:39] INFO [apps.celery_task.views:74] sddsdÓÃÀı·µ»Ø
+[2026-01-22 17:19:39] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 4899
+[2026-01-22 17:40:04] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-22 17:40:06] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-22 17:41:18] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-22 17:41:20] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-22 17:41:48] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 43723
+[2026-01-22 17:41:49] WARNING [django.request:248] Not Found: /favicon.ico
+[2026-01-22 17:41:49] WARNING [django.server:213] "GET /favicon.ico HTTP/1.1" 404 21157
+[2026-01-22 17:49:10] INFO [django.server:213] "OPTIONS /api/httpcase/del HTTP/1.1" 200 0
+[2026-01-22 17:49:10] INFO [django.server:213] "POST /api/httpcase/del HTTP/1.1" 200 58
+[2026-01-22 17:49:10] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-22 17:49:10] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 14893
+[2026-01-22 18:13:09] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-22 18:13:09] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-22 18:16:04] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-22 18:16:05] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-22 18:18:28] INFO [django.server:213] "OPTIONS /api/httpcase/add HTTP/1.1" 200 0
+[2026-01-22 18:18:28] INFO [django.server:213] "POST /api/httpcase/add HTTP/1.1" 200 4059
+[2026-01-22 18:18:28] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-22 18:18:28] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 18897
+[2026-01-22 18:47:41] INFO [django.server:213] "POST /api/httpcase/add HTTP/1.1" 200 981
+[2026-01-22 18:47:41] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 19823
+[2026-01-22 18:47:44] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 15309
+[2026-01-22 18:48:04] INFO [django.server:213] "OPTIONS /api/login HTTP/1.1" 200 0
+[2026-01-22 18:48:05] INFO [django.server:213] "POST /api/login HTTP/1.1" 200 371
+[2026-01-22 18:48:05] INFO [django.server:213] "OPTIONS /api/menu1 HTTP/1.1" 200 0
+[2026-01-22 18:48:05] INFO [django.server:213] "OPTIONS /api/menu1/ HTTP/1.1" 200 0
+[2026-01-22 18:48:05] INFO [django.server:213] "GET /api/menu1/ HTTP/1.1" 200 1408
+[2026-01-22 18:48:05] INFO [django.server:213] "OPTIONS /api/user/getPageList HTTP/1.1" 200 0
+[2026-01-22 18:48:05] INFO [django.server:213] "POST /api/user/getPageList HTTP/1.1" 200 391
+[2026-01-22 18:48:05] INFO [django.server:213] "OPTIONS /api/depart/getPageList HTTP/1.1" 200 0
+[2026-01-22 18:48:05] INFO [django.server:213] "POST /api/depart/getPageList HTTP/1.1" 200 24565
+[2026-01-22 18:48:08] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 15309
+[2026-01-22 18:49:26] INFO [django.server:213] "OPTIONS /api/suit/add HTTP/1.1" 200 0
+[2026-01-22 18:49:26] INFO [django.server:213] "POST /api/suit/add HTTP/1.1" 200 1217
+[2026-01-22 18:49:26] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-22 18:49:26] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 16471
+[2026-01-23 10:25:08] INFO [django.server:213] "OPTIONS /api/suit/getPageList HTTP/1.1" 200 0
+[2026-01-23 10:25:08] INFO [django.server:213] "POST /api/suit/getPageList HTTP/1.1" 200 16471
+[2026-01-23 10:25:32] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-23 10:25:32] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 19823
+[2026-01-23 10:26:46] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-23 10:26:46] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-23 10:35:20] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\abs\baserequest.py changed, reloading.
+[2026-01-23 10:35:23] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 10:37:46] INFO [django.server:213] "OPTIONS /api/httpcase/add HTTP/1.1" 200 0
+[2026-01-23 10:37:46] INFO [django.server:213] "POST /api/httpcase/add HTTP/1.1" 200 4092
+[2026-01-23 10:37:46] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 23860
+[2026-01-23 10:38:24] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 23860
+[2026-01-23 10:38:32] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-23 10:49:40] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-23 10:55:51] INFO [django.server:213] "POST /api/httpcase/add HTTP/1.1" 200 4310
+[2026-01-23 10:55:51] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 28116
+[2026-01-23 10:58:24] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-23 11:23:07] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\abs\baserequest.py changed, reloading.
+[2026-01-23 11:23:10] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 11:23:13] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-23 11:23:13] INFO [apps.celery_task.views:46] getBIMultiLayerFAQæ¥å£ã€MFAQã€‘å•æœåŠ¡è¿›åº¦ç”¨ä¾‹æ‰§è¡Œ
+[2026-01-23 11:23:13] INFO [apps.celery_task.views:74] ã€MFAQã€‘å•æœåŠ¡è¿›åº¦ç”¨ä¾‹è¿”å›
+[2026-01-23 11:23:13] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 13639
+[2026-01-23 11:26:39] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-23 11:32:38] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\abs\baserequest.py changed, reloading.
+[2026-01-23 11:32:41] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 13:51:03] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\abs\baserequest.py changed, reloading.
+[2026-01-23 13:51:06] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 13:53:04] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\abs\baserequest.py changed, reloading.
+[2026-01-23 13:53:07] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 14:06:19] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\assert_util.py changed, reloading.
+[2026-01-23 14:06:22] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 14:09:47] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\assert_util.py changed, reloading.
+[2026-01-23 14:09:50] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 14:13:36] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\assert_util.py changed, reloading.
+[2026-01-23 14:13:39] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 14:29:00] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-23 14:29:03] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 14:30:09] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-23 14:30:09] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 28116
+[2026-01-23 14:30:11] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-23 14:30:11] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-23 14:30:37] INFO [django.server:213] "OPTIONS /api/httpcase/update HTTP/1.1" 200 0
+[2026-01-23 14:30:37] INFO [django.server:213] "POST /api/httpcase/update HTTP/1.1" 200 4303
+[2026-01-23 14:30:37] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 28108
+[2026-01-23 14:30:44] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-23 14:30:44] INFO [apps.celery_task.views:46] dialogchatæ¥å£ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹æ‰§è¡Œ
+[2026-01-23 14:30:44] ERROR [commons.abs.baserequest:149] replace expected at least 2 arguments, got 1
+[2026-01-23 14:30:45] INFO [apps.celery_task.views:74] ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹è¿”å›
+[2026-01-23 14:30:45] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 100
+[2026-01-23 14:32:45] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-23 14:32:48] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 14:33:37] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-23 14:33:37] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 28108
+[2026-01-23 14:33:39] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-23 14:33:39] INFO [apps.celery_task.views:46] dialogchatæ¥å£ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹æ‰§è¡Œ
+[2026-01-23 14:33:39] ERROR [commons.abs.baserequest:149] the JSON object must be str, bytes or bytearray, not NoneType
+[2026-01-23 14:33:39] INFO [apps.celery_task.views:74] ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹è¿”å›
+[2026-01-23 14:33:39] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 117
+[2026-01-23 14:36:09] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-23 14:36:09] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-23 14:36:32] INFO [django.server:213] "OPTIONS /api/httpcase/update HTTP/1.1" 200 0
+[2026-01-23 14:36:32] INFO [django.server:213] "POST /api/httpcase/update HTTP/1.1" 200 4301
+[2026-01-23 14:36:32] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-23 14:36:32] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 28106
+[2026-01-23 14:36:36] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-23 14:36:36] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 28106
+[2026-01-23 14:36:37] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-23 14:36:37] INFO [apps.celery_task.views:46] dialogchatæ¥å£ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹æ‰§è¡Œ
+[2026-01-23 14:36:38] ERROR [commons.abs.baserequest:149] the JSON object must be str, bytes or bytearray, not NoneType
+[2026-01-23 14:36:38] INFO [apps.celery_task.views:74] ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹è¿”å›
+[2026-01-23 14:36:38] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 117
+[2026-01-23 14:36:48] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-23 14:36:48] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-23 14:37:29] INFO [django.server:213] "OPTIONS /api/httpcase/update HTTP/1.1" 200 0
+[2026-01-23 14:37:29] INFO [django.server:213] "POST /api/httpcase/update HTTP/1.1" 200 4311
+[2026-01-23 14:37:29] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-23 14:37:30] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 28116
+[2026-01-23 14:37:33] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-23 14:37:33] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 28116
+[2026-01-23 14:37:35] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-23 14:37:35] INFO [apps.celery_task.views:46] dialogchatæ¥å£ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹æ‰§è¡Œ
+[2026-01-23 14:37:35] ERROR [commons.abs.baserequest:149] the JSON object must be str, bytes or bytearray, not NoneType
+[2026-01-23 14:37:35] INFO [apps.celery_task.views:74] ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹è¿”å›
+[2026-01-23 14:37:35] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 117
+[2026-01-23 14:37:53] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-23 14:37:53] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-23 14:41:33] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-23 14:41:36] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 15:03:21] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-23 15:03:24] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 15:04:19] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-23 15:04:21] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 15:04:52] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-23 15:04:52] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 28116
+[2026-01-23 15:04:55] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-23 15:04:55] INFO [apps.celery_task.views:46] dialogchatæ¥å£ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹æ‰§è¡Œ
+[2026-01-23 15:04:55] ERROR [commons.abs.baserequest:149] the JSON object must be str, bytes or bytearray, not NoneType
+[2026-01-23 15:04:55] INFO [apps.celery_task.views:74] ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹è¿”å›
+[2026-01-23 15:04:55] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 117
+[2026-01-23 15:07:06] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-23 15:07:08] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 15:07:17] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-23 15:07:17] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 28116
+[2026-01-23 15:07:21] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-23 15:07:21] INFO [apps.celery_task.views:46] dialogchatæ¥å£ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹æ‰§è¡Œ
+[2026-01-23 15:07:21] ERROR [commons.utils.request_util:71] 'exyMap'ä¸å­˜åœ¨è¿”å›ä½“ä¸­
+[2026-01-23 15:07:21] INFO [apps.celery_task.views:74] ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹è¿”å›
+[2026-01-23 15:07:21] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 4690
+[2026-01-23 15:08:25] INFO [django.server:213] "OPTIONS /api/operator/ HTTP/1.1" 200 0
+[2026-01-23 15:08:25] INFO [django.server:213] "GET /api/operator/ HTTP/1.1" 200 234
+[2026-01-23 15:09:05] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-23 15:09:08] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 15:09:30] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-23 15:09:32] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 15:09:37] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-23 15:09:37] INFO [apps.celery_task.views:46] dialogchatæ¥å£ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹æ‰§è¡Œ
+[2026-01-23 15:09:37] ERROR [commons.utils.request_util:68] 'exyMap'ä¸å­˜åœ¨è¿”å›ä½“ä¸­
+[2026-01-23 15:09:37] INFO [apps.celery_task.views:74] ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹è¿”å›
+[2026-01-23 15:09:37] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 4690
+[2026-01-23 15:12:04] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-23 15:12:04] INFO [apps.celery_task.views:46] getBIMultiLayerFAQæ¥å£ã€MFAQã€‘ç­”æ¡ˆç›´è½+faqç”¨ä¾‹æ‰§è¡Œ
+[2026-01-23 15:12:04] INFO [apps.celery_task.views:74] ã€MFAQã€‘ç­”æ¡ˆç›´è½+faqç”¨ä¾‹è¿”å›
+[2026-01-23 15:12:04] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 2625
+[2026-01-23 15:15:13] INFO [django.server:213] "OPTIONS /api/httpcase/update HTTP/1.1" 200 0
+[2026-01-23 15:15:13] WARNING [django.request:248] Bad Request: /api/httpcase/update
+[2026-01-23 15:15:13] WARNING [django.server:213] "POST /api/httpcase/update HTTP/1.1" 400 36
+[2026-01-23 15:15:13] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-23 15:15:13] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 28116
+[2026-01-23 15:15:26] INFO [django.server:213] "OPTIONS /api/httpcase/update HTTP/1.1" 200 0
+[2026-01-23 15:15:26] INFO [django.server:213] "POST /api/httpcase/update HTTP/1.1" 200 4311
+[2026-01-23 15:15:26] INFO [django.server:213] "OPTIONS /api/httpcase/getPageList HTTP/1.1" 200 0
+[2026-01-23 15:15:26] INFO [django.server:213] "POST /api/httpcase/getPageList HTTP/1.1" 200 28116
+[2026-01-23 15:15:29] INFO [django.server:213] "OPTIONS /api/test HTTP/1.1" 200 0
+[2026-01-23 15:15:29] INFO [apps.celery_task.views:46] dialogchatæ¥å£ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹æ‰§è¡Œ
+[2026-01-23 15:15:29] INFO [apps.celery_task.views:74] ã€å¤§èœå•ã€‘BUé€‰æ‹©æµ®å±‚é€‰æ‹©BUç”¨ä¾‹è¿”å›
+[2026-01-23 15:15:29] INFO [django.server:213] "POST /api/test HTTP/1.1" 200 4687
+[2026-01-23 16:01:00] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\utils\request_util.py changed, reloading.
+[2026-01-23 16:01:03] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 16:02:44] INFO [django.server:213] "GET /api/log/ HTTP/1.1" 200 46741
+[2026-01-23 16:25:41] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\cusntom\view.py changed, reloading.
+[2026-01-23 16:25:43] INFO [django.utils.autoreload:668] Watching for file changes with StatReloader
+[2026-01-23 16:25:51] INFO [django.utils.autoreload:266] D:\testplatformservice\testplatform\commons\cusntom\view.py changed, reloading.
