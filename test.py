@@ -31,7 +31,7 @@ if 'prod' in settings.DATABASES['default']['NAME']:
 # 导入应用模块
 try:
     from apps.automatic.models import SuitModel
-    from commons.utils.getcasedata import GetCaseData
+    from commons.utils.get_case_data import GetCaseData
 except ImportError as e:
     print(f"导入模块失败: {e}")
     print("当前Python路径:")
@@ -39,7 +39,7 @@ except ImportError as e:
         print(f" - {p}")
     sys.exit(1)
 # 标准导入（在Django设置后）
-from commons.utils.getcasedata import GetCaseData
+from commons.utils.get_case_data import GetCaseData
 from commons.utils.request_util import AutomatedRequest
 from apps.automatic.models import SuitModel
 from apps.automatic.sers import SuitSer

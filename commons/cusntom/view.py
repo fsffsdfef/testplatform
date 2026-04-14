@@ -6,9 +6,9 @@ from commons.utils.batch_util import UniversalBatchOperator
 
 
 class CustomView(GenericAPIView):
-
+    """视图"""
     model = None
-    fields = None
+    fields: dict[str, any] = None
     index_key = None
 
     def post(self, request, *args, **kwargs):
@@ -88,19 +88,24 @@ class CustomView(GenericAPIView):
 
     def get_query(self, request, *args, **kwargs):
         query_params = {}
-        for i in self.fields:
+        for i in self.fields.keys():
             value = request.get(i, None)
             if value is not None:
                 query_params[i] = value
+        # 初始化批量查询实例
         q_objects = Q()
+        # 已处理字段集合
         processed_fields = set()
+        # 需预加载数据集合
         select_related_fields = set()
 
         for param, value in query_params.items():
             field = param
             lookup_type = self.fields[param].get('type')
+            # 初始化请求类型状态
+            # 是否是时间范围查询
             is_range_param = False
-            # 处理关联字段
+            # 是否是多表查询
             is_related_field = False
             related_field_path = None
             for base_field, config in self.fields.items():
@@ -144,7 +149,6 @@ class CustomView(GenericAPIView):
                 # 非时间类型
                 else:
                     lookup_expr = f"{related_field_path}__{related_lookup_type}"
-                    print(f'关联字段：{lookup_expr}')
             else:
                 # 普通字段查询
                 if is_range_param:
@@ -167,7 +171,14 @@ class CustomView(GenericAPIView):
 
         if _ := q_objects.children:
             queryset = queryset.filter(q_objects)
-        ordered_queryset = queryset.order_by("-updatedDate")
+        if hasattr(queryset.model, 'updatedDate'):
+            ordered_queryset = queryset.order_by("-updatedDate")
+        elif hasattr(queryset.model, 'date_changed'):
+            ordered_queryset = queryset.order_by("-date_changed")
+        else:
+            ordered_queryset = queryset.order_by("-id")
+        # if "updatedDate" in [attr for attr in dir(self.model) if not attr.startswith('_')]:
+        # ordered_queryset = queryset.order_by("-updatedDate") or queryset.order_by("-date_changed")
         page_data = self.paginate_queryset(ordered_queryset)
         if page_data is not None:
             serializer = self.serializer_class(instance=page_data, many=True)

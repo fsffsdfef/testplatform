@@ -1,7 +1,7 @@
 from django.db import IntegrityError
 from django.db import connection
 from rest_framework import serializers
-from ..model.test import *
+# from ..model.test import *
 
 MAX_BATCH_SIZE = 100
 
@@ -34,23 +34,23 @@ class BulkCreateSerializer(serializers.ListSerializer):
             raise serializers.ValidationError(f"数据冲突: {str(e)}")
 
 
-class OneModelSer(serializers.ModelSerializer):
-
-    class Meta:
-        model = OneModel
-        fields = '__all__'
-        list_serializer_class = BulkCreateSerializer
-
-
-class TwoModelSer(serializers.ModelSerializer):
-
-    class Meta:
-        model = TwoModel
-        fields = '__all__'
-
-
-class ThreeModelSer(serializers.ModelSerializer):
-
-    class Meta:
-        model = ThreeModel
-        fields = '__all__'
+# class OneModelSer(serializers.ModelSerializer):
+#
+#     class Meta:
+#         model = OneModel
+#         fields = '__all__'
+#         list_serializer_class = BulkCreateSerializer
+#
+#
+# class TwoModelSer(serializers.ModelSerializer):
+#
+#     class Meta:
+#         model = TwoModel
+#         fields = '__all__'
+#
+#
+# class ThreeModelSer(serializers.ModelSerializer):
+#
+#     class Meta:
+#         model = ThreeModel
+#         fields = '__all__'

@@ -30,6 +30,7 @@ class ApplyModel(BaseModel):
     baseUrl = models.CharField(verbose_name="域地址", max_length=200, unique=True)
     synopsis = models.CharField(verbose_name="简介", max_length=1000, null=True)
     owner = models.CharField(verbose_name="负责人", max_length=200, default='admin')
+    # owner = models.ForeignKey(UserModel, to_field='userId', related_name='apply', on_delete=models.CASCADE)
     depart = models.ForeignKey(DepartModel, to_field="departId", related_name="apply", on_delete=models.CASCADE)
 
     class Meta:

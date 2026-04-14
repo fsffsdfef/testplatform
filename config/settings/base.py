@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-from commons.utils.readfile import Read
+from commons.utils.read_file import Read
 from datetime import timedelta
 import os
 

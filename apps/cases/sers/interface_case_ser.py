@@ -2,7 +2,7 @@ from rest_framework import serializers
 from django.db import transaction
 from ..model.interface_case import *
 from ..sers.express_ser import *
-from commons.utils.getcasedata import GetCaseData
+from commons.utils.get_case_data import GetCaseData
 from apps.automatic.models import SuitCaseModel
 
 
@@ -77,7 +77,6 @@ class HttpCaseSer(serializers.ModelSerializer):
                 express_item = ExpressItem.objects.create(httpCase=instance, **item_data)
                 self._handle_expresses(express_item, express_list)
 
-
     @staticmethod
     def _handle_expresses(express_item, express_list):
         """处理表达式列表"""
@@ -127,18 +126,19 @@ class HttpCaseSer(serializers.ModelSerializer):
 
 class SuitCaseSerializer(serializers.ModelSerializer):
     """套件用例关联序列化器"""
-    case = serializers.SerializerMethodField(method_name='_get_case_info')
+
     case_id = serializers.IntegerField(write_only=True)
+    case = serializers.SerializerMethodField(method_name='_get_case_info')
+    items = serializers.SerializerMethodField(method_name="_get_items")
 
     class Meta:
         model = SuitCaseModel
-        fields = ['id', 'case', 'case_id', 'execution_order', 'is_first', 'is_last', 'globalList', 'created_at', 'updated_at', 'streamKey']
+        fields = ['id', 'case', 'case_id', 'execution_order', 'is_first', 'is_last', 'changeSidKey', 'changeSid',
+                  'globalMap', 'created_at', 'updated_at', 'streamKey', 'items']
         read_only_fields = ['id', 'created_at', 'updated_at']
 
     def create(self, validated_data):
         case_id = validated_data.pop('caseId')
-        global_list = validated_data.get('streamKey', None)
-        print(f'globalList：{type(global_list)}')
         try:
             case = HttpCaseModel.objects.get(caseId=case_id)
         except HttpCaseModel.DoesNotExist:
@@ -151,4 +151,18 @@ class SuitCaseSerializer(serializers.ModelSerializer):
     def _get_case_info(obj):
         case = GetCaseData(obj).get_case("httpObj")
         return case
+
+    @staticmethod
+    def _get_items(obj):
+        global_map = obj.globalMap
+        if global_map and len(global_map) >= 1:
+            items = []
+            for k, v in global_map.items():
+                _ = dict()
+                _["key"] = k
+                _["value"] = v
+                items.append(_)
+            return items
+        else:
+            return []
 

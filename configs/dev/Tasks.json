@@ -1,0 +1,12 @@
+{
+  "tasksMap": [
+    {
+      "taskName": "套件执行",
+      "taskCode": "celerys.tasks.SuitRequest"
+    },
+    {
+      "taskName": "http请求执行",
+      "taskCode": "celerys.tasks.https_action"
+    }
+  ]
+}

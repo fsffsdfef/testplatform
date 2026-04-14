@@ -7,7 +7,7 @@ from commons.cusntom.view import CustomView
 from commons.cusntom.response import CustomResponse
 from commons.cusntom.pagination import CustomPage
 from commons.utils.analysis_token import get_token
-from celerys.tasks import demo
+import operator
 from celery import result
 
 
@@ -20,7 +20,6 @@ class MenuInitializeView(ModelViewSet):
     def list(self, request, *args, **kwargs):
         menus = self.serializer_class.Meta.model.objects.filter(parent=None)
         menu_tree = []
-        menu_sort_tree = []
         permission_list = get_token(request)['permissionList']
         for menu in menus:
             per_list = [per.perCode for per in menu.per.all()]
@@ -35,7 +34,9 @@ class MenuInitializeView(ModelViewSet):
                     'sequence': menu.sequence,
                     'children': menu.get_children_tree(permission_list)
                 })
-        return CustomResponse(data=menu_tree, msg='true')
+
+        menu_sort_tree = sorted(menu_tree, key=operator.itemgetter("sequence"))
+        return CustomResponse(data=menu_sort_tree, msg='true')
 
 
 class MenuCascaderView(ModelViewSet):

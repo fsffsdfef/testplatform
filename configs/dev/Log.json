@@ -19,7 +19,7 @@
             "class": "commons.cusntom.handler.DatabaseLogHandler"
         },
         "file": {
-            "level": "INFO",
+            "level": "DEBUG",
             "class":"logging.handlers.RotatingFileHandler",
             "filename": "logs/debug.log",
             "backupCount": 5,

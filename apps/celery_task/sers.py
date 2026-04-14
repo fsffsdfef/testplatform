@@ -7,54 +7,24 @@ from django_celery_beat.models import (
     SolarSchedule,
     CrontabSchedule
 )
-from .models import *
 
 
-class CustomClockedScheduleSer(serializers.ModelSerializer):
-
-    class Meta:
-        model = CustomClockedSchedule
-        fields = '__all__'
-
-
-class CustomCrontabSchedulSer(serializers.ModelSerializer):
-
-    class Meta:
-        model = CustomCrontabSchedule
-        fields = '__all__'
-
-
-class CustomSolarScheduleSer(serializers.ModelSerializer):
-
-    class Meta:
-        model = CustomSolarSchedule
-        fields = '__all__'
-
-
-class CustomPeriodcTaskSer(serializers.ModelSerializer):
-
-    class Meta:
-        model = CustomPeriodicTask
-        fields = ["id", "name", "task", "args", "kwargs", "headers", "start_time", "expires", "enabled",
-                  "customInterval"]
-
-
-class CustomIntervalScheduleSer(serializers.ModelSerializer):
-
-    class Meta:
-        model = CustomIntervalSchedule
-        fields = "__all__"
-
-
-class PeriodcTaskSer(serializers.ModelSerializer):
+class PeriodicTaskSer(serializers.ModelSerializer):
+    schedule = serializers.SerializerMethodField(method_name="_get_schedule")
 
     class Meta:
         model = PeriodicTask
         fields = '__all__'
 
-    def validate(self, attr):
-        print(attr)
-        return attr
+    @staticmethod
+    def _get_schedule(obj):
+        if obj.interval:
+            return obj.interval.__str__()
+        elif obj.crontab:
+            return obj.crontab.__str__()
+        elif obj.clocked:
+            return obj.clocked.__str__()
+        return ''
 
 
 class PeriodicTasksSer(serializers.ModelSerializer):
@@ -65,10 +35,15 @@ class PeriodicTasksSer(serializers.ModelSerializer):
 
 
 class IntervalScheduleSer(serializers.ModelSerializer):
+    intervalName = serializers.SerializerMethodField(method_name="_get_interval_name")
 
     class Meta:
         model = IntervalSchedule
         fields = '__all__'
+
+    @staticmethod
+    def _get_interval_name(obj):
+        return f"{str(obj.every)} {obj.period}"
 
 
 class ClockedScheduleSer(serializers.ModelSerializer):

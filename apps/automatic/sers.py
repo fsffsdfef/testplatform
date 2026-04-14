@@ -3,7 +3,7 @@ from .models import SuitModel, SuitCaseModel
 from ..cases.model.interface_case import HttpCaseModel
 from ..cases.sers.interface_case_ser import SuitCaseSerializer
 from django.forms.models import model_to_dict
-from commons.utils.getcasedata import GetCaseData
+from commons.utils.get_case_data import GetCaseData
 from django.db import transaction
 
 
@@ -12,14 +12,9 @@ class SuitSer(serializers.ModelSerializer):
     suitId = serializers.IntegerField(read_only=True)
     # caseList = serializers.PrimaryKeyRelatedField(queryset=HttpCaseModel.objects.all(), write_only=True, many=True)
     caseInfo = SuitCaseSerializer(source='suitcasemodel_set', many=True, read_only=True)
-    casesList = serializers.ListField(
-        child=serializers.DictField(),
-        write_only=True,
-        required=False,
-        help_text="用例列表，格式: [{'case_id': 1, 'execution_order': 1, 'is_first': False, 'is_last': False}]"
-    )
     # caseInfo = serializers.SerializerMethodField(method_name='_get_case_info')
     caseSize = serializers.SerializerMethodField(method_name="_get_case_size")
+    selectList = serializers.SerializerMethodField(method_name="_get_select_list")
     suitName = serializers.CharField(
         required=True,
         allow_blank=False,
@@ -27,6 +22,12 @@ class SuitSer(serializers.ModelSerializer):
             'required': 'suitName不可为null',
             'blank': 'suitName不可为空字符串'
         }
+    )
+    casesList = serializers.ListField(
+        child=serializers.DictField(),
+        write_only=True,
+        required=False,
+        help_text="用例列表，格式: [{'case_id': 1, 'execution_order': 1, 'is_first': False, 'is_last': False}]"
     )
 
     class Meta:
@@ -42,6 +43,22 @@ class SuitSer(serializers.ModelSerializer):
     def _get_case_size(obj):
         return int(obj.casesList.count())
 
+    @staticmethod
+    def _get_select_list(obj):
+        select_list = list()
+        for i in obj.suitcasemodel_set.all():
+            case_list = list()
+            case_id = i.case.caseId
+            port_id = i.case.port.portId
+            apply_id = i.case.port.apply.applyId
+            depart_id = i.case.port.apply.depart.departId
+            case_list.append(depart_id)
+            case_list.append(apply_id)
+            case_list.append(port_id)
+            case_list.append(case_id)
+            select_list.append(case_list)
+        return select_list
+
     def validate(self, attrs):
         """入参校验"""
         return attrs
@@ -56,7 +73,7 @@ class SuitSer(serializers.ModelSerializer):
             for case_info in case_list:
                 case_id = case_info.get('caseId')
                 execution_order = case_info.get('execution_order')
-                global_list = case_info.get('globalList')
+                global_map = case_info.get('globalMap')
                 stream_key = case_info.get('streamKey')
                 is_first = case_info.get('is_first', False)
                 is_last = case_info.get('is_last', False)
@@ -67,7 +84,7 @@ class SuitSer(serializers.ModelSerializer):
                         suit=suit,
                         case=case,
                         execution_order=execution_order,
-                        globalList=global_list,
+                        globalMap=global_map,
                         is_first=is_first,
                         is_last=is_last,
                         streamKey=stream_key

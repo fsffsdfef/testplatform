@@ -2,7 +2,7 @@ import os
 import sys
 from celery import Celery
 from django.conf import settings
-from commons.utils.readfile import Read
+from commons.utils.read_file import Read
 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.base')

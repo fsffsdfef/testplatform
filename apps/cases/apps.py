@@ -5,5 +5,5 @@ class CasesConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'apps.cases'
 
-    def ready(self):
-        from .sgains.test import create_one_two
+    # def ready(self):
+    #     from .sgains.test import create_one_two

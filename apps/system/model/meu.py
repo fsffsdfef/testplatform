@@ -1,6 +1,7 @@
 from django.db import models
 from commons.abs.basemodel import BaseModel
 from .permission_group_role import PermissionModel
+import operator
 
 
 class Menu(BaseModel):
@@ -28,8 +29,10 @@ class Menu(BaseModel):
                     'menuName': menu.menuName,
                     'icon': menu.icon,
                     'path': menu.path,
+                    'sequence': menu.sequence,
                     'children': menu.get_children_tree(permission_list)  # 使用递归逻辑获取更下层的菜单
                 })
+        children = sorted(children, key=operator.itemgetter("sequence"))
         return children
 
     def __str__(self):

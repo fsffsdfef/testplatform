@@ -8,5 +8,5 @@
   "include": ["celerys.tasks"],
   "broker_connection_retry_on_startup": true,
   "timezone": "Asia/Shanghai",
-  "beat_scheduler": "django_celery_beat.schedulers.DatabaseScheduler"
+  "beat_scheduler": "django_celery_beat.schedulers:DatabaseScheduler"
 }

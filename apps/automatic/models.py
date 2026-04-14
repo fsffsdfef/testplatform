@@ -51,9 +51,11 @@ class SuitCaseModel(models.Model):
     execution_order = models.IntegerField(verbose_name='执行顺序', help_text='用例在套件中的执行顺序，数字越小越先执行')
     is_first = models.BooleanField(verbose_name='是否最先执行', default=False, help_text='标记为最先执行的用例')
     is_last = models.BooleanField(verbose_name='是否最后执行', default=False, help_text='标记为最后执行的用例')
-    is_stream = models.BooleanField(verbose_name='是否为流式请求', default=False)
+    is_stream = models.BooleanField(verbose_name='是否为循环请求', default=False)
     streamKey = models.CharField(verbose_name='流式key', max_length=300, null=True)
-    globalList = models.JSONField(verbose_name='全局变量', null=True)
+    globalMap = models.JSONField(verbose_name='全局变量', null=True)
+    changeSidKey = models.CharField(verbose_name='要切换的会话ID的key', max_length=300, null=True)
+    changeSid = models.BooleanField(verbose_name='是否要切换会话id', default=False)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='更新时间')
 

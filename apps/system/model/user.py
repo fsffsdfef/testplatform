@@ -16,6 +16,7 @@ class UserModel(BaseModel, AbstractBaseUser):
     password = models.CharField(verbose_name='密码', help_text='输入密码', max_length=100)
     groups = models.ManyToManyField(to=GroupModel, related_name='user', blank=True)
     roles = models.ManyToManyField(to=RoleModel, related_name='user', blank=True)
+    is_active = models.BooleanField(default=True)
     depart = models.ForeignKey(to=DepartModel, to_field='departId', related_name='user', on_delete=models.CASCADE)
 
     USERNAME_FIELD = 'email'

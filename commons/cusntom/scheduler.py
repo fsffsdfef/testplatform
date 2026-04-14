@@ -1,191 +1,129 @@
-"""
-自定义 Celery Beat 调度器
-继承 django_celery_beat 的调度器，扩展自定义功能
-"""
-import json
-from django.utils import timezone
-from django_celery_beat.schedulers import DatabaseScheduler
-from django_celery_beat.models import PeriodicTask
 from celery import current_app
-from celery.schedules import crontab, schedule
-from django_celery_beat.models import (
-    PeriodicTask,
-    PeriodicTasks,
-    IntervalSchedule,
-    ClockedSchedule,
-    SolarSchedule,
-    CrontabSchedule
-)
+from django_celery_beat.schedulers import DatabaseScheduler
+from django.core.cache import cache
+from django.utils.timezone import now
+from apps.celery_task.models import CustomSchedule
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class CustomDatabaseScheduler(DatabaseScheduler):
     """
     自定义数据库调度器
-    扩展了任务执行日志、错误处理、重试机制等功能
+    基于 CustomSchedule 表进行任务调度
     """
-
+    
+    Model = CustomSchedule  # 使用自定义模型
+    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self._last_tick = None
-
-    def setup_schedule(self):
-        """设置调度计划"""
-        super().setup_schedule()
-        # 初始化自定义任务
-        self._sync_custom_tasks()
-
-    def _sync_custom_tasks(self):
-        """同步自定义任务到 Celery Beat"""
-        for task in PeriodicTask.objects.filter(enabled=True):
-            try:
-                self._add_custom_task(task)
-            except Exception as e:
-                print(f"Error syncing task {task.name}: {e}")
-
-    def _add_custom_task(self, task):
-        """添加自定义任务到调度器"""
-        # 获取任务调度
-        schedule_obj = self._get_task_schedule(task)
-        if schedule_obj:
-            # 添加到 Celery Beat
-            self.app.conf.beat_schedule[task.name] = {
-                'task': task.task,
-                'schedule': schedule_obj,
-                'args': json.loads(task.args) if task.args else (),
-                'kwargs': json.loads(task.kwargs) if task.kwargs else {},
-                'options': json.loads(task.options) if task.options else {},
-            }
-
-    @staticmethod
-    def _get_task_schedule(task):
-        """获取任务调度对象"""
-        if task.interval:
-            return task.interval.schedule
-        elif task.crontab:
-            return task.crontab.schedule
-        elif task.solar:
-            return task.solar.schedule
-        elif task.clocked:
-            return task.clocked.schedule
-        elif task.customInterval:
-            return task.customInterval.schedule
-        elif task.customCrontab:
-            return crontab(
-                minute=task.customCrontab.minute,
-                hour=task.customCrontab.hour,
-                day_of_week=task.customCrontab.day_of_week,
-                day_of_month=task.customCrontab.day_of_month,
-                month_of_year=task.customCrontab.month_of_year,
-            )
-        return None
-
-    def sync(self):
-        """同步任务到数据库"""
-        super().sync()
-        # 同步自定义任务
-        self._sync_custom_tasks()
-
-    def apply_async(self, entry, producer=None, advance=True, **kwargs):
-        """异步执行任务，并记录执行日志"""
-        # 创建执行日志
-        log = None
-        if isinstance(entry, dict) and 'task' in entry:
-            task_name = entry['task']
-            try:
-                custom_task = PeriodicTask.objects.get(task=task_name, enabled=True)
-
-            except PeriodicTask.DoesNotExist:
-                pass
-
+        self._last_update = now()
+        self._schedule_cache_key = 'celery:custom_schedule:cache'
+        self._cache_timeout = 30  # 缓存30秒
+        
+    def get_schedule(self):
+        """
+        获取调度计划
+        """
+        schedule = {}
+        
         try:
-            # 调用父类方法执行任务
-            result = super().apply_async(entry, producer=producer, advance=advance, **kwargs)
-
-            # 更新日志状态
-            if log:
-                log.status = 'running'
-                log.save(update_fields=['status'])
-
-            return result
-        except Exception as e:
-            # 记录错误
-            if log:
-                log.finish(
-                    status='failure',
-                    error_message=str(e),
-                    traceback=str(e.__traceback__) if hasattr(e, '__traceback__') else None
-                )
-                # 更新任务失败计数
-                try:
-                    custom_task = PeriodicTask.objects.get(task=entry['task'])
-                except PeriodicTask.DoesNotExist:
-                    pass
-            raise
-
-    def tick(self, event_t=None, min=min, **kwargs):
-        """每次调度周期执行"""
-        # 更新任务的下次执行时间
-        self._update_next_run_times()
-        return super().tick(event_t=event_t, min=min, **kwargs)
-
-    def _update_next_run_times(self):
-        """更新所有任务的下次执行时间"""
-        now = timezone.now()
-        for task in PeriodicTask.objects.filter(enabled=True, next_run_at__lte=now):
-            try:
-                task.update_next_run_time()
-            except Exception as e:
-                print(f"Error updating next run time for task {task.name}: {e}")
-
-    def close(self):
-        """关闭调度器"""
-        super().close()
-
-    def get_from_database(self):
-        """从数据库获取任务"""
-        # 获取标准任务
-        tasks = super().get_from_database()
-
-        # 添加自定义任务
-        for custom_task in PeriodicTask.objects.filter(enabled=True):
-            schedule_obj = self._get_task_schedule(custom_task)
-            if schedule_obj:
-                tasks[custom_task.name] = {
-                    'task': custom_task.task,
-                    'schedule': schedule_obj,
-                    'args': json.loads(custom_task.args) if custom_task.args else (),
-                    'kwargs': json.loads(custom_task.kwargs) if custom_task.kwargs else {},
-                    'options': json.loads(custom_task.options) if custom_task.options else {},
+            # 检查缓存
+            cached = cache.get(self._schedule_cache_key)
+            if cached:
+                return cached
+            
+            # 查询激活的自定义调度任务
+            custom_schedules = CustomSchedule.objects.filter(
+                is_active=True,
+                periodic_task__enabled=True
+            ).select_related('periodic_task')
+            
+            for custom_schedule in custom_schedules:
+                task_name = custom_schedule.periodic_task.task
+                
+                # 检查条件字段（可选）
+                if (custom_schedule.condition_field and 
+                    custom_schedule.condition_value):
+                    if not self._check_condition(
+                        custom_schedule.condition_field,
+                        custom_schedule.condition_value
+                    ):
+                        continue
+                
+                # 创建调度条目
+                schedule_entry = {
+                    'task': task_name,
+                    'schedule': custom_schedule.periodic_task.interval,
+                    'args': custom_schedule.periodic_task.args or (),
+                    'kwargs': custom_schedule.periodic_task.kwargs or {},
+                    'options': {
+                        'expires': custom_schedule.periodic_task.expires,
+                        'queue': custom_schedule.periodic_task.queue,
+                        'priority': custom_schedule.priority,
+                        'max_retries': custom_schedule.max_retries,
+                        'retry_delay': custom_schedule.retry_delay,
+                    }
                 }
-
-        return tasks
-
-
-class TaskResultHandler:
-    """任务结果处理器"""
-
-    @staticmethod
-    def handle_success(task_name, result=None):
-        """处理任务成功"""
-        try:
-            task = PeriodicTask.objects.get(task=task_name)
-
-        except PeriodicTask.DoesNotExist:
-            pass
+                
+                schedule[task_name] = schedule_entry
+            
+            # 缓存结果
+            cache.set(
+                self._schedule_cache_key, 
+                schedule, 
+                self._cache_timeout
+            )
+            
         except Exception as e:
-            print(f"Error handling success for task {task_name}: {e}")
-
-    @staticmethod
-    def handle_failure(task_name, error_msg=None, traceback=None):
-        """处理任务失败"""
+            logger.error(f"获取自定义调度失败: {e}")
+        
+        return schedule
+    
+    def _check_condition(self, field_name, expected_value):
+        """
+        检查动态条件是否满足
+        可根据业务需求自定义条件检查逻辑
+        """
         try:
-            task = PeriodicTask.objects.get(task=task_name)
-            task.record_failure(error_msg)
-
-            # 更新最新的执行日志
-
-        except PeriodicTask.DoesNotExist:
-            pass
+            # 示例：检查配置表中的某个状态
+            from django.apps import apps
+            
+            # 这里只是示例，实际实现需根据具体业务
+            # 例如：检查用户数是否达到阈值
+            # 检查某个表的数据状态等
+            
+            return True  # 简化示例
+            
         except Exception as e:
-            print(f"Error handling failure for task {task_name}: {e}")
-
+            logger.error(f"条件检查失败: {e}")
+            return False
+    
+    def setup_schedule(self):
+        """
+        初始化调度器
+        """
+        super().setup_schedule()
+        
+        # 自定义初始化逻辑
+        self._cleanup_old_tasks()
+    
+    def _cleanup_old_tasks(self):
+        """
+        清理旧任务（可选）
+        """
+        try:
+            from django_celery_results.models import TaskResult
+            
+            # 删除超过30天的任务结果
+            from datetime import timedelta
+            from django.utils.timezone import now
+            
+            cutoff_date = now() - timedelta(days=30)
+            TaskResult.objects.filter(
+                date_done__lt=cutoff_date
+            ).delete()
+            
+        except Exception as e:
+            logger.error(f"清理旧任务失败: {e}")

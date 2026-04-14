@@ -8,8 +8,8 @@ log = logging.getLogger(__name__)
 
 
 _CMD_MAP = {
-        "jsonloads": json.loads,
-        "jsondumps": json.dumps
+        "jsonLoads": json.loads,
+        "jsonDumps": json.dumps
     }
 
 
@@ -26,7 +26,6 @@ def get_kv(data, keys: str):
         if "@" in keys:
             k_list = keys.split("@")
             data_key = k_list[0]
-            print(f"k_list：{k_list}")
             if isinstance(data, dict):
                 match_data = get_nested_value(data, data_key.split("."))
             elif isinstance(data, str):
@@ -62,8 +61,8 @@ def get_nested_value(data: dict, keys: list) -> any:
         current_value = None
         match = re.match(r'(\w+)\[(\d+)]', current_key)
         if match:
-            var_name = match.group(1)  # 'extPacks'
-            index_num = match.group(2)  # '0' (字符串形式)
+            var_name = match.group(1)
+            index_num = match.group(2)
             if var_name not in data or data[var_name] is None:
                 return None
             if index_num:

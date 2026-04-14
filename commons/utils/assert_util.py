@@ -1,6 +1,10 @@
 from commons.utils.request_util import get_nested_value, get_kv
 import operator
 import re
+import logging
+
+
+log = logging.getLogger(__name__)
 
 
 class AssertUtil:
@@ -10,8 +14,8 @@ class AssertUtil:
         '<=': operator.le,
         '>=': operator.ge,
         '!=': operator.ne,
-        '>': operator.lt,
-        '<': operator.gt,
+        '>': operator.gt,
+        '<': operator.lt,
         'in': operator.contains,
         "!=null": operator.is_not,
         "like": re.search,
@@ -35,17 +39,23 @@ class AssertUtil:
         """获取断言结果"""
         group_assert_list = []
         final_list = []
+        try:
+            for index, express_obj in enumerate(express_group, 1):
+                # 处理单个组的断言
+                group_result = self._process_express_group(req, res_data, express_obj)
+                group_assert_list.append(group_result)
+                final_list.append(group_result["final"])
 
-        for index, express_obj in enumerate(express_group, 1):
-            # 处理单个组的断言
-            group_result = self._process_express_group(req, res_data, express_obj)
-            group_assert_list.append(group_result)
-            final_list.append(group_result["final"])
-
-        return {
-            'assertInfo': group_assert_list,
-            'finalAssert': any(final_list)
-        }
+            return {
+                'assertInfo': group_assert_list,
+                'finalAssert': any(final_list)
+            }
+        except Exception as e:
+            log.error(msg=f"异常：{str(e)}")
+            return {
+                'assertInfo': "失败",
+                'finalAssert': False
+            }
 
     def _process_express_group(self, req: dict, res_data: dict, express_obj: dict) -> dict:
         """
@@ -63,9 +73,9 @@ class AssertUtil:
         group_final = all(item_final_list)
 
         return {
-        "groupID": express_obj.get("expressItemId"),
-        "expressInfo": item_assert_info_list,
-        "final": group_final
+            "groupID": express_obj.get("expressItemId"),
+            "expressInfo": item_assert_info_list,
+            "final": group_final
         }
 
     def _process_single_express(self, req: dict, res_data: dict, express: dict) -> dict:
@@ -77,7 +87,10 @@ class AssertUtil:
         # 获取操作符
         opera = self._get_operator(match_opera)
         # 获取结果值
-        result_value = get_nested_value(res_data, match_key.split("."))
+        if "@" in match_key:
+            result_value = get_kv(res_data, match_key)
+        else:
+            result_value = get_nested_value(res_data, match_key.split("."))
         if match_opera != "!=null":
             key_type = express.pop('keyType')
             match_value = express.pop('matchValue')
@@ -114,8 +127,6 @@ class AssertUtil:
                          match_method: str = None
                          ) -> bool:
         """评估断言结果"""
-        if "$" in match_value:
-            pass
         try:
             if opera.__name__ == "search":
                 if match_opera == "like":
@@ -123,13 +134,14 @@ class AssertUtil:
                 if match_opera == "re":
                     return bool(opera(self._TYPE_DICT[key_type](match_value), result_value))
             if match_method and match_method != "0" and key_type and match_value:
+
                 return opera(self._TYPE_DICT[match_method](result_value), self._TYPE_DICT[key_type](match_value))
             elif key_type and match_value:
                 return bool(opera(result_value, self._TYPE_DICT[key_type](match_value)))
             else:
                 return opera(result_value, None)
         except (ValueError, TypeError) as e:
-            print(f"断言评估失败: {e}")
+            log.error(msg=f"断言评估失败: {e}")
             return False
 
     def _get_operator(self, opera: str):
