@@ -10,3 +10,7 @@ celery
 pyyaml
 pyjwt
 playwright
+channels
+channels-redis
+langgraph
+langchain-core

@@ -94,7 +94,7 @@ class AssertUtil:
         if match_opera != "!=null":
             key_type = express.pop('keyType')
             match_value = express.pop('matchValue')
-            if "$" in match_value:
+            if match_value.startswith("$"):
                 match_value = get_kv(req, match_value)
             match_method = express.pop("matchMethod")
             # 构建断言信息

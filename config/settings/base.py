@@ -25,6 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-2&8-@cff6dw3-wuhgas8*t-elhza8v!1m34ln&0*$!d2g-18xu'
+ASGI_APPLICATION = 'config.asgi.application'
 ALGORITHM = 'HS256'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'django_celery_beat',
     'django_celery_results',
+    'channels',
     'apps.cases',
     'apps.system',
     'apps.celery_task',
@@ -99,6 +101,7 @@ if not os.path.exists(LOG_DIR):
 LOGGING = Read(env='dev', filename="Log.json").get_json_file()
 DATABASES = Read(env='dev', filename='DataBase.json').get_json_file()
 CACHES = Read(env='dev', filename='Cache.json').get_json_file()
+CHANNEL_LAYERS = Read(env='dev', filename='Channels.json').get_json_file()
 # LOGGING = Read('dev', 'Log.json').get_json_file()
 
 # Password validation

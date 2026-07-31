@@ -22,6 +22,7 @@ def get_kv(data, keys: str):
     """
     try:
         keys = keys.replace("$", "")
+
         match_data = None
         if "@" in keys:
             k_list = keys.split("@")
@@ -40,6 +41,8 @@ def get_kv(data, keys: str):
                 match_data = get_nested_value(data, keys.split("."))
             elif isinstance(data, requests.Response):
                 match_data = get_nested_value(data.json(), keys.split("."))
+            elif isinstance(data, str):
+                match_data = get_nested_value(json.loads(data), keys.split("."))
             return match_data
     except Exception as e:
         log.error(f"异常报错，原因：{str(e)}")

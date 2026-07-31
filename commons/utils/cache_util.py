@@ -16,4 +16,5 @@ class Cache:
         cache.set(k, v, self.time_out)
 
     def cache_get(self, k):
-        cache.get(k)
+        if cache.has_key(k):
+            return cache.get(k)

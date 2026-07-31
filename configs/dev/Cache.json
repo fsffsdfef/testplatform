@@ -1,7 +1,7 @@
 {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://:leeway123@127.0.0.1:6379/0",
+        "LOCATION": "redis://:leeway123@172.28.78.49:6379/0",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             "SOCKET_CONNECT_TIMEOUT": 5,

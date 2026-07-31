@@ -63,67 +63,41 @@ class SuitSer(serializers.ModelSerializer):
         """入参校验"""
         return attrs
 
+    @staticmethod
+    def _create_suit_case(suit, case_info):
+        case_id = case_info.get('caseId')
+        try:
+            case = HttpCaseModel.objects.get(caseId=case_id)
+        except HttpCaseModel.DoesNotExist:
+            raise serializers.ValidationError(f"用例ID {case_id} 不存在")
+
+        return SuitCaseModel.objects.create(
+            suit=suit,
+            case=case,
+            execution_order=case_info.get('execution_order'),
+            globalMap=case_info.get('globalMap'),
+            streamKey=case_info.get('streamKey'),
+            is_first=case_info.get('is_first', False),
+            is_last=case_info.get('is_last', False),
+            is_stream=case_info.get('is_stream', False),
+            changeSid=case_info.get('changeSid', False),
+            changeSidKey=case_info.get('changeSidKey'),
+        )
+
     def create(self, validated_data):
-        case_list = validated_data.pop("casesList", [])
-        # 使用事务确保数据一致性
+        case_list = validated_data.pop('casesList', [])
         with transaction.atomic():
-            # 创建套件
             suit = SuitModel.objects.create(**validated_data)
-            # 创建关联关系
             for case_info in case_list:
-                case_id = case_info.get('caseId')
-                execution_order = case_info.get('execution_order')
-                global_map = case_info.get('globalMap')
-                stream_key = case_info.get('streamKey')
-                is_first = case_info.get('is_first', False)
-                is_last = case_info.get('is_last', False)
-
-                try:
-                    case = HttpCaseModel.objects.get(caseId=case_id)
-                    SuitCaseModel.objects.create(
-                        suit=suit,
-                        case=case,
-                        execution_order=execution_order,
-                        globalMap=global_map,
-                        is_first=is_first,
-                        is_last=is_last,
-                        streamKey=stream_key
-                    )
-                except HttpCaseModel.DoesNotExist:
-                    # 可以选择抛出异常或跳过
-                    raise serializers.ValidationError(f"用例ID {case_id} 不存在")
-
+                self._create_suit_case(suit, case_info)
         return suit
 
     def update(self, instance, validated_data):
         case_list = validated_data.pop('casesList', None)
-
         with transaction.atomic():
-            # 更新套件基本信息
             suit = super().update(instance, validated_data)
-
-            # 如果提供了case_list，则更新用例列表
             if case_list is not None:
-                # 清空现有用例关联
                 SuitCaseModel.objects.filter(suit=instance).delete()
-
-                # 创建新的关联关系
                 for case_info in case_list:
-                    case_id = case_info.get('caseId')
-                    execution_order = case_info.get('execution_order')
-                    is_first = case_info.get('is_first', False)
-                    is_last = case_info.get('is_last', False)
-
-                    try:
-                        case = HttpCaseModel.objects.get(caseId=case_id)
-                        SuitCaseModel.objects.create(
-                            suit=suit,
-                            case=case,
-                            execution_order=execution_order,
-                            is_first=is_first,
-                            is_last=is_last
-                        )
-                    except HttpCaseModel.DoesNotExist:
-                        raise serializers.ValidationError(f"用例ID {case_id} 不存在")
-
+                    self._create_suit_case(suit, case_info)
         return suit

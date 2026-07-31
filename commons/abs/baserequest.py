@@ -12,6 +12,7 @@ import time
 import requests
 import operator
 import logging
+import asyncio
 logger = logging.getLogger(__name__)
 
 
@@ -52,7 +53,6 @@ class HttpRequestStrategy(RequestStrategy):
 
     def __init__(self, global_map: Dict = None):
         """初始化默认超时时间与请求头"""
-        logger.info("初始化了一次")
         if global_map:
             self. _GLOBAL_MAP = global_map
         else:
@@ -91,7 +91,7 @@ class HttpRequestStrategy(RequestStrategy):
         :return:
         """
         answer_map = dict()
-        # 根据序号排序，并抽出前置与后置用例
+        # 数据预加载，获取前置，后置用例与排序常规用例
         is_first_case = [obj for obj in data_list if bool(obj.get("is_first"))]
         is_last_case = [obj for obj in data_list if bool(obj.get("is_last"))]
         remove_ids = {id(o) for o in is_last_case+is_first_case}
@@ -140,6 +140,7 @@ class HttpRequestStrategy(RequestStrategy):
             express_group = case.pop('expressItem', None)
             adapter = self.get_adapter(retries)
             self.sess.mount('http://', adapter)
+            self.sess.mount('https://', adapter)
             if stream_key:
                 res = self._send_stream_req(stream_key, case)
                 final = assert_util.get_assert(req=body, res_data=res, express_group=express_group)
@@ -160,12 +161,14 @@ class HttpRequestStrategy(RequestStrategy):
                 return {"caseId": case_id, "caseName": case_name,  "req": case,
                         "res": {"msg": f"{case_id}执行失败, {e}"}, "assert": {"finalAssert": False}, "msg": f"{case_id}执行失败, {e}", "success": "skip"}
             else:
+                # logger.info(str(json.loads(res.json()["aitoken"])["messageId"]))
                 data = {"caseId": case_id,
                         "caseName": case_name,
                         "req": case,
                         "res": res.json(),
                         "assert": final,
-                        "global": self._GLOBAL_MAP
+                        "global": self._GLOBAL_MAP,
+                        # "trace": str(json.loads(res.json()["aitoken"])["messageId"])
                         }
                 return data
         except Exception as e:
@@ -222,12 +225,10 @@ class HttpRequestStrategy(RequestStrategy):
                 return {"msg": f"请求失败，原因：{str(e)}"}
             if res['streamOver'] is True and res['fullData']:
                 return res
-            if res['readyForData'] is False:
+            if res['readyForData'] is False or res['streamOver'] is None:
                 num += 1
                 self._send_stream_req(stream_key, case, num)
-            if res['streamOver'] is None:
-                num += 1
-                self._send_stream_req(stream_key, case, num)
+
         return {"msg": "超过最大片数"}
 
     @staticmethod
